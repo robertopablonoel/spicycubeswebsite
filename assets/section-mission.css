@@ -1,0 +1,120 @@
+.mission {
+  z-index: 1;
+}
+
+.h0,
+.h1,
+.h2,
+.h3 {
+  font-family: 'Futura', sans-serif;
+  font-weight: 700;
+}
+
+.h0 {
+  font-size: 60px;
+}
+
+.h1 {
+  font-size: 55px;
+}
+
+.h2 {
+  font-size: 30px;
+}
+
+.h3 {
+  font-size: 20px;
+}
+
+.normal {
+  font-size: 16px;
+  font-family: 'Futura', sans-serif;
+}
+
+.large {
+  font-size: 20px;
+  font-family: 'Futura', sans-serif;
+}
+
+.mission__wrapper {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 4rem / var(--font-body-scale));
+}
+
+.mission:not(.mission--full-width) .mission__wrapper {
+  margin: auto;
+  width: calc(100% - 8rem / var(--font-body-scale));
+}
+
+.mission__blocks {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .mission__wrapper {
+    width: 100%;
+  }
+
+  .mission__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .mission__wrapper--right {
+    justify-content: flex-end;
+  }
+
+  .mission__blocks {
+    max-width: 50rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .mission__blocks {
+    max-width: 78rem;
+  }
+}
+
+.mission__blocks * {
+  overflow-wrap: break-word;
+}
+
+.mission__blocks > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mission__blocks > * + * {
+  margin-top: 2rem;
+}
+
+.mission__blocks > * + a {
+  margin-top: 3rem;
+}
+
+.mission__buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 45rem;
+  word-break: break-word;
+}
+
+.mission__buttons--multiple > * {
+  flex-grow: 1;
+  min-width: 22rem;
+}
+
+.mission__buttons + .mission__buttons {
+  margin-top: 1rem;
+}
+
+.mission__blocks.left .mission__buttons {
+  justify-content: flex-start;
+}
+
+.mission__blocks.right .mission__buttons {
+  justify-content: flex-end;
+}
