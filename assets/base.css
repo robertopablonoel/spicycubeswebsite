@@ -2391,9 +2391,12 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 /* Main Header Layout */
 .header-wrapper {
-  display: block;
-  position: relative;
-  background-color: rgb(var(--color-background));
+  position: fixed;
+  width: 100%;
+  z-index: 100; /* Ensure this is higher than the z-index of other elements */
+  top: 39;
+  left: 0;
+  background-color: transparent; /* If you want a transparent background */
 }
 
 .header-wrapper--border-bottom {
