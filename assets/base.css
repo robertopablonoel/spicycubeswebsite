@@ -2396,7 +2396,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   z-index: 100; /* Ensure this is higher than the z-index of other elements */
   top: 39;
   left: 0;
-  background-color: transparent; /* If you want a transparent background */
+  background-color: transparent !important; /* If you want a transparent background */
 }
 
 .header-wrapper--border-bottom {

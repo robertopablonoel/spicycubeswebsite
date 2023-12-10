@@ -488,3 +488,11 @@
     color: currentColor;
   }
 }
+
+.banner-overlay {
+  position: absolute;
+  top: 50%; /* Adjust these values as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Additional styling as needed */
+}
