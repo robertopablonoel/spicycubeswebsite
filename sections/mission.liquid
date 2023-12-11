@@ -17,33 +17,40 @@
 <div class='isolate{% unless section.settings.full_width %} page-width{% endunless %}'>
   <div class='mission content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} mission--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding'>
     <div class='mission__wrapper mission__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}'>
-      <div class='mission__blocks {{ section.settings.content_alignment }}'>
+      <h2
+        class='mission__heading rte inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+        {{ section.shopify_attributes }}
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade style='--animation-order: {{ forloop.index }};'
+        {% endif %}
+      >
+        {{ section.settings.heading }}
+      </h2>
+      <!-- Start of the value props container -->
+      <div class='value__props__container'>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
-              <h2
-                class='mission__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
-                {{ block.shopify_attributes }}
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style='--animation-order: {{ forloop.index }};'
-                {% endif %}
-              >
-                {{ block.settings.heading }}
-              </h2>
             {%- when 'value_prop' -%}
-              <img
-                src='{{ block.settings.icon | image_url: 'original' }}'
-              >
-              <h3 class='value__heading rte inline-richtext {{ block.settings.heading_size }}'>
-                {{ block.settings.heading }}
-              </h3>
-              <p class='value__text rte inline-richtext {{ block.settings.paragraph_size }}'>
-                {{ block.settings.paragraph_text }}
-              </p>
+              <!-- Individual value prop block -->
+              <div class='value__prop'>
+                <img
+                  class='value__prop__img'
+                  src='{{ block.settings.icon | img_url: 'original' }}'
+                  alt='Value Prop Img'
+                >
+                <h3 class='value__prop__heading rte inline-richtext {{ block.settings.heading_size }}'>
+                  {{ block.settings.heading }}
+                </h3>
+                <p class='value__prop__text rte inline-richtext {{ block.settings.paragraph_size }}'>
+                  {{ block.settings.paragraph_text }}
+                </p>
+              </div>
+              <!-- End of individual value prop block -->
           {%- endcase -%}
         {%- endfor -%}
       </div>
+      <!-- End of the value props container -->
     </div>
   </div>
 </div>
@@ -133,38 +140,31 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Talk about your brand",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
     }
   ],
   "blocks": [
-    {
-      "type": "heading",
-      "name": "Heading",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "Talk about your brand",
-          "label": "Heading"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
-        }
-      ]
-    },
     {
       "type": "value_prop",
       "name": "Value Prop",
@@ -226,9 +226,6 @@
     {
       "name": "Mission",
       "blocks": [
-        {
-          "type": "heading"
-        },
         {
           "type": "value_prop"
         }
