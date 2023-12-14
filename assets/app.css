@@ -510,5 +510,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .twcss-block {
-  display: block !important;
+  display: block;
+}
+
+.twcss-font-raleway {
+  font-family: Raleway, sans-serif;
+}
+
+.twcss-font-bold {
+  font-weight: 700;
+}
+
+.twcss-text-yellow-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.twcss-opacity-100 {
+  opacity: 1;
+}
+
+.twcss-opacity-50 {
+  opacity: 0.5;
 }

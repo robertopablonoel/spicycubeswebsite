@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": false,
+  "gitlens.hovers.enabled": false,
   "[javascript]": {
     "editor.formatOnSave": true
   },
@@ -8,5 +9,8 @@
   },
   "[liquid]": {
     "editor.formatOnSave": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "liquid": "html",
   }
 }
