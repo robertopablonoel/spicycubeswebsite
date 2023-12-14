@@ -82,10 +82,29 @@
         "heading": "We are on a mission to create connection.",
         "heading_size": "h1"
       }
+    },
+    "hello": {
+      "type": "hello",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "left_text": "DISCRETE SHIPPING ⋆ EASY RETURNS ⋆ SECURE CHECKOUT",
+        "product_image": "shopify:\/\/shop_images\/satisfaction.svg",
+        "right_text": "SEXUALLY ENHANCING SUGAR CUBES SUPPLEMENT DESIGNED AND FORMULATED FOR COUPLES, OR SINGLE USE.*",
+        "button_label": "see more",
+        "button_link": "/"
+      }
     }
   },
   "order": [
     "image_banner",
-    "mission"
+    "mission",
+    "hello"
   ]
 }

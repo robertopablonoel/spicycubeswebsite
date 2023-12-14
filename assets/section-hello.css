@@ -1,0 +1,237 @@
+.hello {
+  z-index: 1;
+}
+
+.h0,
+.h1,
+.h2,
+.h3 {
+  font-family: 'Futura', sans-serif;
+  font-weight: 700;
+}
+
+.h0 {
+  font-size: 60px;
+}
+
+.h1 {
+  font-size: 55px;
+}
+
+.h2 {
+  font-size: 30px;
+}
+
+.h3 {
+  font-size: 20px;
+}
+
+.normal {
+  font-size: 16px;
+  font-family: 'Futura', sans-serif;
+}
+
+.large {
+  font-size: 20px;
+  font-family: 'Futura', sans-serif;
+}
+
+.hello__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 4rem / var(--font-body-scale));
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hello__left,
+.hello__right {
+  flex-basis: 20%; /* Adjust this value to match your design */
+  text-align: center;
+  font-family: 'Futura', sans-serif;
+}
+
+.hello__image__container {
+  flex-basis: 60%; /* Adjust this value to match your design */
+  display: flex;
+  justify-content: center;
+}
+
+.hello__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hello__right p {
+  margin-bottom: 10px; /* Adjust this value based on your design */
+}
+
+.hello__buttons {
+  padding: 12px 18px; /* Reduced padding */
+  min-width: 50px; /* Example min-width */
+  max-width: 100px; /* Example max-width */
+  border: 2px solid #000; /* Slightly thicker border */
+  background-color: transparent; /* Transparent background */
+  color: #000; /* Black text */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold text */
+  text-decoration: none; /* No underline */
+  font-family: 'Futura', sans-serif;
+  font-size: 10px; /* Adjust the font size as needed */
+  border-radius: 15px; /* Rounded corners - adjust radius as needed */
+  cursor: pointer; /* Hand cursor on hover */
+  display: inline-block; /* Allows setting padding and margins */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.hello__buttons:hover {
+  background-color: #000; /* Background color on hover */
+  color: #fff !important; /* Text color on hover */
+}
+
+/* Optional: if the button is within a link (<a>), you might want to remove the blue color and underline */
+.hello__buttons:link,
+.hello__buttons:visited {
+  color: #000; /* Black text */
+}
+
+/* Positioning classes for the wrapper based on the setting */
+.hello__wrapper--left {
+  justify-content: flex-start;
+}
+
+.hello__wrapper--center {
+  justify-content: center;
+}
+
+.hello__wrapper--right {
+  justify-content: flex-end;
+}
+
+/* Full width modifier for the wrapper */
+.page-width {
+  width: 100%;
+}
+
+/* Responsive adjustments if necessary */
+@media (max-width: 768px) {
+  .hello__wrapper {
+    flex-direction: column;
+  }
+
+  .hello__left,
+  .hello__right,
+  .hello__image__container {
+    flex-basis: 100%;
+  }
+
+  .hello__image {
+    width: 693px; /* Adjust based on your responsive design needs */
+    height: 760px; /* Adjust based on your responsive design needs */
+  }
+}
+
+.hello:not(.hello--full-width) .hello__wrapper {
+  margin: auto;
+  width: calc(100% - 8rem / var(--font-body-scale));
+}
+
+.hello__blocks {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .hello__wrapper {
+    width: 100%;
+  }
+
+  .hello__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .hello__wrapper--right {
+    justify-content: flex-end;
+  }
+
+  .hello__blocks {
+    max-width: 50rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .hello__blocks {
+    max-width: 78rem;
+  }
+}
+
+.hello__blocks * {
+  overflow-wrap: break-word;
+}
+
+.hello__blocks > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hello__blocks > * + * {
+  margin-top: 2rem;
+}
+
+.hello__blocks > * + a {
+  margin-top: 3rem;
+}
+
+.hello__blocks.left .hello__buttons {
+  justify-content: flex-start;
+}
+
+.hello__blocks.right .hello__buttons {
+  justify-content: flex-end;
+}
+
+/* Base styles for mobile devices */
+.value__prop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  /* Adds spacing between the rows */
+}
+
+.value__prop__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hello__heading {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styles for tablets and desktops */
+@media (min-width: 768px) {
+  .value__props__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller desktops/tablets */
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .value__prop {
+    margin-bottom: 0;
+    /* Remove the spacing between rows for desktop */
+    width: calc(33.333% - 20px);
+    /* Divide the container into 3 columns, accounting for some margin */
+    margin: 10px;
+    /* Adds margin between columns */
+  }
+}
