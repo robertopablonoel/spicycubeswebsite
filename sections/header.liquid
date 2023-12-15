@@ -337,14 +337,16 @@
     </div>
   </header>
   <div class="guarantee-bar">
-    <span class="guarantee-bar__left">
-      <i class="guarantee-icon-left">{% render 'icon-return-guarantee' %}</i> <!-- Placeholder for the left icon -->
-      30 DAY MONEY BACK GUARANTEE
-    </span>
-    <span class="guarantee-bar__right">
-      <i class="guarantee-icon-right">{% render 'icon-shipping-guarantee' %}</i>
-      FAST & DISCREET SHIPPING
-    </span>
+    <div class="guarantee-wrapper">
+      <span class="guarantee-bar__left">
+        <i class="guarantee-icon-left">{% render 'icon-return-guarantee' %}</i> <!-- Placeholder for the left icon -->
+        30 DAY MONEY BACK GUARANTEE
+      </span>
+      <span class="guarantee-bar__right">
+        <i class="guarantee-icon-right">{% render 'icon-shipping-guarantee' %}</i>
+        FAST & DISCREET SHIPPING
+      </span>
+    </div>
   </div>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 

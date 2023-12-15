@@ -2666,13 +2666,21 @@ menu-drawer + .header__search {
 }
 
 .guarantee-bar {
-  background-color: #fdfaf1; /* Assuming white background */
-  color: #000; /* Assuming black text */
-  font-family: Futura PT, sans-serif; /* Assuming Futura PT */
+  background-color: #fdfaf1;
+  color: #000;
+  font-family: Futura, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guarantee-wrapper {
+  width: var(--page-width);
+  margin: 0 auto;
+  padding: 8px 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 40px; /* Slightly less padding */
   font-size: 10px; /* Smaller font size */
 }
 
