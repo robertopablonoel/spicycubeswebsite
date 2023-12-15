@@ -2385,10 +2385,11 @@ product-info .loading-overlay:not(.hidden) ~ *,
   width: 100%;
   position: relative;
   background-color: rgb(var(--color-background));
+  border-top: 0.01rem solid black;
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-bottom: 0.01rem solid black;
 }
 
 .header {
@@ -2669,6 +2670,7 @@ menu-drawer + .header__search {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: 0.01rem solid black;
 }
 
 .guarantee-wrapper {
@@ -2713,6 +2715,140 @@ menu-drawer + .header__search {
   /* Larger truck */
   width: 24px; /* Adjust width as needed */
   height: auto; /* Keeps the aspect ratio intact */
+}
+
+.benefits-section {
+  text-align: center;
+  font-family: 'Futura', sans-serif; /* Assuming Futura is the desired font */
+  background-color: #fdfaf1; /* White background, can be adjusted */
+  padding: 2em 1em; /* Top and bottom padding, less horizontal padding */
+}
+
+/* Flex container for benefit items */
+.benefits-section .benefits-container {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align the items vertically */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  gap: 1em; /* Space between the items */
+}
+
+.benefit-item {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stacks icon above text */
+  align-items: center; /* Center-aligns items for flex direction */
+  width: 10rem;
+  text-wrap: wrap;
+  padding: 1em; /* Provides some space around items */
+  margin: clamp(1em, 3vw, 3em);
+}
+
+@media (min-width: 1200px) {
+  .benefit-item {
+    /* Override the clamp value at this breakpoint if necessary */
+    margin: 5em;
+  }
+}
+
+.benefit-item-icon {
+  font-size: 24px; /* Adjust the size of icons */
+  margin-bottom: 0.5em; /* Space between icon and text */
+}
+
+.benefit-item p {
+  font-size: 14px; /* Adjust text size as needed */
+  color: #000; /* Text color */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+.spicy-cubes-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.spicy-cubes-icon,
+.spicy-cubes-title {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.spicy-cubes-icon svg {
+  max-width: 100px; /* Decrease max-width to make the cubes smaller */
+  height: auto; /* Maintain the aspect ratio */
+  margin: auto; /* Keep the SVG centered */
+  margin-bottom: 3rem;
+}
+
+.spicy-cubes-title svg {
+  max-width: 300px; /* Increase max-width to make the title larger */
+  height: auto; /* Maintain the aspect ratio */
+  margin: auto; /* Keep the SVG centered */
+}
+
+.shop-now-button {
+  display: inline-block;
+  margin: 2em auto; /* Center button and add vertical space */
+  padding: 0.5em 2.5em;
+  font-size: 16px; /* Adjust button text size */
+  font-weight: bold;
+  border: 3px solid #000; /* Button border */
+  border-radius: 10px;
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color and background */
+}
+
+.shop-now-button:hover {
+  background-color: #000; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+.benefit-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  padding: 20px;
+}
+
+/* This will align icons to the left of the text for each benefit item */
+.benefit-detail-item {
+  display: flex;
+  padding: 0.5em 0;
+  text-align: left;
+  margin-bottom: 1em; /* Space between detail items */
+  max-width: 400px;
+}
+
+/* This styles the icons */
+.benefit-detail-icon {
+  width: 24px; /* Adjust the width of icons */
+  align-items: center; /* Align the icon and text vertically */
+  padding: 0.5em; /* Space around the icon */
+  margin-right: 1em; /* Space between icon and text */
+  font-size: 24px; /* Adjust the size of icons */
+}
+
+/* This styles the paragraph text */
+.benefit-detail-item p {
+  font-size: 14px; /* Adjust text size as needed */
+  margin: 0; /* Remove margin from paragraphs */
+  line-height: 1.4; /* Adjust line height for readability */
+}
+
+/* This makes the titles bold */
+.benefit-detail-item strong {
+  font-weight: bold; /* Make the title bold */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .benefit-details {
+    flex-direction: row; /* Set the direction to row for larger screens */
+    flex-wrap: wrap; /* Allows items to wrap to new line if needed */
+    justify-content: space-evenly; /* Evenly distribute the items in the container */
+  }
 }
 
 .no-js .predictive-search {
