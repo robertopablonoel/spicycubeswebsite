@@ -2144,16 +2144,6 @@ product-info .loading-overlay:not(.hidden) ~ *,
   height: 100%;
 }
 
-.utility-bar--bottom-border {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-}
-
-@media screen and (min-width: 990px) {
-  .utility-bar--bottom-border-social-only {
-    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  }
-}
-
 .utility-bar__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -2673,6 +2663,51 @@ menu-drawer + .header__search {
   .header--top-center * > .header__search {
     display: none;
   }
+}
+
+.guarantee-bar {
+  background-color: #fdfaf1; /* Assuming white background */
+  color: #000; /* Assuming black text */
+  font-family: Futura PT, sans-serif; /* Assuming Futura PT */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px; /* Slightly less padding */
+  font-size: 10px; /* Smaller font size */
+}
+
+.guarantee-bar__left,
+.guarantee-bar__right {
+  display: flex;
+  align-items: center;
+}
+
+.guarantee-icon-left,
+.guarantee-icon-right {
+  /* Icon styles */
+  font-size: 18px; /* Adjust icon size */
+  margin-right: 5px; /* Adjust spacing for left icon */
+  margin-left: 5px; /* Adjust spacing for right icon */
+}
+
+/* If you are using SVG icons, adjust the size accordingly */
+.guarantee-icon-left svg,
+.guarantee-icon-right svg {
+  width: 18px; /* Smaller icon width */
+  height: auto;
+  fill: currentColor; /* Icon inherits the color of the text */
+}
+
+.guarantee-icon-left svg {
+  /* Smaller shield */
+  width: 14px; /* Adjust width as needed */
+  height: auto; /* Keeps the aspect ratio intact */
+}
+
+.guarantee-icon-right svg {
+  /* Larger truck */
+  width: 24px; /* Adjust width as needed */
+  height: auto; /* Keeps the aspect ratio intact */
 }
 
 .no-js .predictive-search {
