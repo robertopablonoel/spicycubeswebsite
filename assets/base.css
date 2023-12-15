@@ -2808,16 +2808,16 @@ menu-drawer + .header__search {
 .benefit-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the start of the flex container */
-  padding: 20px;
+  align-items: center; /* Align items to the start of the flex container */
+  padding: 15px;
+  margin: 0 auto;
 }
 
 /* This will align icons to the left of the text for each benefit item */
 .benefit-detail-item {
   display: flex;
-  padding: 0.5em 0;
   text-align: left;
-  margin-bottom: 1em; /* Space between detail items */
+  padding: 1.8rem;
   max-width: 400px;
 }
 
@@ -2825,8 +2825,7 @@ menu-drawer + .header__search {
 .benefit-detail-icon {
   width: 24px; /* Adjust the width of icons */
   align-items: center; /* Align the icon and text vertically */
-  padding: 0.5em; /* Space around the icon */
-  margin-right: 1em; /* Space between icon and text */
+  padding: 1em; /* Space around the icon */
   font-size: 24px; /* Adjust the size of icons */
 }
 
