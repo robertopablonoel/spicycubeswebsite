@@ -2,6 +2,7 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/logo.svg",
     "logo_width": 260,
+    "favicon": "shopify:\/\/shop_images\/satisfaction.svg",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -144,7 +145,7 @@
       "background-2": {
         "settings": {
           "background": "#fdfaf1",
-          "background_gradient": "linear-gradient(125deg, rgba(227, 30, 30, 1) 21%, rgba(227, 40, 111, 1) 36%, rgba(255, 165, 70, 1) 62%)",
+          "background_gradient": "linear-gradient(105deg, rgba(255, 165, 70, 1), rgba(237, 13, 48, 1) 19%, rgba(237, 24, 96, 1) 31%, rgba(227, 30, 30, 1) 56%, rgba(255, 165, 70, 1) 95%)",
           "text": "#ffffff",
           "button": "#121212",
           "button_label": "#f3f3f3",

@@ -2676,11 +2676,19 @@ menu-drawer + .header__search {
 .guarantee-wrapper {
   width: var(--page-width);
   margin: 0 auto;
-  padding: 8px 5rem;
+  padding: 8px 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px; /* Smaller font size */
+  font-size: 9px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .guarantee-wrapper {
+    font-size: 10px;
+    padding: 8px 5rem;
+  }
 }
 
 .guarantee-bar__left,
@@ -2737,9 +2745,9 @@ menu-drawer + .header__search {
   display: flex; /* Enables flexbox layout */
   flex-direction: column; /* Stacks icon above text */
   align-items: center; /* Center-aligns items for flex direction */
-  width: 10rem;
+  width: 8rem;
   text-wrap: wrap;
-  padding: 1em; /* Provides some space around items */
+  padding: 0.5em; /* Provides some space around items */
   margin: clamp(1em, 3vw, 3em);
 }
 
