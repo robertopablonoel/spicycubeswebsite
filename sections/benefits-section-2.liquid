@@ -1,0 +1,53 @@
+<!-- Benefits Section -->
+{% assign background_image_url = section.settings.background_image | img_url: 'master' %}
+<section
+  class='benefits-section-2'
+  style='background-image: url("{{ background_image_url }}");'
+>
+  <div class='benefit-details-2'>
+    <div class='benefit-detail-item'>
+      <p>
+        <strong>Safe & Effective</strong><br>
+        Made in an FDA approved facillity. Our ingredients are all natural and thoroughly tested.
+      </p>
+    </div>
+    <div class='benefit-detail-item'>
+      <p>
+        <strong>Made in the USA</strong><br>
+        Formulated, crafted, and packaged in the United States using globally sourced ingredients.
+      </p>
+    </div>
+    <div class='benefit-detail-item'>
+      <p>
+        <strong>Easy 30-day Returns</strong><br>
+        We're confident you'll love spicy cubes, but if you don't, send them back within 30 days for a full refund --
+        more info.
+      </p>
+    </div>
+    <div class='benefit-detail-item'>
+      <p>
+        <strong>Fast & Discreet Shipping</strong><br>
+        Fast Standard Shipping with 2-5 day expedited option. All orders are shipped in plain packaging to ensure your
+        privacy -- more info.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Benefits Section -->
+{% schema %}
+{
+  "name": "Benefits Section 2",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Choose Image"
+    }
+  ]
+}
+{% endschema %}

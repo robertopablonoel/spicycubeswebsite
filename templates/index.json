@@ -26,11 +26,18 @@
       "settings": {
         "box_image": "shopify:\/\/shop_images\/box-render.svg"
       }
+    },
+    "benefits-section-2": {
+      "type": "benefits-section-2",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
+      }
     }
   },
   "order": [
     "image_banner",
     "benefits-section",
-    "sugar-section"
+    "sugar-section",
+    "benefits-section-2"
   ]
 }
