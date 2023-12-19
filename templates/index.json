@@ -3,9 +3,9 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/main-image-banner.jpg",
+        "image": "shopify:\/\/shop_images\/mm_5fdc9ca3-6caa-4e08-93ed-e996751b5a94.webp",
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -17,11 +17,20 @@
       }
     },
     "benefits-section": {
-      "type": "benefits-section"
+      "type": "benefits-section",
+      "settings": {
+      }
+    },
+    "sugar-section": {
+      "type": "sugar-section",
+      "settings": {
+        "box_image": "shopify:\/\/shop_images\/box-render.svg"
+      }
     }
   },
   "order": [
     "image_banner",
-    "benefits-section" // Add the new section key to the order array where you want it to appear
+    "benefits-section",
+    "sugar-section"
   ]
 }

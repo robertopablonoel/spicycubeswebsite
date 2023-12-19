@@ -2725,11 +2725,38 @@ menu-drawer + .header__search {
   height: auto; /* Keeps the aspect ratio intact */
 }
 
-.benefits-section {
+.sugar-section {
   text-align: center;
   font-family: 'Futura', sans-serif; /* Assuming Futura is the desired font */
   background-color: #fdfaf1; /* White background, can be adjusted */
   padding: 2em 1em; /* Top and bottom padding, less horizontal padding */
+}
+
+/* Flex container for benefit items */
+.sugar-section .sugar-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align the items */
+  gap: 2em; /* Space between the items */
+}
+
+.target-description {
+  text-align: center;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+}
+
+.effects-description {
+  text-align: left;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+}
+
+.benefits-section {
+  text-align: center;
+  font-family: 'Futura', sans-serif; /* Assuming Futura is the desired font */
+  background-color: #fdfaf1; /* White background, can be adjusted */
+  padding: 2em 0em; /* Top and bottom padding, less horizontal padding */
 }
 
 /* Flex container for benefit items */
@@ -2745,10 +2772,9 @@ menu-drawer + .header__search {
   display: flex; /* Enables flexbox layout */
   flex-direction: column; /* Stacks icon above text */
   align-items: center; /* Center-aligns items for flex direction */
-  width: 8rem;
+  width: 9rem;
   text-wrap: wrap;
-  padding: 0.5em; /* Provides some space around items */
-  margin: clamp(1em, 3vw, 3em);
+  margin: 0em clamp(1em, 3vw, 3em);
 }
 
 @media (min-width: 1200px) {
