@@ -8,42 +8,47 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "CUSTOMER CARE",
             "menu": "footer"
           }
         },
-        "footer-1": {
+        "1c023ea7-e6b4-4d57-8e57-05bc4f42892f": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "WORK WITH US",
+            "menu": "work-with-us"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "4ac72d50-ca5b-4e3d-8182-9f7fb372c54e": {
+          "type": "link_list",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "QUICK LINKS",
+            "menu": "quick-links"
           }
         }
       },
       "block_order": [
         "footer-0",
-        "footer-1",
-        "footer-2"
+        "1c023ea7-e6b4-4d57-8e57-05bc4f42892f",
+        "4ac72d50-ca5b-4e3d-8182-9f7fb372c54e",
+        "582025ce-ba53-4617-9763-10ea324a590a"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "inverse",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Join our community",
+        "enable_follow_on_shop": false,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": true,
+        "payment_enable": false,
         "show_policy": false,
         "margin_top": 48,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "image": "shopify:\/\/shop_images\/logo.svg",
+        "image_width": 550,
+        "alignment": "center"
       }
     }
   },
