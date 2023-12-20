@@ -2872,7 +2872,7 @@ menu-drawer + .header__search {
   display: flex;
   text-align: left;
   padding: 1.8rem;
-  width: 400px;
+  max-width: 390px;
 }
 
 /* This styles the icons */
