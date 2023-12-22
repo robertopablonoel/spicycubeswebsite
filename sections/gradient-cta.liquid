@@ -1,0 +1,110 @@
+{% liquid 
+  assign color_right = section.settings.color_right | default: settings.color_gradient_2
+  assign color_left = section.settings.color_left | default: settings.color_gradient_1
+  assign color_text = section.settings.text_color | default: settings.color_gradient_text
+%}
+
+<style media="screen">
+  #section-{{ section.id }} {
+    background: {{ color_right }};
+    background: -webkit-linear-gradient(to right, {{ color_left  }}, {{ color_right }});
+    background: linear-gradient(to right, {{ color_left }}, {{ color_right }});
+    {% if section.settings.spacing %}
+      margin: 100px auto;
+    {% endif %}
+  }
+  
+  #section-{{ section.id }} h3 {
+    color: {{ color_text }};
+  }
+  
+  #section-{{ section.id }}.cta-gradient a.btn {
+    color: {{ color_right }};
+    background: {{ color_text }};
+    border: 2px solid {{ color_text }};
+  }
+  
+  #section-{{ section.id }} h3 span {
+    color: transparent;
+    -webkit-text-stroke-color: {{ color_text }};
+  }
+</style>
+
+<div id="section-{{ section.id }}" class="cta-gradient">
+  <div class="cta-gradient__content page-width">
+    <h3>{{ section.settings.title }} <span>{{ section.settings.title_outline }}</span></h3>
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_url | default: '#' }}" class="btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "CTA Gradient Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading (Solid)",
+        "default": "Your Text"
+      },
+      {
+        "type": "text",
+        "id": "title_outline",
+        "label": "Heading (Outline)",
+        "default": "Goes Here"
+      },
+      {
+        "type": "header",
+        "content": "Gradient"
+      },
+      {
+        "id": "color_left",
+        "type": "color",
+        "label": "Color (left)"
+      },
+      {
+        "id": "color_right",
+        "type": "color",
+        "label": "Color (right)"
+      },
+      {
+        "id": "text_color",
+        "type": "color",
+        "label": "Text Color"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop now"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "spacing",
+        "label": "Section spacing"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Gradient Text Banner",
+        "category": "Text"
+      }
+    ]
+  }
+
+{% endschema %}

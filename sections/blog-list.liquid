@@ -1,0 +1,145 @@
+<div class="blog-listing" id="section-{{ section.id }}">
+  {% if section.settings.title != blank or section.settings.subtitle != blank %}
+    <div class="section__title-area{% if section.settings.view_blog_btn != blank %} section__title-area--cta{% endif %} page-width">
+      <div>
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title | escape }}</h2>
+        {% endif %}
+        
+        {% if section.settings.subtitle != blank %}
+          <p>{{ section.settings.subtitle | escape }}</p>
+        {% endif %}
+      </div>
+      {% if section.settings.view_blog_btn != blank %}
+        <a href="{{ section.settings.blog.url }}" class="btn">{{ section.settings.view_blog_btn }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if section.settings.blog != blank %}
+    <image-slider class="blog-listing__container page-width js-blog-listing mobile-only"
+      data-slides-per-view="1"
+      data-slides-per-view-mobile="1"
+      data-space-between="10"
+      data-mobile-only="true"
+      data-dots="true"
+      data-pagination="#section-{{ section.id }} .js-pagination"
+      data-loop="false"
+    >
+      <div class="swiper-wrapper blog-listing__blogs">
+        {% for article in section.settings.blog.articles limit: 8 %}
+          <div class="blog-listing__card-outer swiper-slide">
+            <div class="blog-listing__card">
+              {{ article.image | image_url: width: 350 | image_tag }}
+              <div class="blog-listing__card__info">
+                <h3>{{ article.title }}</h3>
+                <div class="blog-listing__card__excerpt">
+                  {% if article.excerpt.size > 0 %}
+                    {{ article.excerpt | truncatewords: 10 }}
+                  {% else %}
+                    <p>
+                      {{ article.content | strip_html | truncatewords: 10 }}
+                    </p>
+                  {% endif %}
+                  <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.012 1.995c-5.518 0-9.998 4.48-9.998 9.998s4.48 9.998 9.998 9.998 9.997-4.48 9.997-9.998-4.479-9.998-9.997-9.998zm0 1.5c4.69 0 8.497 3.808 8.497 8.498s-3.807 8.498-8.497 8.498-8.498-3.808-8.498-8.498 3.808-8.498 8.498-8.498zm1.528 4.715s1.502 1.505 3.255 3.259c.146.147.219.339.219.531s-.073.383-.219.53c-1.753 1.754-3.254 3.258-3.254 3.258-.145.145-.336.217-.527.217-.191-.001-.383-.074-.53-.221-.293-.293-.295-.766-.004-1.057l1.978-1.977h-6.694c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.694l-1.979-1.979c-.289-.289-.286-.762.006-1.054.147-.147.339-.221.531-.222.19 0 .38.071.524.215z" fill-rule="nonzero"/></svg>
+                </div>
+              </div>
+              <a href="{{ article.url }}" aria-label="{{ article.title }}"></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="js-pagination slider-pagination"></div>
+    </image-slider>
+  {% endif %}
+</div>
+
+{% assign post_limit = section.settings.post_limit_desktop | default: 4 %}
+
+{% style %}
+
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    
+    {% if section.settings.spacing %}
+      margin-top: 100px;
+      margin-bottom: 100px;
+    {% endif %}
+  }
+  
+  {% if section.settings.enable_border %}
+    #section-{{ section.id }} .blog-listing__card {
+      border: 2px solid {{ section.settings.border }};
+    }
+  {% endif %}
+
+  @media screen and (min-width: 900px) {
+    #section-{{ section.id }} .slider-disabled .blog-listing__card-outer:nth-child(n+{{ post_limit | plus: 1 }}) {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Blog Listing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "view_blog_btn",
+        "label": "View blog button text",
+        "info": "Leave blank to hide button"
+      },
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog"
+      },
+      {
+        "type": "range",
+        "id": "post_limit_desktop",
+        "label": "Maximum number of posts (desktop)",
+        "info": "All posts hidden beyond this number will be hidden on desktop.",
+        "step": 2,
+        "min": 2,
+        "max": 8,
+        "default": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "spacing",
+        "label": "Section spacing"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_border",
+        "label": "Article borders"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "border",
+        "label": "Border color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog Listing",
+        "category": "Blog"
+      }
+    ]
+  }
+{% endschema %}

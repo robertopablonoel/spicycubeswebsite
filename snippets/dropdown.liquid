@@ -1,0 +1,62 @@
+{% assign dropdown_settings = dropdown_settings %}
+{% assign link_downcase = link.title | downcase %}
+{% assign has_nav_cards = false %}
+
+{% capture nav_cards %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'product-card' %}
+        {% assign parent_link_downcase = block.settings.parent_link | downcase %}
+        {% if parent_link_downcase == link_downcase %}
+          {% assign has_nav_cards = true %}
+          {% assign product_card = all_products[block.settings.product] %}
+          <div class="header__nav__product">
+            <a href="{{ product_card.url }}">
+              <img src="{{ product_card.featured_image | img_url: '180x' }}" alt="{{ product_card.featured_image.alt }}">
+              <span>{{ product_card.title }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% when 'custom-card' %}
+        {% assign parent_link_downcase = block.settings.parent_link | downcase %}
+        {% if parent_link_downcase == link_downcase %}
+          {% assign has_nav_cards = true %}
+          <div class="header__nav__product">
+            <a href="{{ block.settings.card_url }}">
+              <img src="{{ block.settings.card_img | img_url: '180x' }}" alt="{{ block.settings.card_img.alt }}">
+              <span>{{ block.settings.card_title }}</span>
+            </a>
+          </div>
+        {% endif %}
+    {% endcase %}
+  {% endfor %}
+{% endcapture %}
+
+<div class="header__nav__dropdown header__nav__dropdown--{{ section.settings.logo_position }}">
+  <div class="header__nav__dropdown__lists">
+    {% if link.links != blank %}
+      <ul class="header__nav__dropdown__main-list">
+        {% for childlink in link.links %}
+          <li {% if childlink.links != blank %}class="has-dropdown"{% endif %}>
+            <a class="{{ dropdown_font_size }}" href="{{ childlink.url }}"><span>{{ childlink.title | escape }}</span></a>
+            {% if childlink.links != blank %}
+              <ul class="header__nav__dropdown__sub-list">
+                {% for nestedlink in childlink.links %}
+                  <li>
+                    <a href="{{ nestedlink.url }}"><span>{{ nestedlink.title | escape }}</span></a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if has_nav_cards %}
+      <div class="header__nav__cards">
+        {{ nav_cards }}
+      </div>
+    {% endif %}
+  </div>
+  {{ cta }}
+</div>

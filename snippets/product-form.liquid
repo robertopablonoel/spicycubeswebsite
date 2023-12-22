@@ -1,0 +1,472 @@
+{% comment %}
+  Product Callout Colors
+{% endcomment %}
+
+<style media="screen">
+  .product__callout {
+    color: {{ section.settings.promo_message_text_color | default: settings.color_gradient_text  }};
+  }
+</style>
+
+{% assign gradient_1 = section.settings.promo_message_gradient_1 | default: settings.color_gradient_1  %}
+{% assign gradient_2 = section.settings.promo_message_gradient_2 | default: settings.color_gradient_2  %}
+
+{% if gradient_1 != blank %}
+  {% if gradient_2 != blank %}
+    <style media="screen">
+      .product__callout {
+        background: linear-gradient(275deg, {{ gradient_1 }}, {{ gradient_2 }});
+        background-size: 400% 400%;
+      }
+    </style>
+  {% else %}
+    <style media="screen">
+      .product__callout {
+        background-color: {{ gradient_1 }};
+      }
+    </style>
+  {% endif %}
+{% else %}  
+  <style media="screen">
+    .product__callout {
+      background-color: {{ settings.color_secondary_bg }};
+    }
+  </style>
+{% endif %}
+
+{% assign images_length = product.images | size %}
+
+<div class="product__content">
+  
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+  {% assign on_sale = false %}
+  {% if current_variant.compare_at_price > product.price %}
+    {% assign on_sale = true %}
+  {% endif %}
+  
+  <div class="product__images">
+    <div class="product__images-container">
+      <image-slider 
+        data-auto-height="true"
+        data-space-between="5"
+        data-slides-per-view="1"
+        data-slides-per-view-mobile="1"
+        data-dots="true"
+        data-pagination="#product-section-{{ section.id }} .js-pagination"
+        data-loop="false"
+        class="product__images-slider product__images-slider--mobile"
+      >
+        <div class="swiper-wrapper">
+          {% for media in product.media %}
+            <div class="product__image swiper-slide{% if featured_image.id  == media.id %} product__image--active{% endif %}" data-index="{{ forloop.index0 }}">
+              
+              {% assign social_badge = section.settings.social_badge | default: 'none' %}
+              
+              {% capture social_badge_img_key %}
+                {{ social_badge }}.svg
+              {% endcapture %}
+              
+              {% unless social_badge == 'none' %}
+                <div class="product__badge product__badge--{{ social_badge }}">
+                  <span>{{ 'products.product.as_seen_on' | t }}</span>
+                  <img src="{{ social_badge_img_key | asset_url }}" alt="{{ social_badge }}">
+                </div>
+              {% endunless %}
+
+              {% case media.media_type %}
+                {% when 'image' %}
+                  {{ media | image_url: width: 1000 | image_tag: data-index: forloop.index0, data-image-id: media.id, data-variant-option-1: variant.option1, data-variant-option-2: variant.option2, data-variant-option-3: variant.option3 }}
+                {% when 'video' %}
+                  {{ media | media_tag: data-index: forloop.index0, image_size: "1200x", autoplay: true, loop: true, controls: true, preload: "none" }}
+              {% endcase %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="slider__pagination js-pagination"></div>
+      </image-slider>
+
+      {% if section.settings.image_layout == 'grid' %}
+        {% render 'product-images-grid' featured_image: featured_image, product: product %}
+      {% elsif section.settings.image_layout == 'slider' %}
+        <div class="thumbs-wrapper">
+          <image-slider class="product__images-thumbs js-{{ section.id }}-product-thumbs"
+            data-direction="vertical"
+            data-slides-per-view="5"
+            data-space-between="10"
+            data-loop="false"
+          >
+            <div class="swiper-wrapper">
+              {% for media in product.media %}
+                <div class="swiper-slide js-slider-control thumb-slide{% if forloop.first %} active{% endif %}">
+                  {% case media.media_type %}
+                    {% when 'image' %}
+                      {{ media | image_url: width: 100 | image_tag: data-index: forloop.index0, data-thumb-id: media.id }}
+                    {% when 'video' %}
+                      {{ media.preview_image | image_url: width: 100 | image_tag: data-index: forloop.index0, data-thumb-id: media.id , class: 'video-thumb'}}
+                  {% endcase %}
+                </div>
+              {% endfor %}
+            </div>
+          </image-slider>
+        </div>
+        <div class="slider-wrapper product__images-slider--desktop js-slider-wrapper">
+          <image-slider 
+            data-auto-height="false"
+            data-space-between="5"
+            data-slides-per-view="1"
+            data-thumbs="js-{{ section.id }}-product-thumbs"
+            data-slides-per-view-mobile="1"
+            data-loop="false"
+            class="product__images-slider"
+          >
+            <div class="swiper-wrapper">
+              {% for media in product.media %}
+                <div class="product__image swiper-slide{% if featured_image.id  == media.id %} product__image--active{% endif %}" data-index="{{ forloop.index0 }}">
+                  
+                  {% assign social_badge = section.settings.social_badge | default: 'none' %}
+                  
+                  {% capture social_badge_img_key %}
+                    {{ social_badge }}.svg
+                  {% endcapture %}
+                  
+                  {% unless social_badge == 'none' %}
+                    <div class="product__badge product__badge--{{ social_badge }}">
+                      <span>{{ 'products.product.as_seen_on' | t }}</span>
+                      <img src="{{ social_badge_img_key | asset_url }}" alt="{{ social_badge }}">
+                    </div>
+                  {% endunless %}
+                  
+                  {% case media.media_type %}
+                    {% when 'image' %}
+                      {{ media | image_url: width: 1500 | image_tag: data-index: forloop.index0, data-image-id: media.id, data-variant-option-1: variant.option1, data-variant-option-2: variant.option2, data-variant-option-3: variant.option3 }}
+                    {% when 'video' %}
+                      {{ media | media_tag: data-index: forloop.index0, image_size: "1200x", autoplay: true, loop: true, controls: true, preload: "none" }}
+                  {% endcase %}
+                </div>
+              {% endfor %}
+            </div>
+          </image-slider>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="product__info" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <div class="product__info-container">
+      <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+      <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+      <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+
+      <div class="product__title-area">
+        <div class="product__title__above">
+          {% if section.settings.show_vendor %}
+            <p class="product__vendor">{{ product.vendor }}</p>
+          {% endif %}
+          {% if section.settings.show_discount_percentage %}
+            {% assign percentage_message = section.settings.percentage_message %}
+            {% if percentage_message != blank and percentage_message contains '*percent*' %}
+              <span class="sale-percentage{% unless on_sale %} hide{% endunless %}">
+                {% capture percent %}<span class="js-percentage-discount">{{ current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | round | remove: '.0' }}</span>%{% endcapture %}
+                {% assign percentage_message = percentage_message | replace: '*percent*', percent %}
+                {{ percentage_message }}
+              </span>
+            {% else %}
+              <span class="sale-percentage{% unless on_sale %} hide{% endunless %}">
+                <span class="js-percentage-discount">{{ current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | round | remove: '.0' }}</span>% OFF
+              </span>
+            {% endif %}
+          {% endif %}
+        </div>
+        <h1 class="product__title">
+          {% if template contains 'product' %}
+            {{ product.title }}
+          {% else %}
+            <a href="{{ product.url }}">{{ product.title }}</a>
+          {% endif %}
+        </h1>
+        <div class="product__price" data-price-wrapper>
+          <span {% if on_sale %}class="on-sale"{% endif %} data-product-price>
+            {{ current_variant.price | money_without_trailing_zeros }}
+          </span>
+          {% if product.compare_at_price_max > product.price %}
+            <span class="compare-price" data-compare-price>
+              {% if current_variant.compare_at_price > current_variant.price %}
+                {{ current_variant.compare_at_price | money }}
+              {% endif %}
+            </span>
+            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+          {% endif %}
+        </div>
+      </div>
+      
+      {% if section.settings.promo_message != blank %}
+        <div class="product__callout">
+          <p>{{ section.settings.promo_message }}</p>
+        </div>
+      {% endif %}
+      
+      {% assign prod_skip_cart = false %}
+      {% if settings.enable_skip_to_checkout %}
+        {% assign prod_skip_cart = 'true'%}
+      {% endif %}
+      
+      {% form 'product', product, id: 'newID', class: 'product-form product-form--ajax', data-skip-cart: prod_skip_cart %}
+        
+        <div class="product-form__inputs">
+          {% unless product.has_only_default_variant %}
+            
+            {% assign color_option_name = section.settings.custom_swatch_option_name | downcase | default: 'color' %}
+            
+            {% for option in product.options_with_values %}
+              
+              {% assign option_downcase = option.name | downcase %}
+              
+              {% if section.settings.enable_color_swatches and option_downcase contains color_option_name %}
+                <div class="selector-wrapper js">
+                  <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  
+                  <div class="swatch__container">
+                    {% for value in option.values %}
+                      <div class="swatch__color">
+                        <input type="radio" name="{{ option.name | handle }}" value="{{ value | escape }}"
+                        {% if option.selected_value == value %}checked="checked"{% endif %}
+                        data-single-option-selector
+                        data-index="option{{ option.position }}"
+                        data-option="{{ option.position }}">
+                        <div class="swatch__color__inner">
+                          {% for variant in product.variants %}
+                            {%- capture variant_option_key -%}
+                              option{{- option.position -}}
+                            {%- endcapture -%}
+                            
+                            {% assign variant_option_val = variant[variant_option_key] %}
+
+                            {% if variant_option_val == value %}
+                              {% if variant.image %}
+                                <img src="{{ variant.image | img_url: '60x' }}" data-id="{{ variant.image.id }}" alt="{{ variant_option_val }}">
+                              {% else %}
+                                <img src="{{ 'empty-swatch.svg' | asset_url }}" alt="{{ variant_option_val }}">
+                              {% endif %}
+                              {% break %}
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                        <span class="swatch__color__label">{{ value }}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              
+              {% elsif section.settings.product_form_input == 'grid' %}
+                <div class="selector-wrapper js">
+                  <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  
+                  <div class="radio__grid">
+                    {% for value in option.values %}
+                      <div class="radio__grid__option">
+                        <input type="radio" name="{{ option.name | handle }}" value="{{ value | escape }}"
+                        {% if option.selected_value == value %}checked="checked"{% endif %}
+                        data-single-option-selector
+                        data-index="option{{ option.position }}"
+                        data-option="{{ option.position }}">
+                        <span class="product__option">{{ value }}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <div class="selector-wrapper js">
+                  <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+
+                  <select
+                    id="SingleOptionSelector-{{ forloop.index0 }}"
+                    class="product__option"
+                    data-single-option-selector
+                    data-index="option{{ option.position }}"
+                    data-option="{{ option.position }}">
+                    {% for value in option.values %}
+                      <option
+                        value="{{ value | escape }}"
+                        {% if option.selected_value == value %}selected="selected"{% endif %}>
+                          {{ value }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endunless %}
+          
+          {% if section.settings.enable_quantity_discounts %}
+            {% assign num_of_discounts = 4 %}
+            <div class="product__quantity--radios">
+              <span class="product__quantity__title">{{ 'products.product.quantity' | t }}</span>
+              {% for i in (1..num_of_discounts) %}
+                {% liquid 
+                  assign buy_message_key = 'quantity_discounts_buy_message_' | append: forloop.index
+                  assign save_key = 'quantity_discount_save_' | append: forloop.index
+                  assign qty_key = 'quantity_discount_' | append: forloop.index
+                  assign badge_key = 'quantity_discount_badge_' | append: forloop.index
+
+                  assign buy_message = section.settings[buy_message_key]
+                  assign save = section.settings[save_key] | times: 1
+                  assign qty = section.settings[qty_key]
+                  assign badge = section.settings[badge_key]
+                %}
+                {% if buy_message != blank %}
+                  {% assign percentage = save | divided_by: 100.00 %}
+                  {% assign discount = product.selected_or_first_available_variant.price | times: percentage %}
+                  {% assign price_each = product.selected_or_first_available_variant.price | minus: discount  %}
+
+                  <input id="quantity{{ forloop.index }}" aria-label="Quantity" type="radio" name="quantity" value="{{ qty }}"{% if forloop.first %} checked{% endif %}>
+                  <label for="quantity{{ forloop.index }}" class="product__quantity--radio">
+                    <span>
+                      <span class="quantity__radio">
+                        <span></span>
+                      </span>
+                      <span class="quantity__message">
+                        {% if badge and badge != blank %}
+                          <span class="message__badge">{{ badge }}</span>
+                        {% endif %}
+                        <span>{{ buy_message }}</span>
+                      </span>
+                    </span>
+                    {% if price_each != blank %}
+                      <span class="product__quantity--discount">
+                        {{ price_each | money }} {{ 'products.product.quantity_each' | t }}
+                      </span>
+                    {% endif %}
+                  </label>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <select name="id" class="no-js" data-product-select>
+          {% for variant in product.variants %}
+            <option
+              {% if variant == current_variant %}selected="selected"{% endif %}
+              {% unless variant.available %}disabled="disabled"{% endunless %}
+              value="{{ variant.id }}">
+                {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
+        
+        <div class="product-form__submit">
+          {% unless section.settings.enable_quantity_discounts %}
+            <div class="product__quantity-wrapper{% if section.settings.hide_quantity %} hidden{% endif %}">
+              <button class="qty-control qty-up" type="button" name="button" data-control="up">+</button>
+              <input class="product__quantity" aria-label="Quantity" type="number" id="Quantity" name="quantity" value="1" min="1">
+              <button class="qty-control qty-down" type="button" name="button" data-control="down">-</button>
+            </div>
+          {% endunless %}
+          <button
+            type="submit"
+            name="add"
+            class="add-to-cart btn"
+            data-add-to-cart
+            data-variant="{{ current_variant.id }}"
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {% if settings.enable_skip_to_checkout %}
+                    {{ settings.skip_cart_submit | default: "Buy now" }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endif %}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
+              </span>
+          </button>
+        </div>
+        
+        {% if section.settings.enable_dynamic_buttons %}
+          {{ form | payment_button }}
+        {% endif %}
+        
+        {% if section.settings.add_to_cart_message != blank or section.settings.add_to_cart_message_title != blank %}
+          <div class="form-message">
+            <h3 class="form-message__title">
+              {{ section.settings.add_to_cart_message_title }}
+            </h3>
+            <div class="form-message__content">
+              <p>
+                {{ section.settings.add_to_cart_message }}
+              </p>
+            </div>
+          </div>
+        {% endif %}
+
+      {% endform %}
+      
+      {% if section.settings.enable_payment_plan %}
+        <div class="product__finance">
+          <h4 class="finance__header">{{ section.settings.plan_heading }}</h4>
+          <div class="product__finance__content">
+            <div class="finance__price">
+              <p>{{ section.settings.plan_message }} <span class="finance__price__amount"><sup class="finance__price__currency">{{ shop.money_format | split: "{" | first }}</sup>{{ section.settings.plan_lowest_payment }}<span class="finance__price__frequency">/{{ section.settings.plan_frequency }}</span></span></p>
+            </div>
+            <span class="finance__divider">or</span>
+            <div class="finance__price">
+              <p>Pay now <span class="finance__price__amount"><span data-product-price>{{ current_variant.price | money_without_trailing_zeros }}</span></span></p>
+            </div>
+          </div>
+          <p class="finance__message">{{ section.settings.plan_instructions }}</p>
+        </div>
+      {% endif %}
+
+      {% if section.settings.enable_trust_badges %}
+        {% assign num_of_trust_badges = 3 %}
+        <div class="product__trust-badges">
+          {% for i in (1..num_of_trust_badges) %}
+            {% liquid 
+              assign badge_key = 'trust_badge_' | append: forloop.index
+              assign label_key = 'trust_badge_label_' | append: forloop.index
+
+              assign badge = section.settings[badge_key]
+              assign label = section.settings[label_key]
+            %}
+            
+            {% if badge %}
+              <div class="trust-badges__badge">
+                {{ badge | image_url: width: 55 | image_tag: class: 'trust-badges__badge__img' }}
+                {% if label and label != blank %}
+                  <p>{{ label }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% if section.blocks %}
+        <div class="product__tabs">
+          
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank %}
+              <div class="product__tab">
+                <input type="checkbox" id="tab{{ forloop.index }}" {% if block.settings.default_open %}checked{% endif %}>
+                <label class="tab__label" for="tab{{ forloop.index }}">{{ block.settings.title }} <span class="fas fa-plus tab__open"></span><span class="fas fa-minus tab__close"></span></label>
+                <div class="tab__content product__desc rte">
+                  {{ block.settings.content | newline_to_br }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="header__oversized-dropdown">
+  <ul class="header__oversized-dropdown__main-list">
+    {% for childlink in link.links %}
+      <li {% if childlink.links != blank %}class="has-dropdown"{% endif %}>
+        <a class="{{ dropdown_font_size }}" href="{{ childlink.url }}"><span>{{ childlink.title | escape }} {% if childlink.links != blank %}<span class="dropdown-arrow fas fa-chevron-down"></span>{% endif %}</span></a>
+        {% if childlink.links != blank %}
+          <ul class="header__oversized-dropdown__sub-list">
+            {% for nestedlink in childlink.links %}
+              <li>
+                <a href="{{ nestedlink.url }}"><span>{{ nestedlink.title | escape }}</span></a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    
+  </ul>
+  {{ cta }}
+</div>

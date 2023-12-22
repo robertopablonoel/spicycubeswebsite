@@ -1,0 +1,151 @@
+<div class="why-us" id="section-{{ section.id }}">
+  <h4>{{ section.settings.title }}</h4>
+  <div class="why-us__text page-width">
+    {% for block in section.blocks %}
+      {% if block.settings.feature_title != blank or block.settings.feature_text != blank %}
+        <div class="why-us__text-block">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
+          {% endif %}
+          <h5>{{ block.settings.feature_title }}</h5>
+          <p>{{ block.settings.feature_text | newline_to_br }}</p>
+          {% if block.settings.button_url != blank and block.settings.button_text != blank %}
+            <a class="btn" href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% style %}
+  #section-{{ section.id }} {
+    {% if section.settings.background_color %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+    
+    {% if section.settings.spacing %}
+      margin-top: 100px;
+      margin-bottom: 100px;
+    {% endif %}
+  }
+  
+  #section-{{ section.id }} h4,
+  #section-{{ section.id }} h5,
+  #section-{{ section.id }} p {
+    {% if section.settings.text_color %}
+      color: {{ section.settings.text_color }};
+    {% endif %}
+  }
+  
+  #section-{{ section.id }} .why-us__text-block img {
+    {% if section.settings.image_border_radius %}
+      border-radius: {{ section.settings.image_border_radius }}px;
+    {% endif %}
+  }
+  
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Title with Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Main Title",
+        "default": "Title with text."
+      },
+      {
+        "type": "range",
+        "id": "image_border_radius",
+        "label": "Image rounded corners",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 5
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "checkbox",
+        "id": "spacing",
+        "label": "Section spacing"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title-with-text",
+        "name": "Title with Text",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "feature_title",
+            "label": "Title",
+            "default": "Text block"
+          },
+          {
+            "type": "textarea",
+            "id": "feature_text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title with Text",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "title-with-text",
+            "settings": {
+              "feature_title": "Text block #1",
+              "feature_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          },
+          {
+            "type": "title-with-text",
+            "settings": {
+              "feature_title": "Text block #2",
+              "feature_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          },
+          {
+            "type": "title-with-text",
+            "settings": {
+              "feature_title": "Text block #3",
+              "feature_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

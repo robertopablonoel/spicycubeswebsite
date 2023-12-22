@@ -1,43 +1,224 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "1597558632301": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mm_51324feb-0e61-4481-b0d8-8342305ac8b5.webp",
+            "overlay": true,
+            "background_position_y": "center",
+            "content_align_desktop": "center-middle",
+            "text_align_desktop": "center",
+            "content_align_mobile": "middle",
+            "text_align_mobile": "center",
+            "pre_header": "",
+            "title": "the world's first aphrodisiac sugar cube.",
+            "text": "",
+            "button_url": "\/",
+            "button_text": "Shop now",
+            "enable_slide_link": false,
+            "slide_link": "",
+            "text_color": "#fff",
+            "button_color": "#ff6262",
+            "button_text_color": "#fff"
+          }
+        },
+        "1597642920495": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kiss.webp",
+            "overlay": true,
+            "background_position_y": "center",
+            "content_align_desktop": "center-middle",
+            "text_align_desktop": "center",
+            "content_align_mobile": "middle",
+            "text_align_mobile": "center",
+            "pre_header": "",
+            "title": "transform any drink into a love elixir.",
+            "text": "",
+            "button_url": "shopify:\/\/products\/spicy-cubes",
+            "button_text": "Shop Now",
+            "enable_slide_link": false,
+            "slide_link": "",
+            "text_color": "#fff",
+            "button_color": "#ff6262",
+            "button_text_color": "#fff"
+          }
+        },
+        "1597558210103": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main-image-banner.webp",
+            "overlay": true,
+            "background_position_y": "center",
+            "content_align_desktop": "center-middle",
+            "text_align_desktop": "center",
+            "content_align_mobile": "middle",
+            "text_align_mobile": "center",
+            "pre_header": "",
+            "title": "sugar for every gender, connection for every pair.",
+            "text": "",
+            "button_url": "shopify:\/\/products\/spicy-cubes",
+            "button_text": "Shop now",
+            "enable_slide_link": false,
+            "slide_link": "",
+            "text_color": "#fff",
+            "button_color": "#ff6262",
+            "button_text_color": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "1597558632301",
+        "1597642920495",
+        "1597558210103"
+      ],
+      "custom_css": [
+
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/mm_5fdc9ca3-6caa-4e08-93ed-e996751b5a94.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "height": "50vh",
+        "dots": true,
+        "arrows": true,
+        "autoplay": true,
+        "duration": 8,
+        "arrow_nav_color": "#fff"
       }
     },
-    "benefits-section": {
-      "type": "benefits-section",
+    "richtext": {
+      "type": "richtext",
       "settings": {
+        "pre_header": "Pre-title",
+        "title": "Real nice text box.",
+        "title_align": "center",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum dapibus metus sit amet malesuada. Duis ligula velit, tristique ac dictum eu, egestas eu lorem. Aenean pellentesque erat eget ornare efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris condimentum enim leo, eu tincidunt augue accumsan id. In bibendum, velit vitae vulputate tincidunt, orci purus pharetra enim, in tempus nibh neque id nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at consectetur felis. Fusce vehicula erat a elit venenatis, non elementum est dignissim.<\/p>",
+        "text_align": "center",
+        "borders": false,
+        "spacing": false,
+        "background_color": "",
+        "text_color": ""
       }
     },
-    "sugar-section": {
-      "type": "sugar-section",
+    "banner": {
+      "type": "banner",
       "settings": {
-        "box_image": "shopify:\/\/shop_images\/box-render.svg"
+        "full_width": true,
+        "overlay": true,
+        "title_upper": "Use this banner to",
+        "title_lower": "Say something powerful.",
+        "button_url": "",
+        "button_text": "",
+        "spacing": false
       }
     },
-    "benefits-section-2": {
-      "type": "benefits-section-2",
+    "icon-bar": {
+      "type": "icon-bar",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
+        "spacing": false
+      }
+    },
+    "gradient-cta": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "Shout",
+        "title_outline": "your brand!",
+        "color_left": "",
+        "color_right": "",
+        "text_color": "#ffffff",
+        "button_text": "Shop now",
+        "button_url": "\/",
+        "spacing": false
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "pre_header": "",
+        "pre_header_highlight": "",
+        "title": "Image with text.",
+        "content": "Say something interesting here to describe your product,\nfeature or image.",
+        "button_url": "",
+        "button_text": "",
+        "image_align_left": false,
+        "border_radius": 0,
+        "spacing": true,
+        "padding": false,
+        "bg_color": "",
+        "text_color": ""
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "settings": {
+        "pre_header": "",
+        "pre_header_highlight": "",
+        "title": "Image with text",
+        "content": "Say something interesting here.",
+        "button_url": "",
+        "button_text": "",
+        "image_align_left": true,
+        "border_radius": 0,
+        "spacing": true,
+        "padding": false,
+        "bg_color": "",
+        "text_color": ""
+      }
+    },
+    "title-with-text": {
+      "type": "title-with-text",
+      "blocks": {
+        "1597732128000": {
+          "type": "title-with-text",
+          "settings": {
+            "feature_title": "Text block",
+            "feature_text": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "1597732159869": {
+          "type": "title-with-text",
+          "settings": {
+            "feature_title": "Text block",
+            "feature_text": "Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit.",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "1597732171103": {
+          "type": "title-with-text",
+          "settings": {
+            "feature_title": "Text block",
+            "feature_text": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "1597732128000",
+        "1597732159869",
+        "1597732171103"
+      ],
+      "settings": {
+        "title": "Tell your brand story.",
+        "image_border_radius": 5,
+        "background_color": "",
+        "text_color": "",
+        "spacing": false
       }
     }
   },
   "order": [
-    "image_banner",
-    "benefits-section",
-    "sugar-section",
-    "benefits-section-2"
+    "hero",
+    "richtext",
+    "banner",
+    "icon-bar",
+    "gradient-cta",
+    "image-with-text",
+    "image-with-text-2",
+    "title-with-text"
   ]
 }

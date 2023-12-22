@@ -1,0 +1,51 @@
+<div class="product__images-grid{% if images_length > 7 %} product__images-grid--3{% endif %}">
+  {% for media in product.media %}
+
+    {% case media.media_type %}
+    
+      {% when 'image' %}
+        {% liquid 
+          assign option1 = false
+          assign option2 = false
+          assign option3 = false
+          assign show_img = false
+
+          assign variant_ids = media.variants | map: "id" | join: ','
+
+          for variant in media.variants
+            if variant.option1 != blank
+              assign option1 = variant.option1
+            endif
+            if variant.option2 != blank
+              assign option2 = variant.option2
+            endif
+            if variant.option3 != blank
+              assign option3 = variant.option3
+            endif
+          endfor
+        %}
+
+        <div class="product__image{% if featured_image.id  == media.id %} product__image--active{% endif %}" data-index="{{ forloop.index0 }}">
+          
+          {% if forloop.first %}
+            {% assign social_badge = section.settings.social_badge | default: 'none' %}
+            
+            {% capture social_badge_img_key %}
+              {{ social_badge }}.svg
+            {% endcapture %}
+            
+            {% unless social_badge == 'none' %}
+              <div class="product__badge product__badge--{{ social_badge }}">
+                <span>{{ 'products.product.as_seen_on' | t }}</span>
+                <img src="{{ social_badge_img_key | asset_url }}" alt="{{ social_badge }}">
+              </div>
+            {% endunless %}
+          {% endif %}
+
+          {{ media | image_url: width: 1200 | image_tag: data-image-id: media.id, data-variant-option-1: option1, data-variant-option-2: option2, data-variant-option-3: option3, data-variants: variant_ids }}
+        </div>
+      {% when 'video' %}
+        {{ media | media_tag: image_size: "1200x", autoplay: true, loop: true, controls: true, preload: "none" }}
+    {% endcase %}
+  {% endfor %}
+</div>
