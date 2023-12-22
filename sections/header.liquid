@@ -1,4 +1,4 @@
-{% liquid 
+{% liquid
   assign header_transparent = settings.header_transparent
   assign header_height = settings.header_height
   assign dropdown_type = settings.dropdown_type
@@ -10,7 +10,7 @@
 %}
 
 <script>
-  console.log("dropdown_font_size: {{ dropdown_font_size }}");
+  console.log('dropdown_font_size: {{ dropdown_font_size }}');
 </script>
 
 {% capture cta %}
@@ -55,36 +55,41 @@
   {% endif %}
 {% endcapture %}
 
-<div class="header active {% if template contains 'product' and settings.show_sticky_atc %}header--reveal{% endif %}" data-section-id="{{ section.id }}" data-section-type="header-section">
+<div
+  class='header active {% if template contains 'product' and settings.show_sticky_atc %}header--reveal{% endif %}'
+  data-section-id='{{ section.id }}'
+  data-section-type='header-section'
+>
   {% if settings.enable_promo %}
     {% unless settings.enable_only_ony_homepage and template.name != 'index' %}
-      <div class="promo-bar{% if settings.banner_text_link != blank %} promo-bar--link{% endif %}{% if settings.promo_bar_animate %} promo-bar--animate{% endif %}" 
+      <div
+        class='promo-bar{% if settings.banner_text_link != blank %} promo-bar--link{% endif %}{% if settings.promo_bar_animate %} promo-bar--animate{% endif %}'
         {% if settings.promo_bar_bg_2 != blank %}
-          style="background: linear-gradient(275deg, {{ settings.promo_bar_bg }}, {{ settings.promo_bar_bg_2 }}); {% if settings.promo_bar_animate %}background-size: 400% 400%;{% endif %}"
+          style='background: linear-gradient(275deg, {{ settings.promo_bar_bg }}, {{ settings.promo_bar_bg_2 }}); {% if settings.promo_bar_animate %}background-size: 400% 400%;{% endif %}'
         {% else %}
-          style="background-color: {{ settings.promo_bar_bg }};"
+          style='background-color: {{ settings.promo_bar_bg }};'
         {% endif %}
       >
-        <p class="promo-bar__text{% if settings.promo_bar_text_uppercase_spacing %} promo-bar__text--upcase{% endif %}" style="color: {{ settings.promo_bar_color }};">
-          <span> {{ settings.banner_text }}</span>
+        <p class='promo-bar__text{% if settings.promo_bar_text_uppercase_spacing %} promo-bar__text{% endif %}'>
+          <span style='color: {{ settings.promo_bar_color_1 }};'>{{ settings.banner_text_1 }}</span>
+          <span style='color: {{ settings.promo_bar_color_2 }};'>{{ settings.banner_text_2 }}</span>
           {% if settings.banner_text_link != blank %}
-            <a href="{{ settings.banner_text_link }}" aria-label="{{ settings.banner_text }}"></a>
+            <a href='{{ settings.banner_text_link }}' aria-label='{{ settings.banner_text }}'></a>
           {% endif %}
         </p>
       </div>
     {% endunless %}
   {% endif %}
-  <div class="header__container header__container--{{ header_height }}">
-    
-    <nav class="header__nav header__nav--{{ section.settings.logo_position }}" role="navigation">
-      <ul class="header__nav__main-list header__nav__main-list--{{ dropdown_type }} main-list-width--{{ dropdown_width }}">
+  <div class='header__container header__container--{{ header_height }}'>
+    <nav class='header__nav header__nav--{{ section.settings.logo_position }}' role='navigation'>
+      <ul class='header__nav__main-list header__nav__main-list--{{ dropdown_type }} main-list-width--{{ dropdown_width }}'>
         {% assign main_menu_length = linklists[section.settings.main_linklist].links | size %}
         {% assign menu_link_class = 'large' %}
-        
+
         {% case header_text_size %}
           {% when 'auto' %}
             {% case main_menu_length %}
-              {% when 1 or 2 %}
+              {% when 1, 2 %}
                 {% assign menu_link_class = 'large' %}
               {% when 3 %}
                 {% assign menu_link_class = 'med' %}
@@ -96,15 +101,14 @@
           {% else %}
             {% assign menu_link_class = header_text_size %}
         {% endcase %}
-        
+
         {% assign blocks_amount = section.blocks | size %}
 
         {% for link in linklists[section.settings.main_linklist].links %}
-        
-          {% liquid 
+          {% liquid
             assign link_title_downcase = link.title | downcase
             assign cards_exist = false
-            
+
             if blocks_amount > 0 and dropdown_type != 'oversized'
               assign block_parent_links = section.blocks | map: 'settings' | map: 'parent_link'
               for parent_link in block_parent_links
@@ -116,46 +120,69 @@
               endfor
             endif
           %}
-          
+
           {% if link.links != blank or cards_exist %}
             <li>
-              <a href="{{ link.url }}" class="header__nav__dropdown-link header-link--{{ menu_link_class }}" data-has-dropdown>
+              <a
+                href='{{ link.url }}'
+                class='header__nav__dropdown-link header-link--{{ menu_link_class }}'
+                data-has-dropdown
+              >
                 <span>{{ link.title | escape }}</span>
               </a>
               {% if dropdown_type == 'oversized' %}
-                {% render 'oversized-dropdown' link: link, cta: cta, dropdown_font_size: dropdown_font_size %}
+                {% render 'oversized-dropdown', link: link, cta: cta, dropdown_font_size: dropdown_font_size %}
               {% else %}
-                {% render 'dropdown' link: link, dropdown_settings: section.settings, dropdown_font_size: dropdown_font_size %}
+                {% render 'dropdown',
+                  link: link,
+                  dropdown_settings: section.settings,
+                  dropdown_font_size: dropdown_font_size
+                %}
               {% endif %}
             </li>
           {% else %}
             <li>
-              <a class="header-link--{{ menu_link_class }}" href="{{ link.url }}">{{ link.title | escape }}</a>
+              <a class='header-link--{{ menu_link_class }}' href='{{ link.url }}'>{{ link.title | escape }}</a>
             </li>
           {% endif %}
         {% endfor %}
       </ul>
-      <button class="header__nav__dropdown-toggle" title="Toggle menu" data-toggle-mega-menu>
+      <button class='header__nav__dropdown-toggle' title='Toggle menu' data-toggle-mega-menu>
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="header__oversized-dropdown" data-mega-menu>
-        <ul class="header__oversized-dropdown__main-list">
+      <div class='header__oversized-dropdown' data-mega-menu>
+        <ul class='header__oversized-dropdown__main-list'>
           {% for link in linklists[section.settings.main_linklist].links %}
             {% assign link_title_downcase = link.title | downcase %}
             <li>
-              <a class="{{ dropdown_font_size }}" href="{{ link.url }}" {% if link.links != blank %}data-toggle-mobile-submenu{% endif %}><span>{{ link.title | escape }}</span></a>
+              <a
+                class='{{ dropdown_font_size }}'
+                href='{{ link.url }}'
+                {% if link.links != blank %}
+                  data-toggle-mobile-submenu
+                {% endif %}
+                ><span>{{ link.title | escape }}</span></a
+              >
               {% if link.links != blank %}
-                <ul class="header__oversized-dropdown__sub-list">
+                <ul class='header__oversized-dropdown__sub-list'>
                   {% for childlink in link.links %}
-                    <li class="mega-nav__child-link">
-                      <a href="{{ childlink.url }}" {% if childlink.links != blank %}data-toggle-mobile-submenu{% endif %}><span>{{ childlink.title | escape }}</span></a>
+                    <li class='mega-nav__child-link'>
+                      <a
+                        href='{{ childlink.url }}'
+                        {% if childlink.links != blank %}
+                          data-toggle-mobile-submenu
+                        {% endif %}
+                        ><span>{{ childlink.title | escape }}</span></a
+                      >
                       {% if childlink.links != blank %}
-                        <ul class="header__oversized-dropdown__sub-list">
+                        <ul class='header__oversized-dropdown__sub-list'>
                           {% for nestedlink in childlink.links %}
                             <li>
-                              <a href="{{ nestedlink.url }}"><span>{{ nestedlink.title | escape }}</span></a>
+                              <a href='{{ nestedlink.url }}'
+                                ><span>{{ nestedlink.title | escape }}</span></a
+                              >
                             </li>
                           {% endfor %}
                         </ul>
@@ -168,14 +195,14 @@
           {% endfor %}
         </ul>
         {% if shop.customer_accounts_enabled or settings.enable_search %}
-          <div class="main-list__actions">
+          <div class='main-list__actions'>
             {% if shop.customer_accounts_enabled %}
-              <a class="{{ dropdown_font_size }}" href="/account">
+              <a class='{{ dropdown_font_size }}' href='/account'>
                 {% render 'icon-account', icon_pack: section.settings.icon_pack %}
               </a>
             {% endif %}
             {% if settings.enable_search %}
-              <a class="{{ dropdown_font_size }}" href="/search" data-toggle-search>
+              <a class='{{ dropdown_font_size }}' href='/search' data-toggle-search>
                 {% render 'icon-search', icon_pack: section.settings.icon_pack %}
               </a>
             {% endif %}
@@ -184,37 +211,38 @@
         {{ cta }}
       </div>
     </nav>
-    
-    <header class="header__logo header__logo--{{ section.settings.logo_position }}" role="banner">
-      <h1 itemscope itemtype="http://schema.org/Organization">
-        <a href="/" itemprop="url" class="header__logo__image {{ header_height }}">
+
+    <header class='header__logo header__logo--{{ section.settings.logo_position }}' role='banner'>
+      <h1 itemscope itemtype='http://schema.org/Organization'>
+        <a href='/' itemprop='url' class='header__logo__image {{ header_height }}'>
           {% if section.settings.logo_svg != blank %}
             {{ section.settings.logo_svg }}
           {% elsif section.settings.logo != blank %}
             {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-            <img src="{{ section.settings.logo | img_url: image_size }}"
-                 srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                 alt="{{ section.settings.logo.alt | default: shop.name }}"
-                 itemprop="logo">
+            <img
+              src='{{ section.settings.logo | img_url: image_size }}'
+              srcset='{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x'
+              alt='{{ section.settings.logo.alt | default: shop.name }}'
+              itemprop='logo'
+            >
           {% else %}
             {{ shop.name }}
           {% endif %}
         </a>
       </h1>
     </header>
-    
-    <nav class="header__nav header__nav--right" role="navigation">
-      
+
+    <nav class='header__nav header__nav--right' role='navigation'>
       {% assign header_cta_product = false %}
-      
+
       {% if section.settings.header_cta_product != blank %}
         {% assign header_cta_product = all_products[section.settings.header_cta_product] %}
       {% elsif settings.one_product != empty %}
         {% assign header_cta_product = all_products[settings.one_product] %}
       {% endif %}
-      
+
       {% assign cta_link = '' %}
-      
+
       {% if section.settings.header_cta_url != blank %}
         {% assign cta_link = section.settings.header_cta_url %}
       {% elsif header_cta_product %}
@@ -224,12 +252,12 @@
           {% assign cta_link = '/cart/' | append: header_cta_product.first_available_variant.id | append: ':1' %}
         {% endif %}
       {% endif %}
-      
+
       {% if section.settings.enable_cta %}
-        <div class="header__cta">
-          <a class="btn" href="{{ cta_link }}">
+        <div class='header__cta'>
+          <a class='btn' href='{{ cta_link }}'>
             <span>
-              {% if section.settings.enable_cta_icon %}<span class="fas fa-shopping-cart"></span>{% endif %}
+              {% if section.settings.enable_cta_icon %}<span class='fas fa-shopping-cart'></span>{% endif %}
               {% if section.settings.custom_cta_text != blank %}
                 {{ section.settings.custom_cta_text }}
               {% else %}
@@ -239,26 +267,28 @@
           </a>
         </div>
       {% endif %}
-      <ul class="header__nav__main-list {{ header_icon_size }}">
+      <ul class='header__nav__main-list {{ header_icon_size }}'>
         {% if settings.enable_search %}
           <li>
-            <a class="search-header" href="/search" data-toggle-search>
+            <a class='search-header' href='/search' data-toggle-search>
               {% render 'icon-search', icon_pack: section.settings.icon_pack %}
             </a>
           </li>
         {% endif %}
         {% if shop.customer_accounts_enabled %}
           <li>
-            <a class="header__nav__user" href="/account">
+            <a class='header__nav__user' href='/account'>
               {% render 'icon-account', icon_pack: section.settings.icon_pack %}
             </a>
           </li>
         {% endif %}
         <li>
-          <a class="header__nav__bag" href="/cart" data-toggle-bag>
-            <span class="header__nav__bag__container">
+          <a class='header__nav__bag' href='/cart' data-toggle-bag>
+            <span class='header__nav__bag__container'>
               {% render 'icon-cart', icon_pack: section.settings.icon_pack %}
-              <span class="bag__item-alert bag__item-alert--icon-pack-{{ section.settings.icon_pack }}{% if cart.items != empty %} is-visible{% endif %}"></span>
+              <span
+                class='bag__item-alert bag__item-alert--icon-pack-{{ section.settings.icon_pack }}{% if cart.items != empty %} is-visible{% endif %}'
+              ></span>
             </span>
           </a>
         </li>
@@ -268,36 +298,50 @@
   {% render 'search-header' %}
 </div>
 
-<div class="predictive-search__overlay js-search-overlay"></div>
+<div class='predictive-search__overlay js-search-overlay'></div>
 
 {% if template contains 'product' and settings.show_sticky_atc %}
-  <div class="page-width header__atc">
-    <div class="header__atc__inner">
-      <div class="header__atc__details">
+  <div class='page-width header__atc'>
+    <div class='header__atc__inner'>
+      <div class='header__atc__details'>
         <h4>{{ product.title }}</h4>
-        <div class="header__atc__price product__price" data-price-wrapper>
+        <div class='header__atc__price product__price' data-price-wrapper>
           {% assign on_sale = false %}
           {% if product.compare_at_price_max > product.price %}
-            <span class="compare-price" data-compare-price>
-              {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+            <span class='compare-price' data-compare-price>
+              {% if product.selected_or_first_available_variant.compare_at_price
+                  > product.selected_or_first_available_variant.price
+              %}
                 {{ product.selected_or_first_available_variant.compare_at_price | money }}
               {% endif %}
             </span>
-            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+            <span class='visually-hidden' data-compare-text>{{ 'products.product.regular_price' | t }}</span>
           {% endif %}
           {% if product.selected_or_first_available_variant.compare_at_price > product.price %}
             {% assign on_sale = true %}
           {% endif %}
-          <span {% if on_sale %}class="on-sale"{% endif %} data-product-price>
+          <span
+            {% if on_sale %}
+              class='on-sale'
+            {% endif %}
+            data-product-price
+          >
             {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
           </span>
         </div>
       </div>
-      <button type="button" class="btn btn--primary header__atc__btn js-header-atc" data-add-to-cart {% unless product.selected_or_first_available_variant.available %}disabled="disabled"{% endunless %}>
+      <button
+        type='button'
+        class='btn btn--primary header__atc__btn js-header-atc'
+        data-add-to-cart
+        {% unless product.selected_or_first_available_variant.available %}
+          disabled='disabled'
+        {% endunless %}
+      >
         <span data-add-to-cart-text>
           {% if product.selected_or_first_available_variant.available %}
             {% if settings.enable_skip_to_checkout %}
-              {{ settings.skip_cart_submit | default: "Buy now" }}
+              {{ settings.skip_cart_submit | default: 'Buy now' }}
             {% else %}
               {{ 'products.product.add_to_cart' | t }}
             {% endif %}
@@ -330,7 +374,7 @@
       {% endif %}
     }
   }
-  
+
   {% if header_transparent %}
     .header__container {
       background-color: {{ settings.header_background | color_modify: 'alpha', 0.9 }}
@@ -348,20 +392,20 @@
       color: {{ section.settings.cta_menu_text_color }};
     }
   {% endif %}
-  
+
   .header__atc {
     {% if settings.sticky_atc_bg != blank %}
       background-color: {{ settings.sticky_atc_bg }};
     {% endif %}
   }
-  
+
   .header__atc__price.product__price span:not(.on-sale),
   .header__atc__details h4 {
     {% if settings.sticky_atc_price_title != blank %}
       color: {{ settings.sticky_atc_price_title }};
     {% endif %}
   }
-  
+
   .header__atc__price.product__price .on-sale {
     {% if settings.sticky_atc_price_sale %}
       color: {{ settings.sticky_atc_price_sale }};
@@ -373,257 +417,257 @@
       background-color: {{ settings.sticky_atc_button_bg }};
     }
   {% endif %}
-  
+
   {% if settings.sticky_atc_button_text != blank %}
     .btn.btn--primary.header__atc__btn {
       color: {{ settings.sticky_atc_button_text }};
     }
   {% endif %}
-  
+
   .header__nav__product img {
     max-height: {{ dropdown_card_size }}px;
   }
 {% endstyle %}
 
 {% schema %}
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "paragraph",
-        "content": "Recommended aspect ratio is 4:1. Example logo size: 255 x 65 pixels."
-      },
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo image"
-      },
-      {
-        "type": "html",
-        "id": "logo_svg",
-        "label": "Logo SVG Code [Optional]",
-        "info": "Use SVG images instead of JPEG or PNG for an extremely crisp and high quality logo."
-      },
-      {
-        "type": "range",
-        "id": "logo_max_width",
-        "min": 50,
-        "max": 250,
-        "step": 10,
-        "unit": "px",
-        "label": "Logo width",
-        "default": 250
-      },
-      {
-        "type": "range",
-        "id": "logo_max_width_mobile",
-        "min": 100,
-        "max": 200,
-        "step": 5,
-        "unit": "px",
-        "label": "Logo width [Mobile]",
-        "default": 195
-      },
-      {
-        "type": "select",
-        "id": "logo_position",
-        "label": "Logo Position",
-        "options": [
-          {
-            "label": "Left",
-            "value": "left"
-          },
-          {
-            "label": "Center",
-            "value": "center"
-          }
-        ],
-        "default": "center"
-      },
-      {
-        "type": "header",
-        "content": "Icons"
-      },
-      {
-        "type": "select",
-        "id": "icon_pack",
-        "label": "Icon Pack",
-        "options": [
-          {
-            "label": "Icon pack 1",
-            "value": "1"
-          },
-          {
-            "label": "Icon pack 2",
-            "value": "2"
-          }
-        ],
-        "default": "1"
-      },
-      {
-        "type": "header",
-        "content": "Menu"
-      },
-      {
-        "type": "link_list",
-        "id": "main_linklist",
-        "label": "Menu",
-        "default": "main-menu"
-      },
-      {
-        "type": "header",
-        "content": "Header CTA"
-      },
-      {
-        "type": "paragraph",
-        "content": "The header CTA uses the theme's universal product information found in One Product settings. Make sure you select a product before altering the below settings."
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_cta",
-        "label": "Enable header CTA",
-        "default": true
-      },
-      {
-        "type": "url",
-        "id": "header_cta_url",
-        "label": "Header CTA URL"
-      },
-      {
-        "type": "text",
-        "id": "custom_cta_text",
-        "label": "Button text"
-      },
-      {
-        "type": "product",
-        "id": "header_cta_product",
-        "label": "Header CTA Product",
-        "info": "This will allow you to use the below 'Button Action' option."
-      },
-      {
-        "type": "select",
-        "id": "cta_method",
-        "label": "Button Action (Products)",
-        "options": [
-          {
-            "label": "Send to checkout",
-            "value": "checkout"
-          },
-          {
-            "label": "Send to product page",
-            "value": "link"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_cta_icon",
-        "label": "Enable cart icon",
-        "info": "This controls the cart icon within the CTA button",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Oversized dropdowns"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_cta_dropdown",
-        "label": "Enable CTA in oversized dropdowns",
-        "default": true
-      },
-      {
-        "type": "product",
-        "id": "menu_cta_product",
-        "label": "Dropdown menu CTA product",
-        "info": "Leave blank to use product from 'One Product' settings."
-      },
-      {
-        "type": "select",
-        "id": "cta_menu_method",
-        "label": "Button Action",
-        "options": [
-          {
-            "label": "Send to checkout",
-            "value": "checkout"
-          },
-          {
-            "label": "Send to product page",
-            "value": "link"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "id": "custom_cta_dropdown_headline",
-        "label": "Custom CTA headline",
-        "info": "This controls the title in the CTA area within the dropdown menus. Leave blank for default product title."
-      },
-      {
-        "type": "text",
-        "id": "custom_menu_cta_text",
-        "label": "Custom CTA button text"
-      },
-      {
-        "type": "color",
-        "id": "cta_menu_background",
-        "label": "Background color"
-      },
-      {
-        "type": "color",
-        "id": "cta_menu_text_color",
-        "label": "Text color"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "product-card",
-        "name": "Product card",
-        "settings": [
-          {
-            "type": "text",
-            "id": "parent_link",
-            "label": "Parent link",
-            "info": "The exact name of the parent link in your navigation where this card should appear under."
-          },
-          {
-            "type": "product",
-            "id": "product",
-            "label": "Product"
-          }
-        ]
-      },
-      {
-        "type": "custom-card",
-        "name": "Custom card",
-        "settings": [
-          {
-            "type": "text",
-            "id": "parent_link",
-            "label": "Parent link",
-            "info": "The exact name of the parent link in your navigation where this card should appear under."
-          },
-          {
-            "type": "image_picker",
-            "id": "card_img",
-            "label": "Card image"
-          },
-          {
-            "type": "text",
-            "id": "card_title",
-            "label": "Card title"
-          },
-          {
-            "type": "url",
-            "id": "card_url",
-            "label": "Card URL"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "paragraph",
+      "content": "Recommended aspect ratio is 4:1. Example logo size: 255 x 65 pixels."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "html",
+      "id": "logo_svg",
+      "label": "Logo SVG Code [Optional]",
+      "info": "Use SVG images instead of JPEG or PNG for an extremely crisp and high quality logo."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width_mobile",
+      "min": 100,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo width [Mobile]",
+      "default": 195
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo Position",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "select",
+      "id": "icon_pack",
+      "label": "Icon Pack",
+      "options": [
+        {
+          "label": "Icon pack 1",
+          "value": "1"
+        },
+        {
+          "label": "Icon pack 2",
+          "value": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "header",
+      "content": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Header CTA"
+    },
+    {
+      "type": "paragraph",
+      "content": "The header CTA uses the theme's universal product information found in One Product settings. Make sure you select a product before altering the below settings."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cta",
+      "label": "Enable header CTA",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "header_cta_url",
+      "label": "Header CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "custom_cta_text",
+      "label": "Button text"
+    },
+    {
+      "type": "product",
+      "id": "header_cta_product",
+      "label": "Header CTA Product",
+      "info": "This will allow you to use the below 'Button Action' option."
+    },
+    {
+      "type": "select",
+      "id": "cta_method",
+      "label": "Button Action (Products)",
+      "options": [
+        {
+          "label": "Send to checkout",
+          "value": "checkout"
+        },
+        {
+          "label": "Send to product page",
+          "value": "link"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cta_icon",
+      "label": "Enable cart icon",
+      "info": "This controls the cart icon within the CTA button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Oversized dropdowns"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cta_dropdown",
+      "label": "Enable CTA in oversized dropdowns",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "menu_cta_product",
+      "label": "Dropdown menu CTA product",
+      "info": "Leave blank to use product from 'One Product' settings."
+    },
+    {
+      "type": "select",
+      "id": "cta_menu_method",
+      "label": "Button Action",
+      "options": [
+        {
+          "label": "Send to checkout",
+          "value": "checkout"
+        },
+        {
+          "label": "Send to product page",
+          "value": "link"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "custom_cta_dropdown_headline",
+      "label": "Custom CTA headline",
+      "info": "This controls the title in the CTA area within the dropdown menus. Leave blank for default product title."
+    },
+    {
+      "type": "text",
+      "id": "custom_menu_cta_text",
+      "label": "Custom CTA button text"
+    },
+    {
+      "type": "color",
+      "id": "cta_menu_background",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "cta_menu_text_color",
+      "label": "Text color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-card",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "parent_link",
+          "label": "Parent link",
+          "info": "The exact name of the parent link in your navigation where this card should appear under."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    },
+    {
+      "type": "custom-card",
+      "name": "Custom card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "parent_link",
+          "label": "Parent link",
+          "info": "The exact name of the parent link in your navigation where this card should appear under."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_img",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card title"
+        },
+        {
+          "type": "url",
+          "id": "card_url",
+          "label": "Card URL"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

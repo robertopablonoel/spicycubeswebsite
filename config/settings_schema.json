@@ -33,8 +33,13 @@
       },
       {
         "type": "text",
-        "id": "banner_text",
-        "label": "Announcement Text"
+        "id": "banner_text_1",
+        "label": "Announcement Text #1"
+      },
+      {
+        "type": "text",
+        "id": "banner_text_2",
+        "label": "Announcement Text #2"
       },
       {
         "type": "url",
@@ -55,7 +60,13 @@
       },
       {
         "type": "color",
-        "id": "promo_bar_color",
+        "id": "promo_bar_color_1",
+        "label": "Text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "promo_bar_color_2",
         "label": "Text color",
         "default": "#fff"
       },
