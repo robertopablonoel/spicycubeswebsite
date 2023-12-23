@@ -1,22 +1,26 @@
-<div class="icon-bar" id="section-{{ section.id }}">
-  <div class="page-width">
+<div
+  class='icon-bar'
+  id='section-{{ section.id }}'
+  style='display: flex; align-items: center; justify-content: center;'
+>
+  <div class='page-width'>
     {% for block in section.blocks %}
       {% assign icon = block.settings.icon %}
       {% assign label = block.settings.title %}
 
-      <div class="icon-bar__column">
+      <div class='icon-bar__column'>
         {% if icon %}
-          {{ icon | image_url: width: 750 | image_tag: class: "icon-bar__icon" }}
+          {{ icon | image_url: width: 100 | image_tag: class: 'icon-bar__icon' }}
         {% else %}
-          <div class="icon__img">
-            <div class="placeholder-bg">
+          <div class='icon__img'>
+            <div class='placeholder-bg'>
               {% assign placeholder = 'product-' | append: forloop.index %}
               {{ placeholder | placeholder_svg_tag: 'placeholder-img' }}
             </div>
           </div>
         {% endif %}
         <p>
-          <span class="icon-bar__text">{{ label }}</span>
+          <span class='icon-bar__text'>{{ label }}</span>
         </p>
       </div>
     {% endfor %}
@@ -26,39 +30,39 @@
 {% style %}
   #section-{{ section.id }} {
     {% if section.settings.spacing %}
-      margin: 100px auto;
+      margin: 30px auto;
     {% endif %}
   }
 {% endstyle %}
 
 {% schema %}
-  {
-    "name": "Icon Bar",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "spacing",
-        "label": "Section spacing"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "icon",
-        "name": "Icon",
-        "limit": 4,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "icon",
-            "label": "Icon"
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Icon Label"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Icon Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "spacing",
+      "label": "Section spacing"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Icon Label"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

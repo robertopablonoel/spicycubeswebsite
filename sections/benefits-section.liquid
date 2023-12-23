@@ -1,0 +1,86 @@
+<section class='benefits-section'>
+  <div class='benefits-container'>
+    <div class='benefits-title'>
+      {% render 'benefits-title-1' %}
+    </div>
+  </div>
+
+  <div class='benefit-details'>
+    <div class='benefit-detail-item'>
+      <div class='benefit-detail-icon'>{% render 'icon-lightning' %}</div>
+      <p>
+        <strong>Effective</strong><br>
+        It contains Ginko, Epimedium & Maca Root to activate & enhance performance.
+      </p>
+    </div>
+    <div class='benefit-detail-item'>
+      <div class='benefit-detail-icon'>{% render 'icon-star' %}</div>
+      <p>
+        <strong>Taste great</strong><br>
+        Contains Cinnamon blend sourced from family business in USA.
+      </p>
+    </div>
+    <div class='benefit-detail-item'>
+      <div class='benefit-detail-icon'>{% render 'icon-shield' %}</div>
+      <p>
+        <strong>Safe & Effective</strong><br>
+        Made in an FDA-approved facility in Missouri.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .benefits-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .benefit-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the start of the flex container */
+    justify-content: center; /* Center items horizontally in the flex container */
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  /* This will align icons to the left of the text for each benefit item */
+  .benefit-detail-item {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1.8rem;
+    width: 400px;
+  }
+
+  /* This styles the icons */
+  .benefit-detail-icon {
+    display: flex; /* Align the icon and text horizontally */
+    align-items: center; /* Align the icon and text vertically */
+    justify-content: center; /* Center the icon and text horizontally */
+    min-width: 40px; /* Set the width of the icon */
+  }
+
+  /* This styles the paragraph text */
+  .benefit-detail-item p {
+    font-size: 14px; /* Adjust text size as needed */
+    margin: 0; /* Remove margin from paragraphs */
+    line-height: 1.4; /* Adjust line height for readability */
+  }
+
+  /* This makes the titles bold */
+  .benefit-detail-item strong {
+    font-weight: bold; /* Make the title bold */
+  }
+
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .benefit-details {
+      flex-direction: row; /* Set the direction to row for larger screens */
+      flex-wrap: wrap; /* Allows items to wrap to new line if needed */
+      justify-content: center; /* Evenly distribute the items in the container */
+    }
+  }
+{% endstyle %}

@@ -20,60 +20,14 @@
             "button_text": "Shop now",
             "enable_slide_link": false,
             "slide_link": "",
-            "text_color": "#fff",
+            "text_color": "#ffffff",
             "button_color": "#ff6262",
-            "button_text_color": "#fff"
-          }
-        },
-        "1597642920495": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/kiss.webp",
-            "overlay": true,
-            "background_position_y": "center",
-            "content_align_desktop": "center-middle",
-            "text_align_desktop": "center",
-            "content_align_mobile": "middle",
-            "text_align_mobile": "center",
-            "pre_header": "",
-            "title": "transform any drink into a love elixir.",
-            "text": "",
-            "button_url": "shopify:\/\/products\/spicy-cubes",
-            "button_text": "Shop Now",
-            "enable_slide_link": false,
-            "slide_link": "",
-            "text_color": "#fff",
-            "button_color": "#ff6262",
-            "button_text_color": "#fff"
-          }
-        },
-        "1597558210103": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/main-image-banner.webp",
-            "overlay": true,
-            "background_position_y": "center",
-            "content_align_desktop": "center-middle",
-            "text_align_desktop": "center",
-            "content_align_mobile": "middle",
-            "text_align_mobile": "center",
-            "pre_header": "",
-            "title": "sugar for every gender, connection for every pair.",
-            "text": "",
-            "button_url": "shopify:\/\/products\/spicy-cubes",
-            "button_text": "Shop now",
-            "enable_slide_link": false,
-            "slide_link": "",
-            "text_color": "#fff",
-            "button_color": "#ff6262",
-            "button_text_color": "#fff"
+            "button_text_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "1597558632301",
-        "1597642920495",
-        "1597558210103"
+        "1597558632301"
       ],
       "custom_css": [
 
@@ -84,141 +38,66 @@
         "arrows": true,
         "autoplay": true,
         "duration": 8,
-        "arrow_nav_color": "#fff"
-      }
-    },
-    "richtext": {
-      "type": "richtext",
-      "settings": {
-        "pre_header": "Pre-title",
-        "title": "Real nice text box.",
-        "title_align": "center",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum dapibus metus sit amet malesuada. Duis ligula velit, tristique ac dictum eu, egestas eu lorem. Aenean pellentesque erat eget ornare efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris condimentum enim leo, eu tincidunt augue accumsan id. In bibendum, velit vitae vulputate tincidunt, orci purus pharetra enim, in tempus nibh neque id nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at consectetur felis. Fusce vehicula erat a elit venenatis, non elementum est dignissim.<\/p>",
-        "text_align": "center",
-        "borders": false,
-        "spacing": false,
-        "background_color": "",
-        "text_color": ""
-      }
-    },
-    "banner": {
-      "type": "banner",
-      "settings": {
-        "full_width": true,
-        "overlay": true,
-        "title_upper": "Use this banner to",
-        "title_lower": "Say something powerful.",
-        "button_url": "",
-        "button_text": "",
-        "spacing": false
+        "arrow_nav_color": "#ffffff"
       }
     },
     "icon-bar": {
       "type": "icon-bar",
-      "settings": {
-        "spacing": false
-      }
-    },
-    "gradient-cta": {
-      "type": "gradient-cta",
-      "settings": {
-        "title": "Shout",
-        "title_outline": "your brand!",
-        "color_left": "",
-        "color_right": "",
-        "text_color": "#ffffff",
-        "button_text": "Shop now",
-        "button_url": "\/",
-        "spacing": false
-      }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "settings": {
-        "pre_header": "",
-        "pre_header_highlight": "",
-        "title": "Image with text.",
-        "content": "Say something interesting here to describe your product,\nfeature or image.",
-        "button_url": "",
-        "button_text": "",
-        "image_align_left": false,
-        "border_radius": 0,
-        "spacing": true,
-        "padding": false,
-        "bg_color": "",
-        "text_color": ""
-      }
-    },
-    "image-with-text-2": {
-      "type": "image-with-text",
-      "settings": {
-        "pre_header": "",
-        "pre_header_highlight": "",
-        "title": "Image with text",
-        "content": "Say something interesting here.",
-        "button_url": "",
-        "button_text": "",
-        "image_align_left": true,
-        "border_radius": 0,
-        "spacing": true,
-        "padding": false,
-        "bg_color": "",
-        "text_color": ""
-      }
-    },
-    "title-with-text": {
-      "type": "title-with-text",
       "blocks": {
-        "1597732128000": {
-          "type": "title-with-text",
+        "1448f2db-1b1c-44ea-b901-38c8d5af0fad": {
+          "type": "icon",
           "settings": {
-            "feature_title": "Text block",
-            "feature_text": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.",
-            "button_url": "",
-            "button_text": ""
+            "icon": "shopify:\/\/shop_images\/heart-icon.svg",
+            "title": "Increase sex drive"
           }
         },
-        "1597732159869": {
-          "type": "title-with-text",
+        "02b7427a-3087-4f53-b31a-b985b69ee103": {
+          "type": "icon",
           "settings": {
-            "feature_title": "Text block",
-            "feature_text": "Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit.",
-            "button_url": "",
-            "button_text": ""
+            "icon": "shopify:\/\/shop_images\/leaf-icon.svg",
+            "title": "All natural ingredients"
           }
         },
-        "1597732171103": {
-          "type": "title-with-text",
+        "643e983e-1995-4026-b774-876980d57ade": {
+          "type": "icon",
           "settings": {
-            "feature_title": "Text block",
-            "feature_text": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit.",
-            "button_url": "",
-            "button_text": ""
+            "icon": "shopify:\/\/shop_images\/arrow-icon.svg",
+            "title": "Enhance performance"
           }
         }
       },
       "block_order": [
-        "1597732128000",
-        "1597732159869",
-        "1597732171103"
+        "1448f2db-1b1c-44ea-b901-38c8d5af0fad",
+        "02b7427a-3087-4f53-b31a-b985b69ee103",
+        "643e983e-1995-4026-b774-876980d57ade"
       ],
       "settings": {
-        "title": "Tell your brand story.",
-        "image_border_radius": 5,
-        "background_color": "",
+        "spacing": true
+      }
+    },
+    "b169202f-1653-4b9b-8925-21c748b0f204": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "",
+        "title_outline": "",
+        "color_left": "#fdfaf1",
+        "color_right": "#fdfaf1",
         "text_color": "",
+        "button_text": "Shop now",
+        "button_url": "",
         "spacing": false
+      }
+    },
+    "benefits-section": {
+      "type": "benefits-section",
+      "settings": {
       }
     }
   },
   "order": [
     "hero",
-    "richtext",
-    "banner",
     "icon-bar",
-    "gradient-cta",
-    "image-with-text",
-    "image-with-text-2",
-    "title-with-text"
+    "b169202f-1653-4b9b-8925-21c748b0f204",
+    "benefits-section"
   ]
 }
