@@ -4892,7 +4892,7 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .icon__img {
@@ -5280,17 +5280,12 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 }
 
 .cta-gradient {
-  padding-bottom: 50px;
   text-align: center;
   align-items: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-justify-content: center;
   display: flex;
-  
-  @include media-query($medium-up) {
-    padding: pxToRem(70) pxToRem(15);
-  }
 }
 
 .cta-gradient__content {
@@ -7385,3 +7380,89 @@ predictive-search .search-input:focus {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   }
 /* End disabled theme */
+
+/* Start custom styles */
+
+
+/* Benefits */
+.benefits-section {
+  margin-top: 100px;
+}
+
+.benefits-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.benefit-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.benefit-detail-item {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.8rem;
+  width: 400px;
+}
+
+.benefit-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.benefit-detail-item p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.benefit-detail-item strong {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .benefit-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Landing Featured Product */
+
+.sugar-section {
+  text-align: center;
+  font-family: 'Futura', sans-serif; /* Assuming Futura is the desired font */
+  background-color: #fdfaf1; /* White background, can be adjusted */
+  padding: 2em 1em; /* Top and bottom padding, less horizontal padding */
+}
+
+/* Flex container for benefit items */
+.sugar-section .sugar-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align the items */
+  gap: 2em; /* Space between the items */
+}
+
+.target-description {
+  text-align: center;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+}
+
+.effects-description {
+  text-align: left;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+}

@@ -84,7 +84,7 @@
         "color_right": "#fdfaf1",
         "text_color": "",
         "button_text": "Shop now",
-        "button_url": "",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }
     },
@@ -92,12 +92,54 @@
       "type": "benefits-section",
       "settings": {
       }
+    },
+    "sugar-section": {
+      "type": "sugar-section",
+      "settings": {
+        "box_image": "shopify:\/\/shop_images\/box-render.svg"
+      }
+    },
+    "icon-bar-2": {
+      "type": "icon-bar",
+      "blocks": {
+        "1448f2db-1b1c-44ea-b901-38c8d5af0fad": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/heart-icon.svg",
+            "title": "Increase sex drive"
+          }
+        },
+        "02b7427a-3087-4f53-b31a-b985b69ee103": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/leaf-icon.svg",
+            "title": "All natural ingredients"
+          }
+        },
+        "643e983e-1995-4026-b774-876980d57ade": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/arrow-icon.svg",
+            "title": "Enhance performance"
+          }
+        }
+      },
+      "block_order": [
+        "1448f2db-1b1c-44ea-b901-38c8d5af0fad",
+        "02b7427a-3087-4f53-b31a-b985b69ee103",
+        "643e983e-1995-4026-b774-876980d57ade"
+      ],
+      "settings": {
+        "spacing": true
+      }
     }
   },
   "order": [
     "hero",
     "icon-bar",
     "b169202f-1653-4b9b-8925-21c748b0f204",
-    "benefits-section"
+    "benefits-section",
+    "sugar-section",
+    "icon-bar-2"
   ]
 }

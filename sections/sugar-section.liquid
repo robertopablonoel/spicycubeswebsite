@@ -1,0 +1,30 @@
+<!-- sugar Section -->
+<section class='sugar-section'>
+  <div class='sugar-container'>
+    <div class='sugar-title-image'>
+      {% render 'title-sugar-by-cubes' %}
+    </div>
+    <div class='sugar-box-image'>
+      <img src='{{ section.settings.box_image | image_url }}' loading='lazy'>
+    </div>
+  </div>
+</section>
+
+<!-- End sugar Section -->
+{% schema %}
+{
+  "name": "Sugar Section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "box_image",
+      "label": "Choose Image"
+    }
+  ]
+}
+{% endschema %}
