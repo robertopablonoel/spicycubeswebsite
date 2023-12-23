@@ -1490,16 +1490,10 @@ symbol {
 }
 
 .richtext {
-  padding-top: pxToRem(40);
   padding-bottom: pxToRem(40);
 
   &::after {
     display: none;
-  }
-
-  @include media-query($medium-up) {
-    padding-top: pxToRem(80);
-    padding-bottom: pxToRem(80);
   }
 }
 

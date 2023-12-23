@@ -75,7 +75,7 @@
         "spacing": true
       }
     },
-    "b169202f-1653-4b9b-8925-21c748b0f204": {
+    "shop-now-1": {
       "type": "gradient-cta",
       "settings": {
         "title": "",
@@ -105,8 +105,8 @@
         "1448f2db-1b1c-44ea-b901-38c8d5af0fad": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/heart-icon.svg",
-            "title": "Increase sex drive"
+            "icon": "shopify:\/\/shop_images\/cruelty_free.svg",
+            "title": "Vegan & Cruelty free"
           }
         },
         "02b7427a-3087-4f53-b31a-b985b69ee103": {
@@ -119,8 +119,8 @@
         "643e983e-1995-4026-b774-876980d57ade": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/arrow-icon.svg",
-            "title": "Enhance performance"
+            "icon": "shopify:\/\/shop_images\/gluten_free.svg",
+            "title": "Gluten free"
           }
         }
       },
@@ -132,14 +132,43 @@
       "settings": {
         "spacing": true
       }
+    },
+    "rich-text": {
+      "type": "richtext",
+      "settings": {
+        "pre_header": "",
+        "title": "",
+        "title_align": "center",
+        "text": "<p>Turn any drink into an aphrodisiac!<br\/>Works for <strong>men and women<\/strong>, together or alone 🔥<\/p><p><\/p><p><strong>- Stimulates blood flow 🌶️<\/strong><\/p><p><\/p><p><strong>- Increases sex drive for 3h+ ⏰<\/strong><\/p><p><\/p><p><strong>- Flavorable and safe to use 😋<\/strong><\/p>",
+        "text_align": "center",
+        "borders": false,
+        "spacing": false,
+        "background_color": "",
+        "text_color": ""
+      }
+    },
+    "shop-now-2": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "",
+        "title_outline": "",
+        "color_left": "#fdfaf1",
+        "color_right": "#fdfaf1",
+        "text_color": "",
+        "button_text": "Shop now",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
+        "spacing": false
+      }
     }
   },
   "order": [
     "hero",
     "icon-bar",
-    "b169202f-1653-4b9b-8925-21c748b0f204",
+    "shop-now-1",
     "benefits-section",
     "sugar-section",
-    "icon-bar-2"
+    "icon-bar-2",
+    "rich-text",
+    "shop-now-2"
   ]
 }
