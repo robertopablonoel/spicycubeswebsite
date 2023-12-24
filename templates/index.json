@@ -159,6 +159,56 @@
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }
+    },
+    "benefits-section-2": {
+      "type": "benefits-section-2",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
+      }
+    },
+    "9b54b0cf-c059-4889-98d1-99954268ed5e": {
+      "type": "testimonials",
+      "blocks": {
+        "8f3a44ef-643d-450b-bda1-00d47c865135": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/couple_1.webp",
+            "rating": "5",
+            "testimonial_text": "Skeptical at first, but WOW, these really work -- can't wait for the next box to arrive.",
+            "testimonial_name": "- Jenny H.",
+            "product_highlight": ""
+          }
+        }
+      },
+      "block_order": [
+        "8f3a44ef-643d-450b-bda1-00d47c865135"
+      ],
+      "settings": {
+        "title": "Spicy Cubes in action...",
+        "card_border_radius": 20,
+        "background_color": "",
+        "text_color": "",
+        "card_background_color": "rgba(0,0,0,0)",
+        "card_text_color": "",
+        "card_borders": false,
+        "card_borders_color": "#000000",
+        "product_highlight_background": "",
+        "product_highlight_text": "",
+        "spacing": false
+      }
+    },
+    "shop-now-3": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "",
+        "title_outline": "",
+        "color_left": "#fdfaf1",
+        "color_right": "#fdfaf1",
+        "text_color": "",
+        "button_text": "Shop now",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
+        "spacing": false
+      }
     }
   },
   "order": [
@@ -169,6 +219,9 @@
     "sugar-section",
     "icon-bar-2",
     "rich-text",
-    "shop-now-2"
+    "shop-now-2",
+    "benefits-section-2",
+    "9b54b0cf-c059-4889-98d1-99954268ed5e",
+    "shop-now-3"
   ]
 }

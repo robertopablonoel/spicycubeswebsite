@@ -5280,6 +5280,7 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   -webkit-align-items: center;
   -webkit-justify-content: center;
   display: flex;
+  padding-bottom: pxToRem(50);
 }
 
 .cta-gradient__content {
@@ -5400,10 +5401,24 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   max-width: pxToRem(400);
   align-items: center;
   align-items: -webkit-center;
+  border: none;
   
   @include media-query($medium-up) {
     margin: 0 auto;
   }
+}
+
+.newsletter--form .input-group input {
+  background-color: $color-footer-bg;
+  border: none;
+  border-bottom: 3px solid white;
+}
+
+.newsletter--form .input-group input:focus-visible {
+  background-color: $color-footer-bg;
+  border: none;
+  border-bottom: 3px solid white;
+  outline: none;
 }
 
 .newsletter--form h5.footer__menu-title {
@@ -5431,6 +5446,10 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   height: pxToRem(50);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.newsletter__input::placeholder {
+  color: #fff;
 }
 
 .footer__payment-icons ul {
@@ -7379,9 +7398,6 @@ predictive-search .search-input:focus {
 
 
 /* Benefits */
-.benefits-section {
-  margin-top: 100px;
-}
 
 .benefits-container {
   display: flex;
@@ -7404,7 +7420,7 @@ predictive-search .search-input:focus {
   display: flex;
   justify-content: flex-start;
   padding: 1.8rem;
-  width: 400px;
+  max-width: 400px;
 }
 
 .benefit-detail-icon {
@@ -7430,6 +7446,26 @@ predictive-search .search-input:focus {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+.benefits-section-2 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.benefit-details-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items to the start of the flex container */
+  padding: 15px;
+  margin: 0 auto;
 }
 
 /* Landing Featured Product */

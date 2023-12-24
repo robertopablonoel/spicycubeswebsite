@@ -22,7 +22,7 @@
     "mega_menu_bg_color": "#ffffff",
     "mega_menu_links": "#444545",
     "mega_menu_links_hover": "#ff473b",
-    "footer_bg": "#262626",
+    "footer_bg": "#ff6262",
     "footer_text": "#ffffff",
     "header_transparent": false,
     "header_height": "medium",
@@ -95,13 +95,17 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist": "footer",
-          "footer_linklist_title": "Quick links",
+          "customer_care_linklist": "footer",
+          "customer_care_title": "Customer Care",
+          "work_with_us_linklist": "work-with-us",
+          "work_with_us_title": "Work With Us",
+          "quick_links_linklist": "quick-links",
+          "quick_links_title": "Quick Links",
           "show_payment_icons": true,
           "enable_footer_social": true,
           "social_links_title": "Follow us",
-          "newsletter_title": "Sign up for our newsletter",
-          "newsletter_text": "Say something here about your newsletter or promotional offer.",
+          "newsletter_title": "Join our community",
+          "newsletter_text": "",
           "newsletter_success": "Thanks for signing up!"
         }
       },
