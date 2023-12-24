@@ -4105,9 +4105,9 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   font-weight: 900;
   margin-bottom: pxToRem(10);
   color: $color-body-text;
-  border: 1px solid $color-border;
+  border: 3px solid $color-border;
   padding: pxToRem(20);
-  border-radius: pxToRem(3);
+  border-radius: 10px;
   position: relative;
   cursor: pointer;
 }
@@ -4145,16 +4145,24 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 }
 
 .quantity__message .message__badge {
-  margin-bottom: 5px;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  font-weight: bold;
+  position: absolute;
+  left: 50%; /* Position the left edge of the badge at the center of the parent */
+  transform: translateX(-50%);
+  top: -40px;
+  padding: 6px 12px 6px;
+  background-color: black;
+  white-space: nowrap;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  border-radius: 2px;
-  background: $color-gradient;
-  color: $color-gradient-text;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 24px;
+  /* Consider adding these properties to ensure the width of the badge is taken into account */
+  display: inline-block; /* or inline-flex if needed */
+  width: auto; /* or a fixed width if preferable */
+  box-sizing: border-box; /* to include padding in width calculations */
 }
 
 .quantity__radio > span {
@@ -4181,7 +4189,7 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 }
 
 .product__quantity--radios input:checked + label {
-  border: pxToRem(2) solid $color-primary;
+  border: 3px solid $color-primary;
 }
 
 .product__quantity--radios input:checked + label::after {
