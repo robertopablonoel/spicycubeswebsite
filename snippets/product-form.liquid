@@ -414,6 +414,7 @@
                   {% assign percentage = save | divided_by: 100.00 %}
                   {% assign discount = product.selected_or_first_available_variant.price | times: percentage %}
                   {% assign price_each = product.selected_or_first_available_variant.price | minus: discount %}
+                  {% assign price_total = product.selected_or_first_available_variant.price | times: qty %}
 
                   <input
                     id='quantity{{ forloop.index }}'
@@ -431,18 +432,28 @@
                         <span></span>
                       </span>
                       <span class='quantity__message'>
-                        <span>{{ buy_message }}</span>
+                        <span
+                          ><b>{{ buy_message }}</b></span
+                        >
                       </span>
                     </span>
                     {% if badge and badge != blank %}
-                      <span class='quantity__message'>
-                        <span class='message__badge'>{{ badge }}</span>
-                      </span>
+                      <div class='message__badge'>
+                        {{ badge }}
+                      </div>
                     {% endif %}
                     {% if price_each != blank %}
                       <span class='product__quantity--discount'>
+                        {% if forloop.index == 2 or forloop.index == 3 %}
+                          <span
+                            class='product__quantity--discount__price'
+                            style='font-size: 14px; color: #FF5A5A; text-decoration: line-through; padding-right: 5px;'
+                          >
+                            {{ price_total | money }}
+                          </span>
+                        {% endif %}
                         {{ price_each | money }}
-                        {{ 'products.product.quantity_each' | t }}
+                        <b style='font-size: 12px; color: #A2A2A2; display: inline;'>/ box</b>
                       </span>
                     {% endif %}
                   </label>
