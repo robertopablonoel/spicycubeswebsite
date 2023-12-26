@@ -286,9 +286,13 @@
           <a class='header__nav__bag' href='/cart' data-toggle-bag>
             <span class='header__nav__bag__container'>
               {% render 'icon-cart', icon_pack: section.settings.icon_pack %}
-              <span
-                class='bag__item-alert bag__item-alert--icon-pack-{{ section.settings.icon_pack }}{% if cart.items != empty %} is-visible{% endif %}'
-              ></span>
+              {% comment %}
+                <span
+                  style='font-size:6px; padding-left:2px; padding-top:1px;'
+                  class='bag__item-alert bag__item-alert--icon-pack-{{ section.settings.icon_pack }}{% if cart.items != empty %} is-visible{% endif %}'
+                  >2</span
+                >
+              {% endcomment %}
             </span>
           </a>
         </li>
