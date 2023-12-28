@@ -452,7 +452,7 @@
                             class='product__quantity--discount__price'
                             style='font-size: 14px; color: #FF5A5A; text-decoration: line-through; padding-right: 5px;'
                           >
-                            {{ price_total | money }}
+                            {{ price_total | money_without_trailing_zeros }}
                           </span>
                         {% endif %}
                         {{ price_each | money }}
