@@ -442,6 +442,9 @@
                         {{ badge }}
                       </div>
                     {% endif %}
+                    {% if percentage != 0 %}
+                      <div class='discount__badge'>SAVE {{ percentage | times: 100 | round: 0 }}%</div>
+                    {% endif %}
                     {% if price_each != blank %}
                       <span class='product__quantity--discount'>
                         {% if forloop.index == 2 or forloop.index == 3 %}
