@@ -121,7 +121,7 @@
               "title": "Welcome.",
               "text": "Use this text area to give a brief yet powerful introduction to your amazing product.",
               "button_url": "\/",
-              "button_text": "Shop now"
+              "button_text": "shop now"
             }
           },
           "1597558210103": {
@@ -330,7 +330,7 @@
           "title": "Shout",
           "title_outline": "your brand!",
           "text_color": "#ffffff",
-          "button_text": "Shop now",
+          "button_text": "shop now",
           "button_url": "\/"
         }
       },
@@ -360,7 +360,15 @@
       "1597731163801",
       "1597731243582",
       "1597732100638"
-    ]
+    ],
+    "blocks": {
+      "11532412952436166569": {
+        "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Hype": {

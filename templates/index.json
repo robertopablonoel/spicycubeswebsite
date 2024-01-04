@@ -14,10 +14,10 @@
             "content_align_mobile": "middle",
             "text_align_mobile": "center",
             "pre_header": "",
-            "title": "the world's first aphrodisiac sugar cube.",
+            "title": "",
             "text": "",
             "button_url": "shopify:\/\/products\/spicy-cubes",
-            "button_text": "Shop now",
+            "button_text": "shop now",
             "enable_slide_link": false,
             "slide_link": "",
             "text_color": "#ffffff",
@@ -83,7 +83,7 @@
         "color_left": "#fdfaf1",
         "color_right": "#fdfaf1",
         "text_color": "",
-        "button_text": "Shop now",
+        "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }
@@ -155,7 +155,7 @@
         "color_left": "#fdfaf1",
         "color_right": "#fdfaf1",
         "text_color": "",
-        "button_text": "Shop now",
+        "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }
@@ -205,7 +205,7 @@
         "color_left": "#fdfaf1",
         "color_right": "#fdfaf1",
         "text_color": "",
-        "button_text": "Shop now",
+        "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }

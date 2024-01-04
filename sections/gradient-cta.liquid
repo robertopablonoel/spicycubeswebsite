@@ -41,7 +41,10 @@
       <span>{{ section.settings.title_outline }}</span>
     </h3>
     {% if section.settings.button_text != blank %}
-      <a href='{{ section.settings.button_url | default: '#' }}' class='btn'>{{ section.settings.button_text }}</a>
+      <a href='{{ section.settings.button_url | default: '#' }}' class='btn'>
+        {{- section.settings.button_text }}
+        <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i
+      ></a>
     {% endif %}
   </div>
 </div>
@@ -93,7 +96,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "Shop now"
+      "default": "shop now"
     },
     {
       "type": "url",

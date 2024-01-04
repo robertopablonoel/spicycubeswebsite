@@ -5354,7 +5354,8 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   display: block;
   background: transparent;
   text-align: center;
-  width: clamp(150px, 50vw, 250px);
+  width: clamp(100px, 50vw, 200px);
+  padding: pxToRem(10) pxToRem(0);
 }
 
 .cta-gradient h3 span {
@@ -5594,10 +5595,14 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 .slide__content > .btn {  
   display: inline-block;
   text-align: center;
-  background-color: #fff;
+  background-color: transparent;
   color: #000;
   margin: 0;
+  margin-top: pxToRem(20);
+  padding: pxToRem(10) pxToRem(25);
   font-size: pxToRem(14);
+  border: pxToRem(2) solid white;
+  border-radius: 6px;
   
   @include media-query($medium-up) {
     font-size: pxToRem(16);
@@ -7607,6 +7612,7 @@ predictive-search .search-input:focus {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  color: black;
 }
 
 .product-details-accordion .accordion-button i {
