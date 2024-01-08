@@ -48,7 +48,8 @@
     },
     "product-details": {
       "type": "product-details",
-      "settings": {}
+      "settings": {
+      }
     },
     "benefits-section-2": {
       "type": "benefits-section-2",
@@ -86,12 +87,33 @@
         "product_highlight_text": "",
         "spacing": false
       }
+    },
+    "1704393476afe07aa2": {
+      "type": "apps",
+      "blocks": {
+        "9cadbab9-4a7e-4e96-89da-fca1a0711a0d": {
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "9cadbab9-4a7e-4e96-89da-fca1a0711a0d"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "form",
     "product-details",
     "benefits-section-2",
-    "testimonials"
+    "testimonials",
+    "1704393476afe07aa2"
   ]
 }
