@@ -6,9 +6,9 @@
         "1597558632301": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mm_51324feb-0e61-4481-b0d8-8342305ac8b5.webp",
+            "image": "shopify:\/\/shop_images\/main_original.webp",
             "overlay": true,
-            "background_position_y": "center",
+            "background_position_y": "top",
             "content_align_desktop": "center-middle",
             "text_align_desktop": "center",
             "content_align_mobile": "middle",
@@ -96,7 +96,7 @@
     "sugar-section": {
       "type": "sugar-section",
       "settings": {
-        "box_image": "shopify:\/\/shop_images\/box-render.svg"
+        "box_image": "shopify:\/\/shop_images\/spicy.webp"
       }
     },
     "icon-bar-2": {
@@ -163,7 +163,7 @@
     "benefits-section-2": {
       "type": "benefits-section-2",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
+        "background_image": "shopify:\/\/shop_images\/pd-photo.jpg"
       }
     },
     "9b54b0cf-c059-4889-98d1-99954268ed5e": {
