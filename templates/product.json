@@ -107,6 +107,12 @@
       ],
       "settings": {
       }
+    },
+    "faq-section": {
+      "type": "faq-section",
+      "settings": {
+        "include_title": true
+      }
     }
   },
   "order": [
@@ -114,6 +120,7 @@
     "product-details",
     "benefits-section-2",
     "testimonials",
-    "1704393476afe07aa2"
+    "1704393476afe07aa2",
+    "faq-section"
   ]
 }

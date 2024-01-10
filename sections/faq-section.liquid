@@ -2,6 +2,11 @@
 <section
   class='faq-section'
 >
+  {% if section.settings.include_title %}
+    <div class='page-width'>
+      <h2 class='section-header' style='text-align: center;'>F.A.Q's</h2>
+    </div>
+  {% endif %}
   <div class='faq-accordion page-width' style='padding:0;'>
     <div class='accordion-item'>
       <button class='accordion-button' type='button'>
@@ -13,15 +18,6 @@
           We recommend taking Spicy Cubes 30m before action. Please note that even if the effects aren't felt
           immediately, Spicy Cubes are designed to enhance your intimate moments when it matters most.
         </p>
-      </div>
-    </div>
-    <div class='accordion-item'>
-      <button class='accordion-button' type='button'>
-        How long do the effects last?
-        <i class='fa fa-chevron-down' aria-hidden='true'></i>
-      </button>
-      <div class='accordion-content'>
-        <p>The duration of the effects can differ from person to person, typically ranging between 1 to 3 hours.</p>
       </div>
     </div>
     <div class='accordion-item'>
@@ -38,7 +34,61 @@
     </div>
     <div class='accordion-item'>
       <button class='accordion-button' type='button'>
-        Can anyone enjoy Spicy Cubes?
+        How are Spicy Cubes shipped to me?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>
+          We offer 5-12 day shipping through DHL. Spicy Cubes are shipped discreetly in a padded envelope. For your
+          privacy, the Spicy Cubes logo or branding will never appear on our external packaging.
+        </p>
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        What is your return policy?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>
+          We offer a 30 day money back guarantee. If you are not satisfied with your purchase for any reason, please
+          follow our return instructions and we will do our best to make it right. Learn more.
+        </p>
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        How long do the effects last?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>The duration of the effects can differ from person to person, typically ranging between 1 to 3 hours.</p>
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Are Spicy Cubes safe?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>
+          Yes. Spicy Cubes contain ZERO illicit drugs or substances. All ingredients used are professionally dosed and
+          undergo extensive quality control from our trusted suppliers.
+        </p>
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        How much should I take at once?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>We recommend limiting use to 1 cube per person per day.</p>
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Do they work for men and women?
         <i class='fa fa-chevron-down' aria-hidden='true'></i>
       </button>
       <div class='accordion-content'>
@@ -49,6 +99,18 @@
       </div>
     </div>
     <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Who should not take Spicy Cubes?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        <p>
+          Spicy Cubes are not intended for anyone under the age of 18. If you are pregnant, nursing, taking any
+          medication, or have any medical condition, consult your doctor before use.
+        </p>
+      </div>
+    </div>
+    <div class='accordion-item' style='border-bottom:none;'>
       <button class='accordion-button' type='button'>
         Can I enjoy Spicy Cubes alone?
         <i class='fa fa-chevron-down' aria-hidden='true'></i>
@@ -76,3 +138,17 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_title",
+      "label": "Include Title",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

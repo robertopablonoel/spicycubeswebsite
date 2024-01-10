@@ -2,12 +2,18 @@
   "sections": {
     "page-content": {
       "type": "page-content",
+      "custom_css": [
+        "h1 {text-align: center;}"
+      ],
       "settings": {
+        "show_page_title": true,
+        "show_page_content": true
       }
     },
     "faq-section": {
       "type": "faq-section",
       "settings": {
+        "include_title": false
       }
     }
   },
