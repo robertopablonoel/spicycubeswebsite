@@ -7667,13 +7667,18 @@ predictive-search .search-input:focus {
     border: none;
     text-align: left;
     width: 100%;
-    padding-top: 15px;
+    padding-top: 18px 0px;
     text-decoration: none;
     color: black;
     cursor: pointer;
     display: block;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
+}
+
+@media (max-width: 800px) {
+  .faq-accordion .accordion-item {
+    padding: 18px 20px;
+  }
 }
 
 .faq-accordion .accordion-link {
