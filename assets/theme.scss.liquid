@@ -7660,8 +7660,8 @@ predictive-search .search-input:focus {
   max-width: 800px;
 }
 
-.faq-accordion .accordion-item,
-.faq-accordion .accordion-link {
+.faq-accordion .faq-accordion-item,
+.faq-accordion .faq-accordion-link {
     font-family: Futura, sans-serif;
     font-size: 18px;
     border: none;
@@ -7676,12 +7676,12 @@ predictive-search .search-input:focus {
 }
 
 @media (max-width: 800px) {
-  .faq-accordion .accordion-item {
+  .faq-accordion .faq-accordion-item {
     padding: 18px 20px;
   }
 }
 
-.faq-accordion .accordion-link {
+.faq-accordion .faq-accordion-link {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -7691,7 +7691,7 @@ predictive-search .search-input:focus {
   font-family: Futura, sans-serif;
 }
 
-.faq-accordion .accordion-button {
+.faq-accordion .faq-accordion-button {
   background-color: transparent;
   border: none;
   padding: 0;
@@ -7705,22 +7705,22 @@ predictive-search .search-input:focus {
   text-align: left;
 }
 
-.faq-accordion .accordion-button i {
+.faq-accordion .faq-accordion-button i {
   margin-left: 5px; /* Space between text and icon */
   transition: transform 0.3s ease; /* Smooth transition for rotation */
 }
 
-.faq-accordion .accordion-button.active i {
+.faq-accordion .faq-accordion-button.active i {
   transform: rotate(180deg); /* Rotate icon for active class */
 }
 
-.faq-accordion .accordion-content {
+.faq-accordion .faq-accordion-content {
   display: none;
   overflow: hidden;
   background-color: transparent;
 }
 
-.faq-accordion .accordion-link {
+.faq-accordion .faq-accordion-link {
   background-color: transparent;
   padding-top: 15px;
   font-size: 18px;
@@ -7730,6 +7730,6 @@ predictive-search .search-input:focus {
 }
 
 /* When you want to have the accordion item open */
-.faq-accordion .accordion-content.show {
+.faq-accordion .faq-accordion-content.show {
     display: block;
 }
