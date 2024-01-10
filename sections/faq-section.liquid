@@ -1,0 +1,71 @@
+<!-- Benefits Section -->
+<section
+  class='faq-section'
+>
+  <div class='faq-accordion page-width'>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        When should I take Spicy Cubes?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        We recommend taking Spicy Cubes 30m before action. Please note that even if the effects aren't felt immediately,
+        Spicy Cubes are designed to enhance your intimate moments when it matters most.
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        How long do the effects last?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        The duration of the effects can differ from person to person, typically ranging between 1 to 3 hours.
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Where are Spicy Cubes made?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        Spicy Cubes are manufactured in an FDA registered facility in Missouri, USA. All of our ingredients are sourced
+        from US suppliers.
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Can anyone enjoy Spicy Cubes?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        Spicy Cubes were designed with partners in mind. Each of our ingredients are safe and effective for all genders.
+      </div>
+    </div>
+    <div class='accordion-item'>
+      <button class='accordion-button' type='button'>
+        Can I enjoy Spicy Cubes alone?
+        <i class='fa fa-chevron-down' aria-hidden='true'></i>
+      </button>
+      <div class='accordion-content'>
+        Of course! Make sure to stick to a single cube even if you're enjoying it solo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var acc = document.getElementsByClassName('accordion-button');
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function () {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      });
+    }
+  });
+</script>

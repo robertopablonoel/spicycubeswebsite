@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "page-content": {
+      "type": "page-content",
+      "settings": {
+      }
+    },
+    "faq-section": {
+      "type": "faq-section",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-content",
+    "faq-section"
+  ]
+}

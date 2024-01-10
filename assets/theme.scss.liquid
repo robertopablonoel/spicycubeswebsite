@@ -1774,6 +1774,12 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 
+.faq-page-container {
+  padding-top: pxToRem(50);
+  padding-bottom: pxToRem(50);
+  max-width: pxToRem(900);
+}
+
 /*================ MODULES ================*/
 /*================ Site Header ================*/
 
@@ -7639,5 +7645,86 @@ predictive-search .search-input:focus {
 
 /* When you want to have the accordion item open */
 .product-details-accordion .accordion-content.show {
+    display: block;
+}
+
+.faq-section {
+  font-family: 'Futura', sans-serif;
+  background-color: #fdfaf1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.faq-accordion {
+  max-width: 800px;
+}
+
+.faq-accordion .accordion-item,
+.faq-accordion .accordion-link {
+    font-family: Futura, sans-serif;
+    font-size: 18px;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding-top: 15px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.faq-accordion .accordion-link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Futura, sans-serif;
+}
+
+.faq-accordion .accordion-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Futura, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+  text-align: left;
+}
+
+.faq-accordion .accordion-button i {
+  margin-left: 5px; /* Space between text and icon */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.faq-accordion .accordion-button.active i {
+  transform: rotate(180deg); /* Rotate icon for active class */
+}
+
+.faq-accordion .accordion-content {
+  display: none;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.faq-accordion .accordion-link {
+  background-color: transparent;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Futura, sans-serif;
+  cursor: pointer;
+}
+
+/* When you want to have the accordion item open */
+.faq-accordion .accordion-content.show {
     display: block;
 }
