@@ -7556,10 +7556,19 @@ predictive-search .search-input:focus {
 
 /* Accordion */
 
+.product-details-section {
+  font-family: 'Futura', sans-serif;
+  background-color: #fdfaf1;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-details-container {
+  max-width: 800px;
+}
 .product-benefits {
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom: 20px;
   width: 100%;
 }
 
@@ -7571,10 +7580,16 @@ predictive-search .search-input:focus {
   letter-spacing: 2px;
 }
 
+.product-benefits p {
+  font-family: Futura, sans-serif;
+  font-size: 14px;
+  color: black;
+  line-height: 160%;
+}
+
 .product-details-accordion, .product-benefits {
     padding-left: 25px;
     padding-right: 25px;
-    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -7633,6 +7648,19 @@ predictive-search .search-input:focus {
   display: none;
   overflow: hidden;
   background-color: transparent;
+}
+
+.product-details-accordion .accordion-content p, li {
+  font-family: Futura, sans-serif;
+  font-size: 14px;
+  color: black;
+  line-height: 160%;
+}
+
+.product-details-accordion .accordion-content ul {
+  list-style-type: disc; /* This will apply the default disc bullet */
+  margin-left: 20px;    /* This provides space for bullets to show */
+  padding-left: 0;      /* Adjust padding if needed */
 }
 
 .product-details-accordion .accordion-link {
