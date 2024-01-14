@@ -97,12 +97,12 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "customer_care_linklist": "footer",
-          "customer_care_title": "Customer Care",
+          "customer_care_linklist": "quick-links",
+          "customer_care_title": "Quick Links",
           "work_with_us_linklist": "work-with-us",
           "work_with_us_title": "Work With Us",
-          "quick_links_linklist": "quick-links",
-          "quick_links_title": "Quick Links",
+          "quick_links_linklist": "footer",
+          "quick_links_title": "Customer Care",
           "show_payment_icons": true,
           "enable_footer_social": true,
           "social_links_title": "Follow us",

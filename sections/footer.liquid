@@ -52,6 +52,15 @@
         {% endfor %}
       </ul>
     {% endif %}
+
+    <div class='footer__business-info'>
+      {% render 'icon-logo' %}
+      <div class='footer__business-info__text'>
+        <p>& Company LLC</p>
+        <p>2810 N Church St PMB 941674</p>
+        <p>Wilmington, DE 19802</p>
+      </div>
+    </div>
   </div>
   <div class='footer__payment-icons page-width'>
     {% if section.settings.show_payment_icons %}
@@ -75,9 +84,13 @@
       {% endunless %}
     {% endif %}
   </div>
+  <div class='footer__fda-disclamer'>
+    * These statements have not been evaluated by the food and drug administration. This product is not intended to
+    diagnose, treat, cure, or prevent any disease.
+  </div>
   <div class='footer__copyright'>
     <div class='page-width'>
-      <small>{{- 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, Spicy Cubes.</small>
+      <small>{{- 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, & Company LLC.</small>
     </div>
   </div>
 </footer>

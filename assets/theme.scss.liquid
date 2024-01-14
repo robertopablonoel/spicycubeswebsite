@@ -1205,8 +1205,11 @@ body.no-scroll {
 }
 
 .page-template-container {
-  padding-top: pxToRem(50);
-  padding-bottom: pxToRem(50);
+  padding-top: pxToRem(15);
+  padding-bottom: pxToRem(25);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .track-order {
@@ -1408,6 +1411,7 @@ symbol {
 .payment-icons {
   @include prefix('user-select', 'none', moz ms webkit spec);
   cursor: default;
+  justify-content: center;
 }
 
 /*================ Shopify icon on password page ================*/
@@ -1426,14 +1430,10 @@ symbol {
     table-layout: fixed;
   }
 
-  ul,
-  ol {
-    margin: 0 0 ($gutter / 2) $gutter;
-  }
-
   // Match the styles from RTE nested lists
   ul {
-    list-style: disc outside;
+    list-style: disc;
+    padding-left:20px;
 
     ul {
       list-style: circle outside;
@@ -5391,6 +5391,7 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 .footer__copyright,
 .footer__copyright a {
   padding-bottom: pxToRem(15);
+  text-align: center;
 }
 
 .footer__copyright a {
@@ -5508,17 +5509,17 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   display: flex;
   display: -webkit-flex;
   flex-wrap: wrap;
-  margin: 0 0 pxToRem(25);
   padding: 0;
   
   @include media-query($medium-up) {
-    justify-content: flex-end;
-    -webkit-justify-content: flex-end;
+    justify-content: center;
+    -webkit-justify-content: center;
   }
 }
 
 .footer__payment-icons ul > li {
-  margin-right: pxToRem(20);
+  margin-right: pxToRem(10);
+  margin-left: pxToRem(10);
 }
 
 .hero-slider {
@@ -7764,4 +7765,102 @@ predictive-search .search-input:focus {
 /* When you want to have the accordion item open */
 .faq-accordion .faq-accordion-content.show {
     display: block;
+}
+
+
+.ingredients-banner {
+  font-family: 'Futura', sans-serif;
+  background-color: #fdfaf1;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.ingredients-banner-container {
+  max-width: 800px;
+}
+
+.ingredients-banner-container h1 {
+  font-size: 26px;
+  line-height: 140%;
+}
+.ingredients-banner-container p {
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.ingredients-description {
+  font-family: 'Futura', sans-serif;
+  background-color: #fdfaf1;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  background: rgb(251,136,17);
+background: linear-gradient(143deg, rgba(251,136,17,1) 6%, rgba(245,56,56,1) 58%, rgba(255,98,98,1) 93%);
+}
+
+.ingredients-description-container {
+  max-width: 800px;
+}
+
+.ingredients-description-container p {
+  font-size: 16px;
+  line-height: 160%;
+  color: white;
+}
+
+.ingredients-description-container h1 {
+  font-size: 18px;
+  line-height: 160%;
+  color: white;
+  margin: 0;
+}
+
+.ingredient-left {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+  text-align: left;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.ingredient-right {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+  text-align: right;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.ingredient-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content-container {
+  max-width: 800px;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content-container h1 {
+  text-align: center;
+}
+
+.footer__fda-disclamer {
+  font-family: 'Futura', sans-serif;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 16px;
+}
+
+.footer__business-info {
+  padding: 0 0.625rem;
 }

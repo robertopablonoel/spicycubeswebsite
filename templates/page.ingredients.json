@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "ingredients-banner": {
+      "type": "ingredients-banner"
+    },
+    "shop-now": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "",
+        "title_outline": "",
+        "color_left": "#fdfaf1",
+        "color_right": "#fdfaf1",
+        "text_color": "",
+        "button_text": "shop now",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
+        "spacing": false
+      }
+    },
+    "ingredients-description": {
+      "type": "ingredients-description"
+    }
+  },
+  "order": [
+    "ingredients-banner",
+    "shop-now",
+    "ingredients-description"
+  ]
+}
