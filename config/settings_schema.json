@@ -482,7 +482,7 @@
         "type": "checkbox",
         "id": "show_sticky_atc",
         "label": "Enable Sticky Add To Cart",
-        "default": true
+        "default": false
       },
       {
         "type": "header",
@@ -712,7 +712,7 @@
         "type": "checkbox",
         "id": "enable_cart_discounts",
         "label": "Show cart discount code field",
-        "default": true
+        "default": false
       },
       {
         "type": "header",
