@@ -702,6 +702,22 @@
     ]
   },
   {
+    "name": "Pre-Orders",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_presale",
+        "label": "Enable presale"
+      },
+      {
+        "type": "text",
+        "id": "presale_message",
+        "label": "Pre sale message",
+        "default": "Pre-orders ship on XXX"
+      }
+    ]
+  },
+  {
     "name": "Cart Promotions",
     "settings": [
       {

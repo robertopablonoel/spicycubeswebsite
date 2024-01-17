@@ -248,7 +248,14 @@
             <a href='{{ product.url }}'>{{ product.title }}</a>
           {% endif %}
         </h1>
-<a href="#looxReviews"><div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div></a>
+        <a href='#looxReviews'>
+          <div
+            class='loox-rating'
+            data-id='{{ product.id }}'
+            data-rating='{{ product.metafields.loox.avg_rating }}'
+            data-raters='{{ product.metafields.loox.num_reviews }}'
+          ></div>
+        </a>
         <div class='product__price' data-price-wrapper>
           <span
             {% if on_sale %}
@@ -499,28 +506,38 @@
               <button class='qty-control qty-down' type='button' name='button' data-control='down'>-</button>
             </div>
           {% endunless %}
-          <button
-            type='submit'
-            name='add'
-            class='add-to-cart btn'
-            data-add-to-cart
-            data-variant='{{ current_variant.id }}'
-            {% unless current_variant.available %}
-              disabled='disabled'
-            {% endunless %}
-          >
-            <span data-add-to-cart-text>
-              {% if current_variant.available %}
-                {% if settings.enable_skip_to_checkout %}
-                  {{ settings.skip_cart_submit | default: 'Buy now' }}
+          <div style='width: 100%; display: flex; flex-direction: column;'>
+            <button
+              type='submit'
+              name='add'
+              class='add-to-cart btn'
+              data-add-to-cart
+              data-variant='{{ current_variant.id }}'
+              {% unless current_variant.available %}
+                disabled='disabled'
+              {% endunless %}
+            >
+              <span data-add-to-cart-text>
+                {% if current_variant.available %}
+                  {% if settings.enable_skip_to_checkout %}
+                    {{ settings.skip_cart_submit | default: 'Buy now' }}
+                  {% elsif settings.is_presale %}
+                    Pre Order Now
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endif %}
                 {% else %}
-                  {{ 'products.product.add_to_cart' | t }}
+                  {{ 'products.product.sold_out' | t }}
                 {% endif %}
-              {% else %}
-                {{ 'products.product.sold_out' | t }}
-              {% endif %}
-            </span>
-          </button>
+              </span>
+            </button>
+            {% if settings.is_presale %}
+              {% assign presale_message = settings.presale_message %}
+              <p>
+                {{ presale_message }}
+              </p>
+            {% endif %}
+          </div>
         </div>
 
         {% if section.settings.enable_dynamic_buttons %}
