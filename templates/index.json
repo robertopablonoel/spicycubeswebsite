@@ -209,6 +209,27 @@
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false
       }
+    },
+    "17054643133553cd9c": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_ftDd3M": {
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-agg-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": true,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 20,
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_ftDd3M"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -222,6 +243,7 @@
     "shop-now-2",
     "benefits-section-2",
     "9b54b0cf-c059-4889-98d1-99954268ed5e",
-    "shop-now-3"
+    "shop-now-3",
+    "17054643133553cd9c"
   ]
 }

@@ -3,7 +3,7 @@
     "one_product": "",
     "enable_promo": true,
     "banner_text_1": "Buy 3+ boxes,",
-    "banner_text_2": "SAVE 20%",
+    "banner_text_2": "SAVE 17%",
     "promo_bar_bg": "#000",
     "promo_bar_color_1": "#FFFFFF",
     "promo_bar_color_2": "#FCA5A5",
@@ -371,6 +371,19 @@
         "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "18228966181090706294": {
+        "type": "shopify:\/\/apps\/selleasy\/blocks\/app-embed\/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+        "disabled": false,
+        "settings": {
+          "storefrontAccessToken": "8bbff525f8e0591a9a2060af23939bab"
         }
       }
     }

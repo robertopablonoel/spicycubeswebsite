@@ -248,32 +248,69 @@
             <a href='{{ product.url }}'>{{ product.title }}</a>
           {% endif %}
         </h1>
+        {% if product.title == 'Spicy Cubes' %}
+          <h4 style='margin: 0; margin-top: 5px;'>Sexually Enhancing Cinnamon Cubes</h4>
+        {% endif %}
+        {% comment %}
+          <style>
+            .loox-rating span {
+              color: black;
+              font-size: 14px;
+              font-family: Futura, sans-serif;
+            }
+          </style>
+        {% endcomment %}
         <a href='#looxReviews'>
           <div
             class='loox-rating'
             data-id='{{ product.id }}'
             data-rating='{{ product.metafields.loox.avg_rating }}'
             data-raters='{{ product.metafields.loox.num_reviews }}'
+            data-pattern='<b>[rating]/5</b> based on <b>[count]</b> reviews'
+            style='margin-top: 10px; padding-left: 2px; display: inline-block;'
           ></div>
+          {% comment %}
+            <div
+              style='
+                font-size: 14px;
+                font-family: Futura, sans-serif;
+                display: inline-flex;
+                vertical-align: bottom;
+              '
+            >
+              <b>{{ product.metafields.loox.avg_rating }}/5</b>&nbsp;based on&nbsp;
+              <b>{{ product.metafields.loox.num_reviews }}</b>&nbsp;reviews.
+            </div>
+          {% endcomment %}
         </a>
-        <div class='product__price' data-price-wrapper>
-          <span
-            {% if on_sale %}
-              class='on-sale'
-            {% endif %}
-            data-product-price
-          >
-            {{ current_variant.price | money_without_trailing_zeros }}
-          </span>
-          {% if product.compare_at_price_max > product.price %}
-            <span class='compare-price' data-compare-price>
-              {% if current_variant.compare_at_price > current_variant.price %}
-                {{ current_variant.compare_at_price | money }}
+
+        {% comment %}
+          <div class='product__price' data-price-wrapper>
+            <span
+              {% if on_sale %}
+                class='on-sale'
               {% endif %}
+              data-product-price
+            >
+              {{ current_variant.price | money_without_trailing_zeros }}
             </span>
-            <span class='visually-hidden' data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-          {% endif %}
-        </div>
+            {% if product.compare_at_price_max > product.price %}
+              <span class='compare-price' data-compare-price>
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {{ current_variant.compare_at_price | money }}
+                {% endif %}
+              </span>
+              <span class='visually-hidden' data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+            {% endif %}
+          </div>
+        {% endcomment %}
+        {% comment %}
+          <div class='benefits-on-product-form'>
+            <div>🌶️ Cinnamon Flavored</div>
+            <div>🔥 Stimulates Arousal</div>
+            <div>🌟 Elevates Desire</div>
+          </div>
+        {% endcomment %}
       </div>
 
       {% if section.settings.promo_message != blank %}
@@ -463,7 +500,12 @@
                             {{ price_total | money_without_trailing_zeros }}
                           </span>
                         {% endif %}
-                        {{ price_each | money }}
+                        {% if forloop.index == 2 or forloop.index == 3 and product.title == 'Spicy Cubes' %}
+                          {% assign adjusted_price = price_each | plus: 10 %}
+                          {{ adjusted_price | money }}
+                        {% else %}
+                          {{ price_each | money }}
+                        {% endif %}
                         <b style='font-size: 12px; color: #A2A2A2; display: inline;'>/ box</b>
                       </span>
                     {% endif %}
