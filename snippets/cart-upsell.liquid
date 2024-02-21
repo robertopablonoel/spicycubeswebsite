@@ -8,7 +8,7 @@
   {% endif %}
 {% endfor %}
 
-{% if settings.cart_upsell_product != blank and upsell_item_in_cart == false %}
+{% if settings.cart_upsell_product != blank %}
   <div class='product-page product-page--upsell' data-section-type='product'>
     <p class='cart__section-title'>{{ settings.cart_upsell_message }}</p>
     <div class='cart__upsell'>

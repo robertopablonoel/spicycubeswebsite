@@ -516,7 +516,7 @@
           {% endif %}
         </div>
 
-        <select name='id' class='no-js' data-product-select>
+        <select name='id' data-productid='{{ product.id }}' class='no-js' data-product-select>
           {% for variant in product.variants %}
             <option
               {% if variant == current_variant %}
