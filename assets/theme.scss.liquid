@@ -4915,10 +4915,8 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 2vw, 200px);;
-  height: 150px;
   margin: 0;
-  padding: 0;
+  padding: 0px 20px 0px 20px;
 
   @include media-query($medium-up) {
     gap: 200px;
@@ -4932,7 +4930,6 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 .icon-bar__column {
   text-align: center;
   max-width: 120px;
-  height: 110px;
   -webkit-align-items: center;
   -webkit-justify-content: center;
   display: flex;
@@ -4957,11 +4954,12 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 
 .icon-bar__icon {
   display: block;
-  height: clamp(25px, 2vw, 50px);
-  max-width: 100%;
   color: $color-accent;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 80px;
+  height: auto;
 }
 
 .icon-bar__text {

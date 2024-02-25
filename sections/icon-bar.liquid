@@ -3,7 +3,7 @@
   id='section-{{ section.id }}'
   style='display: flex; align-items: center; justify-content: center; margin: 0 auto;'
 >
-  <div class='page-width'>
+  <div class='page-width' style='gap: clamp({{ section.settings.min_gap }}px, 2vw, 200px);'>
     {% for block in section.blocks %}
       {% assign icon = block.settings.icon %}
       {% assign label = block.settings.title %}
@@ -11,7 +11,7 @@
 
       <div class='icon-bar__column'>
         {% if icon %}
-          {{ icon | image_url: width: 100 | image_tag: class: 'icon-bar__icon' }}
+          {{ icon | image_url: width: 60 | image_tag: class: 'icon-bar__icon' }}
         {% elsif emoji_icon %}
           <h1 style='margin: 0;'>{{ emoji_icon }}</h1>
         {% else %}
@@ -22,9 +22,11 @@
             </div>
           </div>
         {% endif %}
-        <p>
-          <span class='icon-bar__text'>{{ label }}</span>
-        </p>
+        {% if label %}
+          <p>
+            <span class='icon-bar__text'>{{ label }}</span>
+          </p>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
@@ -46,6 +48,12 @@
       "type": "checkbox",
       "id": "spacing",
       "label": "Section spacing"
+    },
+    {
+      "type": "number",
+      "id": "min_gap",
+      "label": "Min Gap",
+      "default": 20
     }
   ],
   "blocks": [

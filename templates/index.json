@@ -6,7 +6,8 @@
         "1597558632301": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/main_original.webp",
+            "image": "shopify:\/\/shop_images\/large.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/b0e4ee43eb3bd5a190146cb84d3ca971_1.jpg",
             "overlay": true,
             "background_position_y": "top",
             "content_align_desktop": "center-middle",
@@ -55,7 +56,7 @@
           "type": "icon",
           "settings": {
             "emoji_icon": "🔥",
-            "title": "Boosts mood </br> & sensual experience"
+            "title": "Boosts mood  & sensual experience"
           }
         },
         "643e983e-1995-4026-b774-876980d57ade": {
@@ -72,7 +73,8 @@
         "643e983e-1995-4026-b774-876980d57ade"
       ],
       "settings": {
-        "spacing": true
+        "spacing": true,
+        "min_gap": 0
       }
     },
     "shop-now-1": {
@@ -91,7 +93,7 @@
     "sugar-section": {
       "type": "sugar-section",
       "settings": {
-        "box_image": "shopify:\/\/shop_images\/spicy.webp"
+        "box_image": "shopify:\/\/shop_images\/spicy_main_final_transparent_2.png"
       }
     },
     "icon-bar-2": {
@@ -100,29 +102,45 @@
         "1448f2db-1b1c-44ea-b901-38c8d5af0fad": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/all-natural-ingredients.svg"
+            "icon": "shopify:\/\/shop_images\/all-natural-ingredients.svg",
+            "emoji_icon": "",
+            "title": ""
           }
         },
         "02b7427a-3087-4f53-b31a-b985b69ee103": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/vegan-and-cruelty-free.svg"
+            "icon": "shopify:\/\/shop_images\/vegan-and-cruelty-free.svg",
+            "emoji_icon": "",
+            "title": ""
           }
         },
         "643e983e-1995-4026-b774-876980d57ade": {
           "type": "icon",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/safe-made-usa.svg"
+            "icon": "shopify:\/\/shop_images\/safe-made-usa.svg",
+            "emoji_icon": "",
+            "title": ""
+          }
+        },
+        "icon_zU86NF": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/vegan-and-cruelty-free.svg",
+            "emoji_icon": "",
+            "title": ""
           }
         }
       },
       "block_order": [
         "1448f2db-1b1c-44ea-b901-38c8d5af0fad",
         "02b7427a-3087-4f53-b31a-b985b69ee103",
-        "643e983e-1995-4026-b774-876980d57ade"
+        "643e983e-1995-4026-b774-876980d57ade",
+        "icon_zU86NF"
       ],
       "settings": {
-        "spacing": true
+        "spacing": true,
+        "min_gap": 20
       }
     },
     "rich-text": {
@@ -131,7 +149,7 @@
         "pre_header": "",
         "title": "",
         "title_align": "center",
-        "text": "<p>Turn any drink into an aphrodisiac!<br\/>Works for <strong>men and women<\/strong>, together or alone 🔥<\/p><p><\/p><p><strong>- Stimulates blood flow 🌶️<\/strong><\/p><p><\/p><p><strong>- Increases sex drive for 3h+ ⏰<\/strong><\/p><p><\/p><p><strong>- Flavorable and safe to use 😋<\/strong><\/p>",
+        "text": "<p><b>TURN ANY DRINK INTO A POWERFUL, CINNAMON-SPICED APHRODISIAC </br> ENJOY TOGETHER OR ALONE 🔥</b></p>",
         "text_align": "center",
         "borders": false,
         "spacing": false,
@@ -213,7 +231,8 @@
             "product_handle": "",
             "aggregated": true,
             "data-limit": 20,
-            "maxwidth": 1080
+            "maxwidth": 1080,
+            "is_sample": true
           }
         }
       },
