@@ -7,10 +7,13 @@
     {% for block in section.blocks %}
       {% assign icon = block.settings.icon %}
       {% assign label = block.settings.title %}
+      {% assign emoji_icon = block.settings.emoji_icon %}
 
       <div class='icon-bar__column'>
         {% if icon %}
           {{ icon | image_url: width: 100 | image_tag: class: 'icon-bar__icon' }}
+        {% elsif emoji_icon %}
+          <h1 style='margin: 0;'>{{ emoji_icon }}</h1>
         {% else %}
           <div class='icon__img'>
             <div class='placeholder-bg'>
@@ -55,6 +58,11 @@
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "emoji_icon",
+          "label": "Emoji Icon"
         },
         {
           "type": "text",
