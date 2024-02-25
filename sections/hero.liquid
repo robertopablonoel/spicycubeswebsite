@@ -6,6 +6,12 @@
   #hero-{{ section.id }} .slider-nav {
     color: {{ section.settings.arrow_nav_color }};
   }
+
+  @media screen and (min-width: 900px) {
+    #hero-{{ section.id }}.hero-slider {
+      height: 70vh; /* Ensures height is set to medium (70vh) on desktop screens */
+    }
+  }
 {% endstyle %}
 
 {% liquid
@@ -44,9 +50,11 @@
           {% if block.settings.pre_header != blank %}
             <p class='pre-header'>{{ block.settings.pre_header }}</p>
           {% endif %}
+          <div style='margin-bottom: 10px;'>{% render 'turn-any-drink' %}</div>
           <h1>{{ block.settings.title | newline_to_br }}</h1>
           <p>{{ block.settings.text | newline_to_br }}</p>
-          <div style='margin-bottom: 10px;'>{% render 'worlds-first' %}</div>
+
+          <div style='margin-bottom: 10px;'>{% render 'more-love' %}</div>
           {% if block.settings.button_url != blank and block.settings.button_text != blank %}
             <a class='btn' href='{{ block.settings.button_url }}'>{{ block.settings.button_text }}</a>
           {% endif %}
