@@ -1,18 +1,23 @@
-<div class="side-content--{{ section.id }} side-content{% if section.settings.image_align_left %} side-content--reverse{% endif %}">
-  <div class="page-width">
-    <div class="side-content__text">
-      {% if section.settings.pre_header != blank %}
-        <p class="pre-header">{{ section.settings.pre_header }} <span>{{ section.settings.pre_header_highlight }}</span></p>
-      {% endif %}
-      <h3>{{ section.settings.title }}</h3>
-      <p>{{ section.settings.content | newline_to_br }}</p>
-      {% if section.settings.button_url != blank and section.settings.button_text != blank %}
-        <a href="{{ section.settings.button_url }}" class="btn">{{ section.settings.button_text }}</a>
-      {% endif %}
-    </div>
-    <div class="side-content__media">
+<div class='side-content--{{ section.id }} side-content{% if section.settings.image_align_left %} side-content--reverse{% endif %}'>
+  <div class='page-width'>
+    {% comment %}
+      <div class='side-content__text'>
+        {% if section.settings.pre_header != blank %}
+          <p class='pre-header'>
+            {{ section.settings.pre_header }}
+            <span>{{ section.settings.pre_header_highlight }}</span>
+          </p>
+        {% endif %}
+        <h3>{{ section.settings.title }}</h3>
+        <p>{{ section.settings.content | newline_to_br }}</p>
+        {% if section.settings.button_url != blank and section.settings.button_text != blank %}
+          <a href='{{ section.settings.button_url }}' class='btn'>{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endcomment %}
+    <div class='side-content__media'>
       {% if section.settings.image %}
-        <img src="{{ section.settings.image | img_url: '600x' }}" alt="{{ section.settings.image.alt }}">
+        <img src='{{ section.settings.image | img_url: '600x' }}' alt='{{ section.settings.image.alt }}'>
       {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'placeholder-img' }}
       {% endif %}
@@ -23,117 +28,123 @@
 {% style %}
   .side-content--{{ section.id }} {
     {% if section.settings.spacing %}
-      margin: 100px auto;
+      margin: 30px auto;
     {% endif %}
-    
+
     {% if section.settings.bg_color %}
       background-color: {{ section.settings.bg_color }};
     {% endif %}
-    
+
     {% if section.settings.padding %}
-      padding: 100px 0;
+      padding: 30px 0;
     {% endif %}
   }
-  
+
   {% if section.settings.text_color %}
   .side-content--{{ section.id }} p,
   .side-content--{{ section.id }} h3 {
     color: {{ section.settings.text_color }};
   }
   {% endif %}
-  
+
   .side-content--{{ section.id }} .side-content__media {
     overflow: hidden;
     border-radius: {{ section.settings.border_radius }}%;
   }
+
+  @media (min-width: 769px) {
+    .side-content--{{ section.id }} {
+      display: none;
+    }
+  }
 {% endstyle %}
 
 {% schema %}
-  {
-    "name": "Image with text",
-    "settings": [
-      {
-        "type": "text",
-        "id": "pre_header",
-        "label": "Pre Title",
-        "info": "Appears above the title"
-      },
-      {
-        "type": "text",
-        "id": "pre_header_highlight",
-        "label": "Pre Title Highlight",
-        "info": "The highlighted text in your pre title"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Image with text"
-      },
-      {
-        "type": "textarea",
-        "id": "content",
-        "label": "Text Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper quam non felis finibus hendrerit."
-      },
-      {
-        "type": "url",
-        "id": "button_url",
-        "label": "Button URL"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "checkbox",
-        "id": "image_align_left",
-        "label": "Show image on left?"
-      },
-      {
-        "type": "range",
-        "id": "border_radius",
-        "label": "Rounded corners",
-        "min": 0,
-        "max": 50,
-        "step": 5,
-        "unit": "%",
-        "default": 0
-      },
-      {
-        "type": "checkbox",
-        "id": "spacing",
-        "label": "Section spacing",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "padding",
-        "label": "Section padding",
-        "default": false
-      },
-      {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background Color"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Image with Text",
-        "category": "Image"
-      }
-    ]
-  }
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pre_header",
+      "label": "Pre Title",
+      "info": "Appears above the title"
+    },
+    {
+      "type": "text",
+      "id": "pre_header_highlight",
+      "label": "Pre Title Highlight",
+      "info": "The highlighted text in your pre title"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Image with text"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Text Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper quam non felis finibus hendrerit."
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_align_left",
+      "label": "Show image on left?"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Rounded corners",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "spacing",
+      "label": "Section spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "padding",
+      "label": "Section padding",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "category": "Image"
+    }
+  ]
+}
 {% endschema %}

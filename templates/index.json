@@ -149,7 +149,7 @@
         "pre_header": "",
         "title": "",
         "title_align": "center",
-        "text": "<p><b>TURN ANY DRINK INTO A POWERFUL, CINNAMON-SPICED APHRODISIAC </br> ENJOY TOGETHER OR ALONE 🔥</b></p>",
+        "text": "<p><b>TURN ANY DRINK INTO A POWERFUL, CINNAMON-SPICED APHRODISIAC <\/br> ENJOY TOGETHER OR ALONE 🔥<\/b><\/p>",
         "text_align": "center",
         "borders": false,
         "spacing": false,
@@ -170,10 +170,27 @@
         "spacing": false
       }
     },
-    "benefits-section-2": {
-      "type": "benefits-section-2",
+    "image_with_text_XGbNyM": {
+      "type": "image-with-text",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/pd-photo.jpg"
+        "pre_header": "",
+        "pre_header_highlight": "",
+        "title": "",
+        "content": "",
+        "button_url": "",
+        "button_text": "",
+        "image": "shopify:\/\/shop_images\/web_-_12.png",
+        "image_align_left": false,
+        "border_radius": 0,
+        "spacing": false,
+        "padding": true,
+        "bg_color": "",
+        "text_color": ""
+      }
+    },
+    "benefits-section-1": {
+      "type": "benefits-section-1",
+      "settings": {
       }
     },
     "9b54b0cf-c059-4889-98d1-99954268ed5e": {
@@ -194,7 +211,7 @@
         "8f3a44ef-643d-450b-bda1-00d47c865135"
       ],
       "settings": {
-        "title": "Spicy Cubes in action...",
+        "title": "See Spicy Cubes in action 🔥",
         "card_border_radius": 20,
         "background_color": "",
         "text_color": "",
@@ -251,7 +268,8 @@
     "icon-bar-2",
     "rich-text",
     "shop-now-2",
-    "benefits-section-2",
+    "image_with_text_XGbNyM",
+    "benefits-section-1",
     "9b54b0cf-c059-4889-98d1-99954268ed5e",
     "shop-now-3",
     "17054643133553cd9c"

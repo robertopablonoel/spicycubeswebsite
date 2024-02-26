@@ -1,24 +1,27 @@
-<div class="testimonials" id="section-{{ section.id }}">
-  <div class="page-width">
+<div class='testimonials' id='section-{{ section.id }}'>
+  <div class='page-width'>
     {% if section.settings.title != blank or section.settings.subtitle != blank %}
-      <div class="section__title-area">
+      <div class='section__title-area'>
         {% if section.settings.title != blank %}
-          <h2 class="section__title">{{ section.settings.title | escape }}</h2>
+          <h2 class='section__title'>{{ section.settings.title | escape }}</h2>
         {% endif %}
       </div>
     {% endif %}
-    <div class="testimonials__container">
+    <div class='testimonials__container'>
       {% for block in section.blocks %}
-        <div class="testimonial">
-          <div class="testimonial__content">
+        <div class='testimonial'>
+          <div class='testimonial__content'>
             {% if block.settings.image %}
-              <div class="testimonial__image" style="background-image: url({{ block.settings.image | img_url: '400x' }})"></div>
+              <div
+                class='testimonial__image'
+                style='background-image: url({{ block.settings.image | img_url: '400x' }})'
+              ></div>
             {% endif %}
             {% if block.settings.rating %}
               {% assign rating = block.settings.rating | plus: 0 %}
-              <div class="testimonial__rating">
+              <div class='testimonial__rating'>
                 {% for i in (1..rating) %}
-                  <span class="fas fa-star"></span>
+                  <span class='fas fa-star'></span>
                 {% endfor %}
               </div>
             {% endif %}
@@ -27,10 +30,19 @@
           </div>
           {% if block.settings.product_highlight != blank %}
             {% assign highlight_product = all_products[block.settings.product_highlight] %}
-            <div class="testimonial__product-highlight">
+            <div class='testimonial__product-highlight'>
               <p>{{ highlight_product.title }}</p>
-              <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="{{ section.settings.product_highlight_text }}" d="m12.012 1.995c-5.518 0-9.998 4.48-9.998 9.998s4.48 9.998 9.998 9.998 9.997-4.48 9.997-9.998-4.479-9.998-9.997-9.998zm0 1.5c4.69 0 8.497 3.808 8.497 8.498s-3.807 8.498-8.497 8.498-8.498-3.808-8.498-8.498 3.808-8.498 8.498-8.498zm1.528 4.715s1.502 1.505 3.255 3.259c.146.147.219.339.219.531s-.073.383-.219.53c-1.753 1.754-3.254 3.258-3.254 3.258-.145.145-.336.217-.527.217-.191-.001-.383-.074-.53-.221-.293-.293-.295-.766-.004-1.057l1.978-1.977h-6.694c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.694l-1.979-1.979c-.289-.289-.286-.762.006-1.054.147-.147.339-.221.531-.222.19 0 .38.071.524.215z" fill-rule="nonzero"></path></svg>
-              <a href="{{ highlight_product.url }}" aria-label="{{ highlight_product.title }}"></a>
+              <svg
+                clip-rule='evenodd'
+                fill-rule='evenodd'
+                stroke-linejoin='round'
+                stroke-miterlimit='2'
+                viewBox='0 0 24 24'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path fill="{{ section.settings.product_highlight_text }}" d="m12.012 1.995c-5.518 0-9.998 4.48-9.998 9.998s4.48 9.998 9.998 9.998 9.997-4.48 9.997-9.998-4.479-9.998-9.997-9.998zm0 1.5c4.69 0 8.497 3.808 8.497 8.498s-3.807 8.498-8.497 8.498-8.498-3.808-8.498-8.498 3.808-8.498 8.498-8.498zm1.528 4.715s1.502 1.505 3.255 3.259c.146.147.219.339.219.531s-.073.383-.219.53c-1.753 1.754-3.254 3.258-3.254 3.258-.145.145-.336.217-.527.217-.191-.001-.383-.074-.53-.221-.293-.293-.295-.766-.004-1.057l1.978-1.977h-6.694c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.694l-1.979-1.979c-.289-.289-.286-.762.006-1.054.147-.147.339-.221.531-.222.19 0 .38.071.524.215z" fill-rule="nonzero"></path>
+              </svg>
+              <a href='{{ highlight_product.url }}' aria-label='{{ highlight_product.title }}'></a>
             </div>
           {% endif %}
         </div>
@@ -44,39 +56,39 @@
     {% if section.settings.background_color %}
       background-color: {{ section.settings.background_color }};
     {% endif %}
-    
+
     {% if section.settings.spacing %}
       margin-top: 100px;
       margin-bottom: 100px;
     {% endif %}
   }
-  
+
   #section-{{ section.id }} .section__title {
     {% if section.settings.text_color %}
       color: {{ section.settings.text_color }};
-    {% endif %} 
+    {% endif %}
   }
-  
+
   #section-{{ section.id }} .testimonial {
     {% if section.settings.card_background_color %}
       background-color: {{ section.settings.card_background_color }};
     {% endif %}
-    
+
     {% if section.settings.card_borders %}
       border: 3px solid {{ section.settings.card_borders_color }};
     {% endif %}
-    
+
     {% if section.settings.card_border_radius %}
       border-radius: {{ section.settings.card_border_radius }}px;
     {% endif %}
   }
-  
+
   #section-{{ section.id }} .testimonial .testimonial__image {
     {% if section.settings.card_borders %}
       border: 2px solid {{ section.settings.card_borders_color }};
     {% endif %}
   }
-  
+
   #section-{{ section.id }} .testimonial h5,
   #section-{{ section.id }} .testimonial p,
   #section-{{ section.id }} .testimonial__rating span {
@@ -84,152 +96,151 @@
       color: {{ section.settings.card_text_color }};
     {% endif %}
   }
-  
+
   #section-{{ section.id }} .testimonial__product-highlight {
     background-color: {{ section.settings.product_highlight_background }};
-    
+
     {% if section.settings.card_border_radius and section.settings.card_borders == false %}
       border-bottom-left-radius: {{ section.settings.card_border_radius }}px;
       border-bottom-right-radius: {{ section.settings.card_border_radius }}px;
     {% endif %}
   }
-  
+
   #section-{{ section.id }} .testimonial__product-highlight p {
     color: {{ section.settings.product_highlight_text }};
   }
-  
 {% endstyle %}
 
 {% schema %}
-  {
-    "name": "Testimonials",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Main Title",
-        "default": "Title with text."
-      },
-      {
-        "type": "range",
-        "id": "card_border_radius",
-        "label": "Card rounded corners",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "unit": "px",
-        "default": 5
-      },
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background color"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Title color"
-      },
-      {
-        "type": "color",
-        "id": "card_background_color",
-        "label": "Card background color"
-      },
-      {
-        "type": "color",
-        "id": "card_text_color",
-        "label": "Card text color"
-      },
-      {
-        "type": "checkbox",
-        "id": "card_borders",
-        "label": "Card borders"
-      },
-      {
-        "type": "color",
-        "id": "card_borders_color",
-        "label": "Card borders color"
-      },
-      {
-        "type": "color",
-        "id": "product_highlight_background",
-        "label": "Product highlight background"
-      },
-      {
-        "type": "color",
-        "id": "product_highlight_text",
-        "label": "Product highlight text"
-      },
-      {
-        "type": "checkbox",
-        "id": "spacing",
-        "label": "Section spacing"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "testimonial",
-        "name": "Testimonial",
-        "limit": 6,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-          {
-            "type": "select",
-            "id": "rating",
-            "label": "Star rating",
-            "options": [
-              {
-                "label": "1",
-                "value": "1"
-              },
-              {
-                "label": "2",
-                "value": "2"
-              },
-              {
-                "label": "3",
-                "value": "3"
-              },
-              {
-                "label": "4",
-                "value": "4"
-              },
-              {
-                "label": "5",
-                "value": "5"
-              }
-            ],
-            "default": "5"
-          },
-          {
-            "type": "textarea",
-            "id": "testimonial_text",
-            "label": "Testimonial text",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "type": "text",
-            "id": "testimonial_name",
-            "label": "Name"
-          },
-          {
-            "type": "product",
-            "id": "product_highlight",
-            "label": "Product highlight",
-            "info": "This should be the product relating to the testimonial."
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Testimonials",
-        "category": "testimonials"
-      }
-    ]
-  }
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Title with text."
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card rounded corners",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Title color"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background color"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_borders",
+      "label": "Card borders"
+    },
+    {
+      "type": "color",
+      "id": "card_borders_color",
+      "label": "Card borders color"
+    },
+    {
+      "type": "color",
+      "id": "product_highlight_background",
+      "label": "Product highlight background"
+    },
+    {
+      "type": "color",
+      "id": "product_highlight_text",
+      "label": "Product highlight text"
+    },
+    {
+      "type": "checkbox",
+      "id": "spacing",
+      "label": "Section spacing"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "Star rating",
+          "options": [
+            {
+              "label": "1",
+              "value": "1"
+            },
+            {
+              "label": "2",
+              "value": "2"
+            },
+            {
+              "label": "3",
+              "value": "3"
+            },
+            {
+              "label": "4",
+              "value": "4"
+            },
+            {
+              "label": "5",
+              "value": "5"
+            }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial_text",
+          "label": "Testimonial text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_name",
+          "label": "Name"
+        },
+        {
+          "type": "product",
+          "id": "product_highlight",
+          "label": "Product highlight",
+          "info": "This should be the product relating to the testimonial."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "testimonials"
+    }
+  ]
+}
 {% endschema %}
