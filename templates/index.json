@@ -200,14 +200,24 @@
           "type": "video",
           "settings": {
             "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.jpg",
-            "video_source": "",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "We had our fun last night."
+          }
+        },
+        "video_BerRKn": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.jpg",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
             "video_description": "We had our fun last night."
           }
         }
       },
       "block_order": [
-        "video_8qgB3K"
+        "video_8qgB3K",
+        "video_BerRKn"
       ],
       "settings": {
         "title": "See Spicy Cubes in action 🔥"
