@@ -57,35 +57,45 @@
         "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
       }
     },
-    "testimonials": {
-      "type": "testimonials",
+    "video-testimonials": {
+      "type": "video-testimonials",
       "blocks": {
-        "8f3a44ef-643d-450b-bda1-00d47c865135": {
-          "type": "testimonial",
+        "video_8qgB3K": {
+          "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/couple_1.webp",
-            "rating": "5",
-            "testimonial_text": "Skeptical at first, but WOW, these really work -- can't wait for the next box to arrive.",
-            "testimonial_name": "- Jenny H.",
-            "product_highlight": ""
+            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.webp",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "\"We had our fun last night.\""
+          }
+        },
+        "video_kwVCUK": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/egf_thumbnail.jpg",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "We take these every week now 😂"
+          }
+        },
+        "video_AUV9rt": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "Took them on Valentines day... WOW"
           }
         }
       },
       "block_order": [
-        "8f3a44ef-643d-450b-bda1-00d47c865135"
+        "video_8qgB3K",
+        "video_kwVCUK",
+        "video_AUV9rt"
       ],
       "settings": {
-        "title": "Spicy Cubes in action...",
-        "card_border_radius": 20,
-        "background_color": "",
-        "text_color": "",
-        "card_background_color": "rgba(0,0,0,0)",
-        "card_text_color": "",
-        "card_borders": false,
-        "card_borders_color": "#000000",
-        "product_highlight_background": "",
-        "product_highlight_text": "",
-        "spacing": false
+        "title_image_desktop": "shopify:\/\/shop_images\/text_desktop.webp",
+        "title_image_mobile": "shopify:\/\/shop_images\/text_mobile.webp"
       }
     },
     "faq-section": {
@@ -119,7 +129,7 @@
     "form",
     "product-details",
     "benefits-section-2",
-    "testimonials",
+    "video-testimonials",
     "faq-section",
     "1704393476afe07aa2"
   ]
