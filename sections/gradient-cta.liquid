@@ -2,6 +2,8 @@
   assign color_right = section.settings.color_right | default: settings.color_gradient_2
   assign color_left = section.settings.color_left | default: settings.color_gradient_1
   assign color_text = section.settings.text_color | default: settings.color_gradient_text
+  assign top_margin = section.settings.top_margin | default: 0
+  assign bottom_margin = section.settings.bottom_margin | default: 0
 %}
 
 <style media='screen'>
@@ -9,6 +11,10 @@
     background: {{ color_right }};
     background: -webkit-linear-gradient(to right, {{ color_left  }}, {{ color_right }});
     background: linear-gradient(to right, {{ color_left }}, {{ color_right }});
+    {% if top_margin %}
+      margin-top: {{ top_margin }}px;
+      margin-bottom: {{ bottom_margin }}px;
+    {% endif %}
   }
 
   #section-{{ section.id }} h3 {
@@ -36,10 +42,6 @@
 
 <div id='section-{{ section.id }}' class='cta-gradient'>
   <div class='cta-gradient__content'>
-    <h3>
-      {{ section.settings.title }}
-      <span>{{ section.settings.title_outline }}</span>
-    </h3>
     {% if section.settings.button_text != blank %}
       <a href='{{ section.settings.button_url | default: '#' }}' class='btn'>
         {{- section.settings.button_text }}
@@ -107,6 +109,26 @@
       "type": "checkbox",
       "id": "spacing",
       "label": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "top_margin",
+      "label": "Top Margin",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bottom_margin",
+      "label": "Bottom Margin",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0,
+      "unit": "px"
     }
   ],
   "presets": [
