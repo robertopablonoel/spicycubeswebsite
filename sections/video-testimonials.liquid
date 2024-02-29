@@ -30,7 +30,7 @@
             >
               <div class='videoContainer'>
                 <video class='videoItem' playsinline poster='{{ block.settings.video_poster | img_url: 'master' }}'>
-                  <source src='{{ block.settings.video_source }}' type='video/mp4'>
+                  <source data-src='{{ block.settings.video_source }}' type='video/mp4'>
                 </video>
                 <img class='videoPlay' src='{{ block.settings.play_icon | img_url: 'master' }}' alt='play icon'>
               </div>
@@ -74,8 +74,51 @@
       },
     });
 
+    // Lazy loading for videos
+    const videoElements = document.querySelectorAll('.videoItem');
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const video = entry.target;
+            const sources = video.querySelectorAll('source');
+            sources.forEach((source) => {
+              source.src = source.dataset.src;
+            });
+            video.load();
+            video.removeAttribute('data-src');
+            observer.unobserve(video);
+          }
+        });
+      },
+      {
+        rootMargin: '0px',
+        threshold: 0.25, // Trigger when 25% of the video is in the viewport
+      },
+    );
+
+    videoElements.forEach((video) => {
+      observer.observe(video);
+    });
+
     document.querySelectorAll('.videoSlide').forEach(function (element) {
       element.addEventListener('click', function () {
+        const video = this.querySelector('video');
+        if (video.dataset.playing) {
+          video.pause();
+          video.removeAttribute('data-playing');
+        } else {
+          // Stop any other active videos
+          const currentlyActive = document.querySelector('video[data-playing]');
+          if (currentlyActive) {
+            currentlyActive.pause();
+            currentlyActive.removeAttribute('data-playing');
+          }
+          video.play();
+          video.setAttribute('data-playing', 'true');
+        }
+
         if (this.classList.contains('active')) {
           this.querySelector('video').pause();
           this.classList.remove('active');
