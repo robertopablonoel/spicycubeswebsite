@@ -87,7 +87,9 @@
         "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
-        "spacing": false
+        "spacing": false,
+        "top_margin": 22,
+        "bottom_margin": 36
       }
     },
     "sugar-section": {
@@ -168,7 +170,9 @@
         "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
-        "spacing": false
+        "spacing": false,
+        "top_margin": 0,
+        "bottom_margin": 50
       }
     },
     "image_with_text_XGbNyM": {
@@ -203,7 +207,7 @@
             "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.webp",
             "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
-            "video_description": "\"We had our fun </br>last night.\""
+            "video_description": "\"We had our fun last night.\""
           }
         },
         "video_BerRKn": {
@@ -212,7 +216,7 @@
             "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
             "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
-            "video_description": "\"Took them on Valentines </br>Day... WOW\""
+            "video_description": "\"Took them on Valentines Day... WOW\""
           }
         }
       },
@@ -235,7 +239,9 @@
         "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
-        "spacing": false
+        "spacing": false,
+        "top_margin": 0,
+        "bottom_margin": 0
       }
     },
     "17054643133553cd9c": {

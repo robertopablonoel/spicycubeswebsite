@@ -138,167 +138,173 @@
 </script>
 
 {% style %}
-  #section-{{ section.id }} .section__title {
-    {% if section.settings.text_color %}
-      color: {{ section.settings.text_color }};
-    {% endif %}
-  }
-
-  .title-image-desktop { display: none; }
-  .title-image-mobile { display: block; }
-
-  .section__title-area{
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 20px 0px 20px 0px;
-  }
-
-  .section__title-wrapper{
-    max-width: 300px;
-    justify-content: center;
-  }
-
-  @media (min-width: 768px) {
-    .title-image-desktop { display: block; }
-    .title-image-mobile { display: none; }
-    .section__title-wrapper{
-        max-width: 500px;
-        justify-content: center;
+    #section-{{ section.id }} .section__title {
+      {% if section.settings.text_color %}
+        color: {{ section.settings.text_color }};
+      {% endif %}
     }
-    .video-testimonials{
-      margin-bottom: 20px;
-    }
-  }
 
-  .videos {
-    padding: 96px 20px;
-    background-color: var(--dark-gray);
-  }
-
-  .videosTitle {
-    text-align: center;
-    margin-bottom: 36px;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 120%;
-  }
-
-  .videosTitle span {
-    font-family: 'Laila', sans-serif;
-    font-size: 32px;
-    line-height: 1;
-  }
-
-  .videosSwiper {
-    margin-bottom: 36px;
-  }
-
-  .videoSlide {
-    height: auto;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .videoContainer {
-    position: relative;
-  }
-
-  .videoItem {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 406/720;
-  }
-
-  .videoPlay {
-    width: 65px;
-    height: 65px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 1;
-  }
-
-  .videoSlide.active .videoPlay {
-    display: none;
-  }
-
-  .videoBody {
-    text-align: center;
-    background-color: white;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 160%;
-    background-image: url("//cdn.shopify.com/s/files/1/0792/0805/5068/files/icon-video-badge.svg?v=1709167811");
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 36px 36px;
-    padding: 10px 40px;
-  }
-
-  .videosButton {
-    max-width: 384px;
-    margin: auto;
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    border: 2px solid black;
     background-color: transparent;
+    opacity: 1;
   }
 
-  @media (max-width: 800px) {
+    .title-image-desktop { display: none; }
+    .title-image-mobile { display: block; }
+
+    .section__title-area{
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding: 20px 0px 20px 0px;
+    }
+
+    .section__title-wrapper{
+      max-width: 300px;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .title-image-desktop { display: block; }
+      .title-image-mobile { display: none; }
+      .section__title-wrapper{
+          max-width: 500px;
+          justify-content: center;
+      }
+      .video-testimonials{
+        margin-bottom: 20px;
+      }
+    }
+
     .videos {
-      padding: 48px 24px;
+      padding: 96px 20px;
+      background-color: var(--dark-gray);
     }
 
     .videosTitle {
-      font-size: 26px;
-      line-height: 140%;
-      margin-bottom: 24px;
+      text-align: center;
+      margin-bottom: 36px;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 120%;
     }
 
     .videosTitle span {
-      font-size: 26px;
+      font-family: 'Laila', sans-serif;
+      font-size: 32px;
+      line-height: 1;
     }
 
     .videosSwiper {
-      margin-bottom: 24px;
-    }
-
-    .videosPagination {
-      position: static;
-      margin-top: 24px;
+      margin-bottom: 36px;
     }
 
     .videoSlide {
-      width: 80%;
-    }
-  }
-
-  @media (min-width: 800px) {
-    .video-testimonials .page-width {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
-    .video-testimonials .section__title-area {
-      text-align: center;
+    .videoContainer {
+      position: relative;
+    }
+
+    .videoItem {
+      display: block;
       width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 406/720;
     }
 
-    .video-testimonials .videosSwiper {
-      width: calc(100% - 48px);
-      margin: 0 auto;
+    .videoPlay {
+      width: 65px;
+      height: 65px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 1;
     }
 
-    .video-testimonials .swiper-wrapper {
-      justify-content: center;
+    .videoSlide.active .videoPlay {
+      display: none;
     }
-  }
+
+    .videoBody {
+      text-align: center;
+      background-color: white;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+      background-image: url("//cdn.shopify.com/s/files/1/0792/0805/5068/files/icon-video-badge.svg?v=1709167811");
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 36px 36px;
+      padding: 10px 40px;
+    }
+
+    .videosButton {
+      max-width: 384px;
+      margin: auto;
+      background-color: transparent;
+    }
+
+    @media (max-width: 800px) {
+      .videos {
+        padding: 48px 24px;
+      }
+
+      .videosTitle {
+        font-size: 26px;
+        line-height: 140%;
+        margin-bottom: 24px;
+      }
+
+      .videosTitle span {
+        font-size: 26px;
+      }
+
+      .videosSwiper {
+        margin-bottom: 24px;
+      }
+
+      .videosPagination {
+        position: static;
+        margin-top: 24px;
+      }
+
+      .videoSlide {
+        width: 80%;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .video-testimonials .page-width {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .video-testimonials .section__title-area {
+        text-align: center;
+        width: 100%;
+      }
+
+      .video-testimonials .videosSwiper {
+        width: calc(100% - 48px);
+        margin: 0 auto;
+      }
+
+      .video-testimonials .swiper-wrapper {
+        justify-content: center;
+      }
+    }
 {% endstyle %}
 
 {% schema %}
