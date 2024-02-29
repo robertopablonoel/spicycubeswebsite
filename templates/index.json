@@ -88,8 +88,8 @@
         "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "spacing": false,
-        "top_margin": 22,
-        "bottom_margin": 36
+        "top_margin": 24,
+        "bottom_margin": 38
       }
     },
     "sugar-section": {
@@ -210,19 +210,29 @@
             "video_description": "\"We had our fun last night.\""
           }
         },
-        "video_BerRKn": {
+        "video_kwVCUK": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/egf_thumbnail.jpg",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "We take these every week now 😂"
+          }
+        },
+        "video_AUV9rt": {
           "type": "video",
           "settings": {
             "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
             "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
-            "video_description": "\"Took them on Valentines Day... WOW\""
+            "video_description": "Took them on Valentines day... WOW"
           }
         }
       },
       "block_order": [
         "video_8qgB3K",
-        "video_BerRKn"
+        "video_kwVCUK",
+        "video_AUV9rt"
       ],
       "settings": {
         "title_image_desktop": "shopify:\/\/shop_images\/text_desktop.webp",
