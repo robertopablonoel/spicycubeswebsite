@@ -1,0 +1,245 @@
+<!-- Benefits Section -->
+<section class='video-testimonials'>
+  <div class='page-width'>
+    {% if section.settings.title != blank %}
+      <div class='section__title-area'>
+        {% if section.settings.title != blank %}
+          <h2 class='section__title'>{{ section.settings.title | escape }}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class='videosSwiper swiper'>
+      <div class='swiper-wrapper'>
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div
+              class='swiper-slide videoSlide'
+              role='group'
+              aria-label='{{ forloop.index }} / {{ section.blocks.size }}'
+            >
+              <div class='videoContainer'>
+                <video class='videoItem' playsinline poster='{{ block.settings.video_poster | img_url: 'master' }}'>
+                  <source src='{{ block.settings.video_source }}' type='video/mp4'>
+                </video>
+                <img class='videoPlay' src='{{ block.settings.play_icon | img_url: 'master' }}' alt='play icon'>
+              </div>
+              <div class='videoBody'>{{ block.settings.video_description }}</div>
+            </div>
+          {% endfor %}
+        {% endif %}
+        <!-- Repeat for each video, changing source, poster, aria-label, and text as necessary -->
+      </div>
+      <div class='videosPagination swiper-pagination'></div>
+    </div>
+  </div>
+</section>
+
+<link
+  rel='stylesheet'
+  href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'
+>
+
+<script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+
+<script>
+  new Swiper(`videosSwiper`, {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    breakpoints: {
+      800: {
+        slidesPerView: 4,
+      },
+    },
+    pagination: {
+      el: `videosPagination`,
+      type: 'bullets',
+      clickable: true,
+    },
+    on: {
+      slideChange: function () {
+        document.querySelectorAll(`videoSlide`).forEach(function (element) {
+          element.querySelector('video').pause();
+          element.classList.remove('active');
+        });
+      },
+    },
+  });
+
+  document.querySelectorAll(`videoSlide`).forEach(function (element) {
+    element.addEventListener('click', function () {
+      if (this.classList.contains('active')) {
+        this.querySelector('video').pause();
+        this.classList.remove('active');
+      } else {
+        // stop if there is another active
+        if (document.querySelector('.videoSlide.active')) {
+          document.querySelector('.videoSlide.active').querySelector('video').pause();
+          document.querySelector('.videoSlide.active').classList.remove('active');
+        }
+        this.querySelector('video').play();
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+
+{% style %}
+  #section-{{ section.id }} .section__title {
+    {% if section.settings.text_color %}
+      color: {{ section.settings.text_color }};
+    {% endif %}
+  }
+
+  .videos {
+      padding: 96px 20px;
+      background-color: var(--dark-gray);
+  }
+
+  .videosInner {
+
+  }
+
+  .videosTitle {
+      text-align: center;
+      margin-bottom: 36px;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 120%;
+  }
+
+  .videosTitle span {
+      font-family: 'Laila', sans-serif;
+      font-size: 32px;
+      line-height: 1;
+  }
+
+  .videosSwiper {
+      margin-bottom: 36px;
+  }
+
+  .videoSlide {
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
+  }
+
+  .videoContainer {
+      position: relative;
+  }
+
+  .videoItem {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 406/720;
+  }
+
+  .videoPlay {
+      width: 65px;
+      height: 65px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .videoSlide.active .videoPlay {
+      display: none;
+  }
+
+  .videoBody {
+      text-align: center;
+      background-color: white;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+      background-image: url("//tabs.co/cdn/shop/t/93/assets/icon-video-badge.svg?v=123859225683162181361706549958");
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 36px 36px;
+      padding: 10px 40px;
+  }
+
+  .videosButton {
+      max-width: 384px;
+      margin: auto;
+      background-color: transparent;
+  }
+
+  @media (max-width: 600px) {
+      .videos {
+          padding: 48px 24px;
+      }
+
+      .videosTitle {
+          font-size: 26px;
+          line-height: 140%;
+          margin-bottom: 24px;
+      }
+
+      .videosTitle span {
+          font-size: 26px;
+      }
+
+      .videosSwiper {
+          margin-bottom: 24px;
+      }
+
+      .videosPagination {
+          position: static;
+          margin-top: 24px;
+      }
+
+      .videoSlide {
+          width: 80%;
+      }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Video Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Title with text."
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "video_poster",
+          "label": "Video Poster Image"
+        },
+        {
+          "type": "url",
+          "id": "video_source",
+          "label": "Video Source URL",
+          "info": "Enter the URL of the video file."
+        },
+        {
+          "type": "image_picker",
+          "id": "play_icon",
+          "label": "Play Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "video_description",
+          "label": "Video Description",
+          "default": "We had our fun last night."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

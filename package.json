@@ -26,7 +26,8 @@
     "tailwindcss": "^3.0.24"
   },
   "dependencies": {
-    "@trelliscommerce/prettier-config": "^1.0.0"
+    "@trelliscommerce/prettier-config": "^1.0.0",
+    "swiper": "^11.0.6"
   },
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {

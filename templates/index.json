@@ -193,35 +193,24 @@
       "settings": {
       }
     },
-    "9b54b0cf-c059-4889-98d1-99954268ed5e": {
-      "type": "testimonials",
+    "video-testimonials": {
+      "type": "video-testimonials",
       "blocks": {
-        "8f3a44ef-643d-450b-bda1-00d47c865135": {
-          "type": "testimonial",
+        "video_8qgB3K": {
+          "type": "video",
           "settings": {
-            "image": "shopify:\/\/shop_images\/couple_1.webp",
-            "rating": "5",
-            "testimonial_text": "Skeptical at first, but WOW, these really work -- can't wait for the next box to arrive.",
-            "testimonial_name": "- Jenny H.",
-            "product_highlight": ""
+            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.jpg",
+            "video_source": "",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "We had our fun last night."
           }
         }
       },
       "block_order": [
-        "8f3a44ef-643d-450b-bda1-00d47c865135"
+        "video_8qgB3K"
       ],
       "settings": {
-        "title": "See Spicy Cubes in action 🔥",
-        "card_border_radius": 20,
-        "background_color": "",
-        "text_color": "",
-        "card_background_color": "rgba(0,0,0,0)",
-        "card_text_color": "",
-        "card_borders": false,
-        "card_borders_color": "#000000",
-        "product_highlight_background": "",
-        "product_highlight_text": "",
-        "spacing": false
+        "title": "See Spicy Cubes in action 🔥"
       }
     },
     "shop-now-3": {
@@ -270,7 +259,7 @@
     "shop-now-2",
     "image_with_text_XGbNyM",
     "benefits-section-1",
-    "9b54b0cf-c059-4889-98d1-99954268ed5e",
+    "video-testimonials",
     "shop-now-3",
     "17054643133553cd9c"
   ]
