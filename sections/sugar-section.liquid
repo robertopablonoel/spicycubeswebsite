@@ -4,13 +4,34 @@
     <div class='sugar-title-image'>
       {% render 'title-sugar-by-cubes' %}
     </div>
-    <div class='sugar-box-image' style='max-width: 500px;'>
-      <img src='{{ section.settings.box_image | image_url }}' loading='lazy'>
+    <div class='sugar-box-image'>
+      <!-- Desktop Image -->
+      <img src='{{ section.settings.box_image_desktop | image_url }}' class='desktop-image' loading='lazy'>
+      <!-- Mobile Image -->
+      <img src='{{ section.settings.box_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
     </div>
   </div>
 </section>
-
 <!-- End sugar Section -->
+<style>
+  .sugar-box-image .desktop-image {
+    display: none;
+  }
+  .sugar-box-image .mobile-image {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .sugar-box-image .desktop-image {
+      display: block;
+      max-width: 1200px;
+    }
+    .sugar-box-image .mobile-image {
+      display: none;
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "Sugar Section",
@@ -22,8 +43,13 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "box_image",
-      "label": "Choose Image"
+      "id": "box_image_desktop",
+      "label": "Choose Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_image_mobile",
+      "label": "Choose Mobile Image"
     }
   ]
 }

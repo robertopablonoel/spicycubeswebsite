@@ -6,8 +6,8 @@
         "1597558632301": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/large.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/b0e4ee43eb3bd5a190146cb84d3ca971_1.jpg",
+            "image": "shopify:\/\/shop_images\/main_desktop.webp",
+            "image_mobile": "shopify:\/\/shop_images\/main_mobile.webp",
             "overlay": true,
             "background_position_y": "top",
             "content_align_desktop": "center-middle",
@@ -93,7 +93,8 @@
     "sugar-section": {
       "type": "sugar-section",
       "settings": {
-        "box_image": "shopify:\/\/shop_images\/spicy_main_final_transparent_2.png"
+        "box_image_desktop": "shopify:\/\/shop_images\/box_with_text.webp",
+        "box_image_mobile": "shopify:\/\/shop_images\/box_main.webp"
       }
     },
     "icon-bar-2": {
@@ -199,19 +200,19 @@
         "video_8qgB3K": {
           "type": "video",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.jpg",
+            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.webp",
             "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
-            "video_description": "We had our fun last night."
+            "video_description": "\"We had our fun  last night.\""
           }
         },
         "video_BerRKn": {
           "type": "video",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.jpg",
+            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
             "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
             "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
-            "video_description": "We had our fun last night."
+            "video_description": "\"Took them on Valentines Day... WOW\""
           }
         }
       },
@@ -220,7 +221,8 @@
         "video_BerRKn"
       ],
       "settings": {
-        "title": "See Spicy Cubes in action 🔥"
+        "title_image_desktop": "shopify:\/\/shop_images\/text_desktop.webp",
+        "title_image_mobile": "shopify:\/\/shop_images\/text_mobile.webp"
       }
     },
     "shop-now-3": {

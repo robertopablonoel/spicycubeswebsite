@@ -1,13 +1,24 @@
 <!-- Benefits Section -->
 <section class='video-testimonials'>
   <div class='page-width'>
-    {% if section.settings.title != blank %}
-      <div class='section__title-area'>
-        {% if section.settings.title != blank %}
-          <h2 class='section__title'>{{ section.settings.title | escape }}</h2>
-        {% endif %}
+    <div class='section__title-area'>
+      <div class='section__title-wrapper'>
+        <!-- Desktop Title Image -->
+        <img
+          src='{{ section.settings.title_image_desktop | img_url: '1024x' }}'
+          class='title-image-desktop'
+          alt='Title Image'
+          loading='lazy'
+        >
+        <!-- Mobile Title Image -->
+        <img
+          src='{{ section.settings.title_image_mobile | img_url: '1024x' }}'
+          class='title-image-mobile'
+          alt='Title Image'
+          loading='lazy'
+        >
       </div>
-    {% endif %}
+    </div>
     <div class='videosSwiper swiper'>
       <div class='swiper-wrapper'>
         {% if section.blocks.size > 0 %}
@@ -90,9 +101,33 @@
     {% endif %}
   }
 
-  .video-testimonials{
+  .title-image-desktop { display: none; }
+  .title-image-mobile { display: block; }
+
+  .section__title-area{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 20px 0px 20px 0px;
+  }
+
+  .section__title-wrapper{
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .title-image-desktop { display: block; }
+    .title-image-mobile { display: none; }
+    .section__title-wrapper{
+        max-width: 500px;
+        justify-content: center;
+    }
+    .video-testimonials{
       margin-bottom: 20px;
     }
+  }
 
   .videos {
     padding: 96px 20px;
@@ -185,12 +220,12 @@
     }
 
     .videosSwiper {
-      margin-bottom: 24px;
+      margin-bottom: 0px;
     }
 
     .videosPagination {
       position: static;
-      margin-top: 24px;
+      margin-top: 5px;
     }
 
     .videoSlide {
@@ -228,10 +263,14 @@
   "name": "Video Testimonials",
   "settings": [
     {
-      "type": "text",
-      "id": "title",
-      "label": "Main Title",
-      "default": "Title with text."
+      "type": "image_picker",
+      "id": "title_image_desktop",
+      "label": "Desktop Title Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image_mobile",
+      "label": "Mobile Title Image"
     }
   ],
   "max_blocks": 4,
