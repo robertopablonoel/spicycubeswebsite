@@ -29,7 +29,9 @@
         {% endif %}
         <!-- Repeat for each video, changing source, poster, aria-label, and text as necessary -->
       </div>
-      <div class='videosPagination swiper-pagination'></div>
+      <div
+        class='videosPagination swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal'
+      ></div>
     </div>
   </div>
 </section>
@@ -87,6 +89,10 @@
       color: {{ section.settings.text_color }};
     {% endif %}
   }
+
+  .video-testimonials{
+      margin-bottom: 20px;
+    }
 
   .videos {
     padding: 96px 20px;
