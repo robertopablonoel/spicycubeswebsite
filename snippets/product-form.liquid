@@ -500,8 +500,11 @@
                             {{ price_total | money_without_trailing_zeros }}
                           </span>
                         {% endif %}
-                        {% if forloop.index == 2 or forloop.index == 3 and product.title == 'Spicy Cubes' %}
-                          {% assign adjusted_price = price_each | plus: 10 %}
+                        {% if forloop.index == 2 and product.title == 'Spicy Cubes' %}
+                          {% assign adjusted_price = price_each | plus: 15 %}
+                          {{ adjusted_price | money }}
+                        {% elsif forloop.index == 3 and product.title == 'Spicy Cubes' %}
+                          {% assign adjusted_price = price_each | plus: 30 %}
                           {{ adjusted_price | money }}
                         {% else %}
                           {{ price_each | money }}

@@ -26,10 +26,10 @@
         "quantity_discounts_buy_message_2": "2 boxes",
         "quantity_discount_badge_2": "Most popular",
         "quantity_discount_2": 2,
-        "quantity_discount_save_2": 7,
+        "quantity_discount_save_2": 9,
         "quantity_discounts_buy_message_3": "3 boxes",
         "quantity_discount_badge_3": "Best deal",
-        "quantity_discount_save_3": 17,
+        "quantity_discount_save_3": 18,
         "quantity_discount_3": 3,
         "enable_dynamic_buttons": false,
         "add_to_cart_message_title": "",
@@ -51,10 +51,27 @@
       "settings": {
       }
     },
-    "benefits-section-2": {
-      "type": "benefits-section-2",
+    "image_with_text_XGbNyM": {
+      "type": "image-with-text",
       "settings": {
-        "background_image": "shopify:\/\/shop_images\/benefits-2-background.webp"
+        "pre_header": "",
+        "pre_header_highlight": "",
+        "title": "",
+        "content": "",
+        "button_url": "",
+        "button_text": "",
+        "image": "shopify:\/\/shop_images\/web_-_12.png",
+        "image_align_left": false,
+        "border_radius": 0,
+        "spacing": false,
+        "padding": true,
+        "bg_color": "",
+        "text_color": ""
+      }
+    },
+    "benefits-section-1": {
+      "type": "benefits-section-1",
+      "settings": {
       }
     },
     "video-testimonials": {
@@ -114,7 +131,8 @@
             "aggregated": false,
             "limit": 20,
             "hide_thumbnails": false,
-            "maxwidth": 800
+            "maxwidth": 800,
+            "is_sample": true
           }
         }
       },
@@ -128,7 +146,8 @@
   "order": [
     "form",
     "product-details",
-    "benefits-section-2",
+    "image_with_text_XGbNyM",
+    "benefits-section-1",
     "video-testimonials",
     "faq-section",
     "1704393476afe07aa2"
