@@ -16,8 +16,23 @@
           The Spicy Card game is the perfect side-kick for Spicy Cubes. Couples, lovers, and "friends" can enjoy
           connecting on a deeper level with this fun and flirty card game. The cards have three levels of questions
           which spark intimate conversations and create a playful atmosphere, perfect for date nights or cozy evenings
-          in. Pair these with Spicy Cubes and you might just set the bedroom on fire.
+          in.
         </p>
+        <p>
+          <b>The Spicy Card Game includes 69 cards with 3 levels of questions:</b>
+
+          <ol style='list-style-type: decimal; margin-block-start:0em; padding-inline-start: 20px;'>
+            <li><b>Spicy:</b> Chill questions to spark the conversation.</li>
+            <li><b>Hot:</b> Questions that will make you blush.</li>
+            <li><b>🔥On Fire🔥:</b> Questions that will make you sweat.</li>
+          </ol>
+        </p>
+
+        <p>Pair these with Spicy Cubes and you might just set the bedroom on fire.</p>
+        <h4>
+          Don't have Spicy Cubes?
+          <a href='{{ section.settings.learn_url | default: '#' }}'><b>Learn more...</b></a>
+        </h4>
       {% endif %}
     </div>
     {% if product.title == 'Spicy Cubes' %}
@@ -116,3 +131,16 @@
     }
   });
 </script>
+
+{% schema %}
+{
+  "name": "CTA Gradient Banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "learn_url",
+      "label": "Learn Url"
+    }
+  ]
+}
+{% endschema %}

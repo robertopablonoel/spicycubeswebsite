@@ -15,10 +15,25 @@
       <div class='cart__upsell__item'>
         <div class='cart__item'>
           <div class='cart__item__image'>
-            <img src='{{ upsell_item.featured_image | img_url: '200x200' }}' alt='{{ upsell_item.title }}'>
+            <a href='{{ upsell_item.url | default: '#' }}'>
+              {% if upsell_item.title == 'The Spicy Card Game' %}
+                <img
+                  src='https://cdn.shopify.com/s/files/1/0792/0805/5068/files/box_web.jpg?v=1712867601'
+                  alt='{{ upsell_item.title }}'
+                >
+              {% else %}
+                <img
+                  src='{{ upsell_item.featured_image | img_url: '200x200' }}'
+                  alt='{{ upsell_item.title }}'
+                >
+              {% endif %}
+            </a>
           </div>
           <div style='display: flex; flex-direction: column; flex: 1; justify-content: space-between;'>
             <div style='margin-left: 16px; width: 100%; text-align: center;'>
+              <a href='{{ upsell_item.url | default: '#' }}'>
+                <h4 style='color: black'>{{ upsell_item.title }}</h4>
+              </a>
               <p>{{ upsell_item.price | money }}</p>
             </div>
             <div class='cart__item__body'>
@@ -93,6 +108,7 @@
                   type='submit'
                   name='add'
                   class='add-to-cart btn'
+                  style='background-color: #ff473b;'
                   data-add-to-cart
                   data-variant='{{ upsell_item.selected_or_first_available_variant.id }}'
                   {% unless upsell_item.selected_or_first_available_variant.available %}

@@ -49,6 +49,7 @@
     "product-details": {
       "type": "product-details",
       "settings": {
+        "learn_url": "shopify:\/\/products\/spicy-cubes"
       }
     },
     "image_with_text_XGbNyM": {
