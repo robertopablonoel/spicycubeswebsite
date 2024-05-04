@@ -13,7 +13,7 @@
   </video>
   <div class='hero-video__content-wrapper'>
     <div class='top__bar'>
-      <div style='margin-bottom: 10px;'>{% render 'turn-any-drink' %}</div>
+      {% render 'turn-any-drink' %}
     </div>
     <div class='content__holder'>
       <div>{% render 'more-love' %}</div>
@@ -26,7 +26,7 @@
 
 {% style %}
   #hero-{{ section.id }} {
-    height: 70vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
   }
@@ -48,7 +48,7 @@
 
   .content__holder {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the content is above the video */
@@ -79,6 +79,22 @@
     color: #fff; /* Adjust text color as needed */
   }
 
+  @media screen and (min-width: 901px) {
+      .top__bar svg {
+      width: 400px; /* Adjust the width of the SVG for desktop */
+      height: auto; /* Maintain aspect ratio */
+      }
+
+      .content__holder svg {
+      width: 400px; /* Adjust the width of the SVG for desktop */
+      height: auto; /* Maintain aspect ratio */
+      }
+
+      .video-hero {
+        margin-bottom: 50px; /* Add space below the video hero */
+      }
+  }
+
   @media screen and (max-width: 900px) {
     #hero-{{ section.id }} {
       height: 50vh;
@@ -90,6 +106,9 @@
     }
     .top__bar {
       top: 5%;
+    }
+    .content__holder {
+      top: 45%;
     }
   }
 {% endstyle %}

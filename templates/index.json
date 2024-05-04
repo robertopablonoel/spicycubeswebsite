@@ -4,7 +4,7 @@
       "type": "video-hero",
       "settings": {
         "height": "70vh",
-        "button_url": "",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
         "button_text": "Shop Now",
         "video_url_desktop": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/271287144c054960a5ecde35246f0e28.webm",
         "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6df7f303d6fe494a8eb1cd8acb6c98c3.webm"

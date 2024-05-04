@@ -1,7 +1,9 @@
 {
   "sections": {
     "ingredients-banner": {
-      "type": "ingredients-banner"
+      "type": "ingredients-banner",
+      "settings": {
+      }
     },
     "shop-now": {
       "type": "gradient-cta",
@@ -13,16 +15,78 @@
         "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify:\/\/products\/spicy-cubes",
-        "spacing": false
+        "spacing": false,
+        "top_margin": 0,
+        "bottom_margin": 0
       }
     },
     "ingredients-description": {
-      "type": "ingredients-description"
+      "type": "ingredients-description",
+      "settings": {
+      }
+    },
+    "video-testimonials": {
+      "type": "video-testimonials",
+      "blocks": {
+        "video_8qgB3K": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.webp",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "\"We had our fun last night.\""
+          }
+        },
+        "video_kwVCUK": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/egf_thumbnail.jpg",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "We take these every week now 😂"
+          }
+        },
+        "video_AUV9rt": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
+            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
+            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_description": "Took them on Valentines day... WOW"
+          }
+        }
+      },
+      "block_order": [
+        "video_8qgB3K",
+        "video_kwVCUK",
+        "video_AUV9rt"
+      ],
+      "settings": {
+        "title_image_desktop": "shopify:\/\/shop_images\/text_desktop.webp",
+        "title_image_mobile": "shopify:\/\/shop_images\/text_mobile.webp"
+      }
+    },
+    "shop-now-2": {
+      "type": "gradient-cta",
+      "settings": {
+        "title": "",
+        "title_outline": "",
+        "color_left": "#fdfaf1",
+        "color_right": "#fdfaf1",
+        "text_color": "",
+        "button_text": "shop now",
+        "button_url": "shopify:\/\/products\/spicy-cubes",
+        "spacing": false,
+        "top_margin": 0,
+        "bottom_margin": 30
+      }
     }
   },
   "order": [
     "ingredients-banner",
     "shop-now",
-    "ingredients-description"
+    "ingredients-description",
+    "video-testimonials",
+    "shop-now-2"
   ]
 }
