@@ -1,5 +1,73 @@
 {
   "sections": {
+    "horizontal_ticker_tERGFL": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_zYrhJr": {
+          "type": "text",
+          "settings": {
+            "title": "☘️ Safe & Effective"
+          }
+        },
+        "text_HXbG9F": {
+          "type": "text",
+          "settings": {
+            "title": "🇺🇸 Made in USA"
+          }
+        },
+        "text_rLp7HU": {
+          "type": "text",
+          "settings": {
+            "title": "📦 Fast & Discreet Shipping"
+          }
+        },
+        "text_y798fr": {
+          "type": "text",
+          "settings": {
+            "title": "🗓️ 30-day Satisfaction Guarantee"
+          }
+        },
+        "text_LyQGet": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        }
+      },
+      "block_order": [
+        "text_zYrhJr",
+        "text_HXbG9F",
+        "text_rLp7HU",
+        "text_y798fr",
+        "text_LyQGet"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 0,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
+    },
     "form": {
       "type": "product-form",
       "settings": {
@@ -145,6 +213,7 @@
     }
   },
   "order": [
+    "horizontal_ticker_tERGFL",
     "form",
     "product-details",
     "image_with_text_XGbNyM",

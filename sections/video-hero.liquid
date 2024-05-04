@@ -19,36 +19,33 @@
   <div class='hero-video__overlay'></div>
 </div>
 <script type='text/javascript'>
-  window.addEventListener('load', function () {
-    adjustHeroHeight(); // Call the function on initial load
-
-    window.addEventListener('resize', adjustHeroHeight); // Add event listener for resize
-  });
-
+  // Function to adjust the hero section height
   function adjustHeroHeight() {
     var heroSection = document.getElementById('hero-{{ section.id }}');
     var videoContent = document.querySelector('.hero-video__content');
 
     if (heroSection && videoContent) {
       var contentHeight = videoContent.offsetHeight;
-      var maxHeight = window.innerHeight * 0.7; // 70vh
-
+      var maxHeight = window.innerHeight * 0.7; // 70% of viewport height
       heroSection.style.height = Math.min(contentHeight, maxHeight) + 'px';
     }
   }
+
+  // Event listeners for load and resize
+  window.addEventListener('load', adjustHeroHeight);
+  window.addEventListener('resize', adjustHeroHeight);
+
+  // Attempt to play video after DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    var heroVideo = document.querySelector('.hero-video__content');
+    heroVideo.play().catch((error) => console.error('Error trying to autoplay video: ', error));
+  });
 </script>
 
 {% style %}
   #hero-{{ section.id }} {
     position: relative;
     overflow: hidden;
-    margin-top: 142.95px;
-  }
-
-  @media screen and (min-width: 900px) {
-    #hero-{{ section.id }} {
-      margin-top: 172.95px;
-    }
   }
 
   .video-hero {

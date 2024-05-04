@@ -51,7 +51,7 @@
         "color_scheme": "accent-1",
         "mobile_text_size": 16,
         "desktop_text_size": 18,
-        "isHeader": true,
+        "isHeader": false,
         "italic_text": false,
         "uppercase_text": false,
         "bold_text": false,
