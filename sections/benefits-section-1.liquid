@@ -1,32 +1,52 @@
 <!-- Benefits Section -->
-<section
-  class='benefits-section-1'
->
+<!-- Benefits Section -->
+<!-- Benefits Section -->
+<section class='benefits-section-1'>
   <div class='benefit-details-1'>
     <div class='benefit-detail-item-1'>
-      <p>
-        <strong>☘️ SAFE & EFFECTIVE INGREDIENTS</strong><br>
-        Made in an FDA registered facillity. Our ingredients are all natural and thoroughly tested.
-      </p>
+      <div class='title-desktop'>
+        <div class='emoji'>☘️</div>
+        <h4>SAFE & NATURAL INGREDIENTS</h4>
+      </div>
+      <div class='title-mobile'>
+        <h4>☘️ SAFE & NATURAL INGREDIENTS</h4>
+      </div>
+      <p>Made in an FDA registered facility. Our ingredients are all natural and thoroughly tested.</p>
     </div>
     <div class='benefit-detail-item-1'>
-      <p>
-        <strong>🇺🇸 MADE IN THE USA</strong><br>
-        Formulated, crafted, and packaged in the United States using globally sourced ingredients.
-      </p>
+      <div class='title-desktop'>
+        <div class='emoji'>🇺🇸</div>
+        <h4>MADE IN THE USA</h4>
+      </div>
+      <div class='title-mobile'>
+        <h4>🇺🇸 MADE IN THE USA</h4>
+      </div>
+      <p>Formulated, crafted, and packaged in the United States using globally sourced ingredients.</p>
     </div>
     <div class='benefit-detail-item-1'>
+      <div class='title-desktop'>
+        <div class='emoji'>✅</div>
+        <h4>EASY 30-DAY RETURNS</h4>
+      </div>
+      <div class='title-mobile'>
+        <h4>✅ EASY 30-DAY RETURNS</h4>
+      </div>
       <p>
-        <strong>✅ EASY 30-DAY RETURNS</strong><br>
         We're confident you'll love spicy cubes, but if you don't, send them back within 30 days for a full refund --
         more info.
       </p>
     </div>
     <div class='benefit-detail-item-1'>
+      <div class='title-desktop'>
+        <div class='emoji'>📦</div>
+        <h4>FAST & DISCREET SHIPPING</h4>
+      </div>
+      <div class='title-mobile'>
+        <h4>📦 FAST & DISCREET SHIPPING</h4>
+      </div>
       <p>
-        <strong>📦 FAST & DISCREET SHIPPING</strong><br>
-        Fast Standard Shipping with 2-7 day expedited option. All orders are shipped in plain packaging to ensure your
-        privacy -- more info.
+        Fast Standard Shipping with 2 - 7 day expedited option. All orders are shipped in plain packaging to ensure your
+        privacy.
       </p>
     </div>
   </div>
@@ -45,19 +65,72 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 80%;
-    text-align: justify;
+    gap: 20px;
+    width: 90%;
+    margin-top: 20px;
   }
 
   .benefit-detail-item-1 {
     width: 100%;
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .benefit-detail-item-1 p {
+    text-align: justify;
+    text-wrap: wrap;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .benefit-detail-item-1 h4 {
+    text-wrap: wrap;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .title-desktop {
+    display: none;
   }
 
   @media (min-width: 900px) {
     .benefits-section-1 {
       flex-direction: row;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .benefits-section-1 {
+      flex-direction: row;
+    }
+
+    .benefit-detail-item-1 {
+      max-width: 250px;
+    }
+
+    .benefit-detail-item-1 p {
+      text-align: center;
+    }
+
+    .benefit-detail-item-1 h4 {
+      text-align: center;
+    }
+    .emoji {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .title-mobile {
+      display: none;
+    }
+
+    .title-desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 {% endstyle %}

@@ -1,13 +1,76 @@
 {
   "sections": {
+    "horizontal_ticker_FdAdhW": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_VN4EJj": {
+          "type": "text",
+          "settings": {
+            "title": "☘️ Safe & Effective"
+          }
+        },
+        "text_pU9FKN": {
+          "type": "text",
+          "settings": {
+            "title": "🇺🇸 Made in USA"
+          }
+        },
+        "text_FfXr8Y": {
+          "type": "text",
+          "settings": {
+            "title": "📦 Fast & Discreet Shipping"
+          }
+        },
+        "text_WkzyhE": {
+          "type": "text",
+          "settings": {
+            "title": "🗓️ 30-day Satisfaction Guarantee"
+          }
+        },
+        "text_qHhh3n": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        }
+      },
+      "block_order": [
+        "text_VN4EJj",
+        "text_pU9FKN",
+        "text_FfXr8Y",
+        "text_WkzyhE",
+        "text_qHhh3n"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "speed": 3,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "header": true,
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
+    },
     "video-hero": {
       "type": "video-hero",
       "settings": {
-        "height": "70vh",
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "button_text": "Shop Now",
-        "video_url_desktop": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/271287144c054960a5ecde35246f0e28.webm",
-        "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6df7f303d6fe494a8eb1cd8acb6c98c3.webm"
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5a879d3a77364a6c9a89fd91d8ae0476.webm",
+        "video_overlay": "shopify:\/\/shop_images\/video_overlay.svg"
       }
     },
     "icon-bar": {
@@ -246,6 +309,7 @@
     }
   },
   "order": [
+    "horizontal_ticker_FdAdhW",
     "video-hero",
     "icon-bar",
     "shop-now-1",

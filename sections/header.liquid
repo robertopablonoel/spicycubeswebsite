@@ -300,19 +300,6 @@
     </nav>
   </div>
   {% render 'search-header' %}
-  <div class='guarantee-bar'>
-    <div class='guarantee-wrapper'>
-      <span class='guarantee-bar__left'>
-        <i class='guarantee-icon-left'>{% render 'icon-return-guarantee' %}</i>
-        <!-- Placeholder for the left icon -->
-        30-DAY SATISFACTION GUARANTEE
-      </span>
-      <span class='guarantee-bar__right'>
-        <i class='guarantee-icon-right'>{% render 'icon-shipping-guarantee' %}</i>
-        FAST & DISCREET SHIPPING
-      </span>
-    </div>
-  </div>
 </div>
 
 <div class='predictive-search__overlay js-search-overlay'></div>
@@ -369,137 +356,185 @@
       </button>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      addAnimation();
+    });
+
+    function addAnimation() {
+      const scrollers = document.querySelectorAll('.scroller');
+
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute('data-animated', true);
+
+        const scrollerInner = scroller.querySelector('.scroller__inner');
+        const scrollerContent = Array.from(scrollerInner.children);
+
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute('aria-hidden', true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
+      });
+    }
+  </script>
 {% endif %}
 
 {% style %}
-  .header__logo h1, .header__logo__image, .header__logo__image svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    {% if section.settings.logo != blank or section.settings.logo_svg != blank %}
-      max-width: {{ section.settings.logo_max_width_mobile }}px;
-    {% endif %}
-  }
-
-  @media screen and (min-width: 900px) {
-    .header__oversized-dropdown {
-      border-radius: 0;
-    }
     .header__logo h1, .header__logo__image, .header__logo__image svg {
+      display: block;
+      width: 100%;
+      height: auto;
       {% if section.settings.logo != blank or section.settings.logo_svg != blank %}
-        max-width: {{ section.settings.logo_max_width }}px;
+        max-width: {{ section.settings.logo_max_width_mobile }}px;
       {% endif %}
     }
-  }
 
-  {% if header_transparent %}
-    .header__container {
-      background-color: {{ settings.header_background | color_modify: 'alpha', 0.9 }}
+    @media screen and (min-width: 900px) {
+      .header__oversized-dropdown {
+        border-radius: 0;
+      }
+      .header__logo h1, .header__logo__image, .header__logo__image svg {
+        {% if section.settings.logo != blank or section.settings.logo_svg != blank %}
+          max-width: {{ section.settings.logo_max_width }}px;
+        {% endif %}
+      }
     }
-  {% endif %}
 
-  {% if section.settings.cta_menu_background %}
-    .header__cta-container {
-      background-color: {{ section.settings.cta_menu_background }};
-    }
-  {% endif %}
-
-  {% if section.settings.cta_menu_text_color %}
-    .header__cta__product h4 {
-      color: {{ section.settings.cta_menu_text_color }};
-    }
-  {% endif %}
-
-  .header__atc {
-    {% if settings.sticky_atc_bg != blank %}
-      background-color: {{ settings.sticky_atc_bg }};
+    {% if header_transparent %}
+      .header__container {
+        background-color: {{ settings.header_background | color_modify: 'alpha', 0.9 }}
+      }
     {% endif %}
-  }
 
-  .header__atc__price.product__price span:not(.on-sale),
-  .header__atc__details h4 {
-    {% if settings.sticky_atc_price_title != blank %}
-      color: {{ settings.sticky_atc_price_title }};
+    {% if section.settings.cta_menu_background %}
+      .header__cta-container {
+        background-color: {{ section.settings.cta_menu_background }};
+      }
     {% endif %}
-  }
 
-  .header__atc__price.product__price .on-sale {
-    {% if settings.sticky_atc_price_sale %}
-      color: {{ settings.sticky_atc_price_sale }};
+    {% if section.settings.cta_menu_text_color %}
+      .header__cta__product h4 {
+        color: {{ section.settings.cta_menu_text_color }};
+      }
     {% endif %}
-  }
 
-  {% if settings.sticky_atc_button_bg != blank %}
-    .btn.btn--primary.header__atc__btn {
-      background-color: {{ settings.sticky_atc_button_bg }};
+    .header__atc {
+      {% if settings.sticky_atc_bg != blank %}
+        background-color: {{ settings.sticky_atc_bg }};
+      {% endif %}
     }
-  {% endif %}
 
-  {% if settings.sticky_atc_button_text != blank %}
-    .btn.btn--primary.header__atc__btn {
-      color: {{ settings.sticky_atc_button_text }};
+    .header__atc__price.product__price span:not(.on-sale),
+    .header__atc__details h4 {
+      {% if settings.sticky_atc_price_title != blank %}
+        color: {{ settings.sticky_atc_price_title }};
+      {% endif %}
     }
-  {% endif %}
 
-  .header__nav__product img {
-    max-height: {{ dropdown_card_size }}px;
-  }
-
-  .guarantee-bar {
-    background-color: #fdfaf1;
-    color: #000;
-    font-family: Futura, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 0.01rem solid black;
-  }
-
-  .guarantee-wrapper {
-    width: 100%; /* Updated to be full width */
-    padding: 8px 1rem;
-    display: flex;
-    justify-content: space-between; /* This will push children to the edges */
-    align-items: center;
-    font-size: 9px;
-  }
-
-  @media (min-width: 768px) {
-    .guarantee-wrapper {
-      font-size: 10px;
-      padding: 8px 5rem;
+    .header__atc__price.product__price .on-sale {
+      {% if settings.sticky_atc_price_sale %}
+        color: {{ settings.sticky_atc_price_sale }};
+      {% endif %}
     }
+
+    {% if settings.sticky_atc_button_bg != blank %}
+      .btn.btn--primary.header__atc__btn {
+        background-color: {{ settings.sticky_atc_button_bg }};
+      }
+    {% endif %}
+
+    {% if settings.sticky_atc_button_text != blank %}
+      .btn.btn--primary.header__atc__btn {
+        color: {{ settings.sticky_atc_button_text }};
+      }
+    {% endif %}
+
+    .header__nav__product img {
+      max-height: {{ dropdown_card_size }}px;
+    }
+
+    .scroller {
+      background-color: #fdfaf1;
+      color: #000;
+      font-family: Futura, sans-serif;
+      border-top: 0.01rem solid black;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+      );
+      mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+
+    .scroller__inner {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .scroller[data-animated="true"] .scroller__inner {
+          width: max-content;
+          flex-wrap: nowrap;
+          animation: scroll var(--_animation-duration, 40s)
+            var(--_animation-direction, forwards) linear infinite;
+        }
+        .scroller[data-direction="right"] {
+      --_animation-direction: reverse;
+    }
+
+    .scroller[data-direction="left"] {
+      --_animation-direction: forwards;
+    }
+
+    .scroller[data-speed="fast"] {
+      --_animation-duration: 20s;
+    }
+
+    .scroller[data-speed="slow"] {
+      --_animation-duration: 60s;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .tag-list {
+      margin: 0;
+      padding-inline: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 1rem;
+      text-wrap: nowrap;
+    }
+
+  .guarantee-item {
+    display: inline-block;
+    margin-right: 20px;
+    animation: scrollGuaranteeBar 10s linear infinite;
   }
 
-  .guarantee-bar__left,
-  .guarantee-bar__right {
-    display: flex;
-    align-items: center;
-  }
-
-
-  .guarantee-icon-left,
-  .guarantee-icon-right {
-    font-size: 18px;
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-
-  .guarantee-icon-left svg,
-  .guarantee-icon-right svg {
-    width: 18px;
-    height: auto;
-    fill: currentColor;
-  }
-
-  .guarantee-icon-left svg {
-    width: 14px;
-    height: auto;
-  }
-
-  .guarantee-icon-right svg {
-    width: 24px;
-    height: auto;
+  @keyframes scrollGuaranteeBar {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 {% endstyle %}
 
