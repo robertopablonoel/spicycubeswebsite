@@ -2,15 +2,24 @@
   .horizontal-ticker {
     overflow-x: hidden;
     max-width: 100%;
-    position: fixed;
-    top: 132.95px; /* Stick to the top of the viewport */
     z-index: 1000;
     background-color: #fdfaf1;
   }
 
+  .show-border {
+    border-top: {{ section.settings.border }}px solid black;
+    border-bottom: {{ section.settings.border }}px solid black;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 132.95px; /* Stick to the top of the viewport */
+  }
+
   @media screen and (max-width: 900px) {
-    .horizontal-ticker {
-      top: 102.95px;
+    .sticky {
+      position: fixed;
+      top: 102.95px; /* Stick to the top of the viewport */
     }
   }
 
@@ -102,8 +111,8 @@
 
 {% if displayed %}
   <div
-    class='horizontal-ticker horizontal-ticker-{{ section.id }} color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding {{ section.settings.visibility }}'
-    style='--mobile-text-size: {{ section.settings.mobile_text_size | divided_by: 10.0 }}rem;--desktop-text-size: {{ section.settings.desktop_text_size | divided_by: 10.0 }}rem;--mobile-image-height: {{ section.settings.mobile_image_height | divided_by: 10.0 }}rem;--desktop-image-height: {{ section.settings.desktop_image_height | divided_by: 10.0 }}rem;'
+    class='horizontal-ticker {% if section.settings.showBorder %} show-border {% endif %} {% if section.settings.isHeader %} sticky {% endif %} horizontal-ticker-{{ section.id }} color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding {{ section.settings.visibility }}'
+    style='--mobile-text-size: {{ section.settings.mobile_text_size | divided_by: 10.0 }}rem;--desktop-text-size: {{ section.settings.desktop_text_size | divided_by: 10.0 }}rem;--mobile-image-height: {{ section.settings.mobile_image_height | divided_by: 10.0 }}rem;--desktop-image-height: {{ section.settings.desktop_image_height | divided_by: 10.0 }}rem; margin-bottom: {{ section.settings.margin_bottom }}px; margin-top: {{ section.settings.margin_top }}px;'
   >
     <div class='horizontal-ticker__container'>
       {% assign unique_blocks_total = section.blocks | size %}
@@ -198,10 +207,25 @@
       "content": "Ticker"
     },
     {
+      "type": "checkbox",
+      "id": "showBorder",
+      "label": "Show Border?",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border",
+      "label": "Border Thickness",
+      "min": 0,
+      "max": 5,
+      "default": 0,
+      "step": 0.5
+    },
+    {
       "type": "range",
       "id": "speed",
       "label": "Ticker speed",
-      "min": 1,
+      "min": 0.5,
       "max": 5,
       "default": 3,
       "step": 0.5
@@ -272,8 +296,8 @@
     },
     {
       "type": "checkbox",
-      "id": "header",
-      "label": "header",
+      "id": "isHeader",
+      "label": "isHeader",
       "default": false
     },
     {
@@ -345,6 +369,26 @@
       "info": "Applied if the checkbox above is checked. Handles of products to only display the block on, split with a comma."
     },
     {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    },
+    {
       "type": "header",
       "content": "Mobile padding"
     },
@@ -355,7 +399,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Padding Top (Mobile)",
       "default": 12
     },
     {
@@ -365,7 +409,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Padding Bottom (Mobile)",
       "default": 12
     },
     {
@@ -379,7 +423,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Padding Top (Desktop)",
       "default": 16
     },
     {
@@ -389,7 +433,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Padding Bottom (Desktop)",
       "default": 16
     }
   ],

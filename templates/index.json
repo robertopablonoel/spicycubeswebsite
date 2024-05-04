@@ -43,13 +43,15 @@
       ],
       "settings": {
         "visibility": "always-display",
-        "speed": 1.5,
+        "showBorder": false,
+        "border": 0,
+        "speed": 1,
         "mobile_spacing": 60,
         "desktop_spacing": 100,
         "color_scheme": "accent-1",
         "mobile_text_size": 16,
         "desktop_text_size": 18,
-        "header": true,
+        "isHeader": true,
         "italic_text": false,
         "uppercase_text": false,
         "bold_text": false,
@@ -58,6 +60,8 @@
         "hidden_products": "",
         "enable_specific_display": false,
         "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
@@ -229,6 +233,74 @@
       "settings": {
       }
     },
+    "horizontal_ticker_eQapVa": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_eLwxbN": {
+          "type": "text",
+          "settings": {
+            "title": "natural"
+          }
+        },
+        "text_8EhtkU": {
+          "type": "text",
+          "settings": {
+            "title": "safe"
+          }
+        },
+        "text_8RTYeg": {
+          "type": "text",
+          "settings": {
+            "title": "effective"
+          }
+        },
+        "text_iiVqrM": {
+          "type": "text",
+          "settings": {
+            "title": "Delicious"
+          }
+        },
+        "text_eK3ggJ": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        }
+      },
+      "block_order": [
+        "text_eLwxbN",
+        "text_8EhtkU",
+        "text_8RTYeg",
+        "text_iiVqrM",
+        "text_eK3ggJ"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": true,
+        "border": 3,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 52,
+        "margin_bottom": 52,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
+    },
     "video-testimonials": {
       "type": "video-testimonials",
       "blocks": {
@@ -319,6 +391,7 @@
     "shop-now-2",
     "image_with_text_XGbNyM",
     "benefits-section-1",
+    "horizontal_ticker_eQapVa",
     "video-testimonials",
     "shop-now-3",
     "17054643133553cd9c"
