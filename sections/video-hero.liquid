@@ -1,0 +1,124 @@
+{% liquid
+  assign video_url_desktop = section.settings.video_url_desktop
+  assign video_url_mobile = section.settings.video_url_mobile
+%}
+<div id='hero-{{ section.id }}' class='video-hero'>
+  <video autoplay muted loop playsinline class='hero-video__content'>
+    {% if video_url_desktop %}
+      <source src='{{ video_url_desktop }}' type='video/mp4' media='(min-width: 900px)'>
+    {% endif %}
+    {% if video_url_mobile %}
+      <source src='{{ video_url_mobile }}' type='video/mp4' media='(max-width: 899px)'>
+    {% endif %}
+  </video>
+  <div class='hero-video__content-wrapper'>
+    <div class='top__bar'>
+      <div style='margin-bottom: 10px;'>{% render 'turn-any-drink' %}</div>
+    </div>
+    <div class='content__holder'>
+      <div>{% render 'more-love' %}</div>
+      {% if section.settings.button_url != blank and section.settings.button_text != blank %}
+        <a class='btn' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  #hero-{{ section.id }} {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video__content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0; /* Fix bottom of the video to the bottom of the container */
+  }
+
+  .top__bar {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Ensure the top bar is above other content */
+  }
+
+  .content__holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the content is above the video */
+    text-align: center; /* Center align the content */
+  }
+
+  .content__holder .btn {
+    background-color: #000;
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .content__holder .btn:hover {
+    background-color: #fff;
+    color: #000; /* Black text on hover */
+  }
+
+  .hero-video__content-wrapper {
+    position: absolute;
+    z-index: 1; /* Ensure the video stays behind other content */
+    width: 100%;
+    height: 100%;
+    color: #fff; /* Adjust text color as needed */
+  }
+
+  @media screen and (max-width: 900px) {
+    #hero-{{ section.id }} {
+      height: 50vh;
+    }
+    .hero-video__content {
+      height: auto;
+      width: 100%;
+      bottom: 0;
+    }
+    .top__bar {
+      top: 5%;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "video-hero",
+  "settings": [
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "video_url_desktop",
+      "label": "Desktop Video URL (MP4)"
+    },
+    {
+      "type": "url",
+      "id": "video_url_mobile",
+      "label": "Mobile Video URL (MP4)"
+    }
+  ]
+}
+{% endschema %}

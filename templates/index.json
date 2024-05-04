@@ -1,45 +1,13 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "blocks": {
-        "1597558632301": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/main_desktop.webp",
-            "image_mobile": "shopify:\/\/shop_images\/main_mobile.webp",
-            "overlay": true,
-            "background_position_y": "top",
-            "content_align_desktop": "center-middle",
-            "text_align_desktop": "center",
-            "content_align_mobile": "middle",
-            "text_align_mobile": "center",
-            "pre_header": "",
-            "title": "",
-            "text": "",
-            "button_url": "shopify:\/\/products\/spicy-cubes",
-            "button_text": "shop now",
-            "enable_slide_link": false,
-            "slide_link": "",
-            "text_color": "#ffffff",
-            "button_color": "#ff6262",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "1597558632301"
-      ],
-      "custom_css": [
-
-      ],
+    "video-hero": {
+      "type": "video-hero",
       "settings": {
-        "height": "50vh",
-        "dots": true,
-        "arrows": true,
-        "autoplay": true,
-        "duration": 8,
-        "arrow_nav_color": "#ffffff"
+        "height": "70vh",
+        "button_url": "",
+        "button_text": "Shop Now",
+        "video_url_desktop": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/271287144c054960a5ecde35246f0e28.webm",
+        "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6df7f303d6fe494a8eb1cd8acb6c98c3.webm"
       }
     },
     "icon-bar": {
@@ -278,7 +246,7 @@
     }
   },
   "order": [
-    "hero",
+    "video-hero",
     "icon-bar",
     "shop-now-1",
     "sugar-section",
