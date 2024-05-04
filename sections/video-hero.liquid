@@ -1,16 +1,13 @@
 {% liquid
-  assign video_url_desktop = section.settings.video_url_desktop
-  assign video_url_mobile = section.settings.video_url_mobile
+  assign video_url = section.settings.video_url
 %}
 <div id='hero-{{ section.id }}' class='video-hero'>
   <video autoplay muted loop playsinline class='hero-video__content'>
-    {% if video_url_desktop %}
-      <source src='{{ video_url_desktop }}' type='video/mp4' media='(min-width: 900px)'>
-    {% endif %}
-    {% if video_url_mobile %}
-      <source src='{{ video_url_mobile }}' type='video/mp4' media='(max-width: 899px)'>
+    {% if video_url %}
+      <source src='{{ video_url }}' type='video/mp4'>
     {% endif %}
   </video>
+  <div class='hero-video__overlay'></div>
   <div class='hero-video__content-wrapper'>
     <div class='top__bar'>
       {% render 'turn-any-drink' %}
@@ -23,19 +20,53 @@
     </div>
   </div>
 </div>
+<script type='text/javascript'>
+  window.addEventListener('load', function () {
+    adjustHeroHeight(); // Call the function on initial load
+
+    window.addEventListener('resize', adjustHeroHeight); // Add event listener for resize
+  });
+
+  function adjustHeroHeight() {
+    var heroSection = document.getElementById('hero-{{ section.id }}');
+    var videoContent = document.querySelector('.hero-video__content');
+
+    if (heroSection && videoContent) {
+      var contentHeight = videoContent.offsetHeight;
+      var maxHeight = window.innerHeight * 0.7; // 70vh
+
+      heroSection.style.height = Math.min(contentHeight, maxHeight) + 'px';
+    }
+  }
+</script>
 
 {% style %}
   #hero-{{ section.id }} {
-    height: 80vh;
     position: relative;
     overflow: hidden;
   }
 
+  .video-hero {
+    margin-bottom: 10px;
+  }
+
   .hero-video__content {
     position: absolute;
-    left: 0;
+    top: 0;
     width: 100%;
-    bottom: 0; /* Fix bottom of the video to the bottom of the container */
+  }
+
+  .hero-video__overlay {
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 102%;
+      height: 100%;
+      {% if section.settings.video_overlay %}
+        background: url({{ section.settings.video_overlay | img_url: '2000x' }}) center bottom no-repeat;
+        background-size: 100% auto; /* Ensure the background covers the entire width */
+      {% endif %}
+      z-index: 2; /* Ensure the overlay is above the video */
   }
 
   .top__bar {
@@ -89,21 +120,9 @@
       width: 400px; /* Adjust the width of the SVG for desktop */
       height: auto; /* Maintain aspect ratio */
       }
-
-      .video-hero {
-        margin-bottom: 50px; /* Add space below the video hero */
-      }
   }
 
   @media screen and (max-width: 900px) {
-    #hero-{{ section.id }} {
-      height: 50vh;
-    }
-    .hero-video__content {
-      height: auto;
-      width: 100%;
-      bottom: 0;
-    }
     .top__bar {
       top: 5%;
     }
@@ -130,13 +149,13 @@
     },
     {
       "type": "url",
-      "id": "video_url_desktop",
-      "label": "Desktop Video URL (MP4)"
+      "id": "video_url",
+      "label": "Desktop Video URL"
     },
     {
-      "type": "url",
-      "id": "video_url_mobile",
-      "label": "Mobile Video URL (MP4)"
+      "type": "image_picker",
+      "id": "video_overlay",
+      "label": "Video Overlay Image"
     }
   ]
 }
