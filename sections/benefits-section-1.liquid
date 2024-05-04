@@ -31,6 +31,36 @@
     </div>
   </div>
 </section>
+
+{% style %}
+  .benefits-section-1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .benefit-details-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    text-align: justify;
+  }
+
+  .benefit-detail-item-1 {
+    width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    .benefits-section-1 {
+      flex-direction: row;
+    }
+  }
+{% endstyle %}
 <!-- End Benefits Section -->
 {% schema %}
 {
