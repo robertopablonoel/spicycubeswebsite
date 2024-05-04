@@ -44,7 +44,7 @@
 <div id='section-{{ section.id }}' class='cta-gradient'>
   <div class='cta-gradient__content'>
     {% if section.settings.button_text != blank %}
-      <a href='{{ 'shopify:\/\/products\/spicy-cubes' | default: '#' }}' class='btn'>
+      <a href='{{ section.settings.button_url }}' class='btn'>
         {{- section.settings.button_text }}
         <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i
       ></a>

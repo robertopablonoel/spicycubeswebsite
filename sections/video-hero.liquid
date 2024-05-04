@@ -7,18 +7,16 @@
       <source src='{{ video_url }}' type='video/mp4'>
     {% endif %}
   </video>
-  <div class='hero-video__overlay'></div>
   <div class='hero-video__content-wrapper'>
     <div class='top__bar'>
       {% render 'turn-any-drink' %}
     </div>
     <div class='content__holder'>
       <div>{% render 'more-love' %}</div>
-      {% if section.settings.button_url != blank and section.settings.button_text != blank %}
-        <a class='btn' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
-      {% endif %}
+      <a class='btn' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
     </div>
   </div>
+  <div class='hero-video__overlay'></div>
 </div>
 <script type='text/javascript'>
   window.addEventListener('load', function () {
@@ -44,19 +42,23 @@
   #hero-{{ section.id }} {
     position: relative;
     overflow: hidden;
-    padding-top: 48px;
+    margin-top: 142.95px;
+  }
+
+  @media screen and (min-width: 900px) {
+    #hero-{{ section.id }} {
+      margin-top: 172.95px;
+    }
   }
 
   .video-hero {
     margin-bottom: 10px;
-    padding-top: 48px;
   }
 
   .hero-video__content {
     position: absolute;
     top: 0;
     width: 100%;
-    padding-top: 48px;
   }
 
   .hero-video__overlay {
@@ -69,7 +71,7 @@
         background: url({{ section.settings.video_overlay | img_url: '2000x' }}) center bottom no-repeat;
         background-size: 100% auto; /* Ensure the background covers the entire width */
       {% endif %}
-      z-index: 2; /* Ensure the overlay is above the video */
+      z-index: 1; /* Ensure the overlay is above the video */
       padding-top: 48px;
   }
 
@@ -99,6 +101,7 @@
     font-size: 16px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    z-index: 4;
   }
 
   .content__holder .btn:hover {
@@ -108,7 +111,7 @@
 
   .hero-video__content-wrapper {
     position: absolute;
-    z-index: 1; /* Ensure the video stays behind other content */
+    z-index: 4; /* Ensure the video stays behind other content */
     width: 100%;
     height: 100%;
     color: #fff; /* Adjust text color as needed */
