@@ -2,9 +2,9 @@
   assign video_url = section.settings.video_url
 %}
 <div id='hero-{{ section.id }}' class='video-hero'>
-  <video autoplay muted loop playsinline class='hero-video__content'>
+  <video autoplay muted loop playsinline class='hero-video__content' onerror='handleVideoError(event)'>
     {% if video_url %}
-      <source src='{{ video_url }}' type='video/webm'>
+      <source src='{{ video_url }}' type='video/webm' onerror='handleVideoError(event)'>
     {% endif %}
   </video>
   <div class='hero-video__content-wrapper'>
@@ -31,9 +31,24 @@
     }
   }
 
+  function handleVideoError(e) {
+    console.error('Video loading error:', e.target.error);
+    var errorMessage = {
+      errorMessage: 'Failed to load video source',
+      src: e.target.src,
+      browser: navigator.userAgent,
+      pageUrl: window.location.href,
+    };
+
+    console.error('Detailed video error:', JSON.stringify(errorMessage));
+  }
+
   // Event listeners for load and resize
   window.addEventListener('load', adjustHeroHeight);
   window.addEventListener('resize', adjustHeroHeight);
+  document.addEventListener('DOMContentLoaded', function () {
+    adjustHeroHeight();
+  });
 
   // Attempt to play video after DOM is fully loaded
   document.addEventListener('DOMContentLoaded', function () {
