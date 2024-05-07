@@ -292,7 +292,7 @@
               {% endif %}
               data-product-price
             >
-              {{ current_variant.price | money_without_trailing_zeros }}
+              {{ current_variant.price | money_without_currency }}
             </span>
             {% if product.compare_at_price_max > product.price %}
               <span class='compare-price' data-compare-price>
@@ -497,17 +497,17 @@
                             class='product__quantity--discount__price'
                             style='font-size: 14px; color: #FF5A5A; text-decoration: line-through; padding-right: 5px;'
                           >
-                            {{ price_total | money_without_trailing_zeros }}
+                            {{ price_total | money_without_currency }} USD
                           </span>
                         {% endif %}
                         {% if forloop.index == 2 and product.title == 'Spicy Cubes' %}
                           {% assign adjusted_price = price_each | plus: 15 %}
-                          {{ adjusted_price | money }}
+                          {{ adjusted_price | money_without_currency }} USD
                         {% elsif forloop.index == 3 and product.title == 'Spicy Cubes' %}
                           {% assign adjusted_price = price_each | plus: 30 %}
-                          {{ adjusted_price | money }}
+                          {{ adjusted_price | money_without_currency }} USD
                         {% else %}
-                          {{ price_each | money }}
+                          {{ price_each | money_without_currency }} USD
                         {% endif %}
                         <b style='font-size: 12px; color: #A2A2A2; display: inline;'>/ box</b>
                       </span>
@@ -622,7 +622,7 @@
               <p>
                 Pay now
                 <span class='finance__price__amount'
-                  ><span data-product-price>{{ current_variant.price | money_without_trailing_zeros }}</span></span
+                  ><span data-product-price>{{ current_variant.price | money_without_currency }} USD</span></span
                 >
               </p>
             </div>
