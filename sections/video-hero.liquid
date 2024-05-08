@@ -9,7 +9,7 @@
   ></a>
   <video autoplay muted loop playsinline class='hero-video__content' onerror='handleVideoError(event)'>
     {% if video_url %}
-      <source src='{{ video_url }}' type='video/webm' onerror='handleVideoError(event)'>
+      <source src='{{ video_url }}' type='video/mp4' onerror='handleVideoError(event)'>
     {% endif %}
   </video>
   <div class='hero-video__content-wrapper'>
