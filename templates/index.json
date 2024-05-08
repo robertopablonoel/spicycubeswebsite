@@ -6,25 +6,25 @@
         "text_VN4EJj": {
           "type": "text",
           "settings": {
-            "title": "☘️ Safe & Effective"
+            "title": "☘️ SAFE & EFFECTIVE"
           }
         },
         "text_pU9FKN": {
           "type": "text",
           "settings": {
-            "title": "🇺🇸 Made in USA"
+            "title": "🇺🇸 MADE IN USA"
           }
         },
         "text_FfXr8Y": {
           "type": "text",
           "settings": {
-            "title": "📦 Fast & Discreet Shipping"
+            "title": "📦 FAST & DISCREET SHIPPING"
           }
         },
         "text_WkzyhE": {
           "type": "text",
           "settings": {
-            "title": "🗓️ 30-day Satisfaction Guarantee"
+            "title": "🗓️ 30-DAY SATISFACTION GUARANTEE"
           }
         },
         "text_qHhh3n": {
@@ -73,7 +73,7 @@
       "settings": {
         "button_url": "shopify:\/\/products\/spicy-cubes",
         "button_text": "Shop Now",
-        "video_url": "https:\/\/d1y0e0eyxb4mj1.cloudfront.net\/d15a0bda045e40759c9cc4912f3733d2.webm",
+        "video_url": "https:\/\/d1y0e0eyxb4mj1.cloudfront.net\/square_short.mp4",
         "video_overlay": "shopify:\/\/shop_images\/video_overlay.svg"
       }
     },

@@ -18,7 +18,7 @@
     </div>
     <div class='content__holder'>
       <div>{% render 'more-love' %}</div>
-      <a class='btn' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
+      <a class='btn red' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
     </div>
   </div>
   <div class='hero-video__overlay'></div>
@@ -82,8 +82,8 @@
   .hero-video__overlay {
       position: absolute;
       left: 0;
-      bottom: -3px;
-      width: 102%;
+      bottom: -4px;
+      width: 104%;
       height: 100%;
       {% if section.settings.video_overlay %}
         background: url({{ section.settings.video_overlay | img_url: '2000x' }}) center bottom no-repeat;
@@ -111,7 +111,7 @@
   }
 
   .content__holder .btn {
-    background-color: #000;
+    background-color: #ff6262;
     color: #fff; /* White text */
     padding: 10px 20px;
     border: none;

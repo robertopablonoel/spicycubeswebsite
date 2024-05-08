@@ -497,14 +497,14 @@
                             class='product__quantity--discount__price'
                             style='font-size: 14px; color: #FF5A5A; text-decoration: line-through; padding-right: 5px;'
                           >
-                            {{ price_total | money_without_currency }} USD
+                            {{ price_total | money_without_trailing_zeros }}
                           </span>
                         {% endif %}
                         {% if forloop.index == 2 and product.title == 'Spicy Cubes' %}
-                          {% assign adjusted_price = price_each | plus: 15 %}
+                          {% assign adjusted_price = price_each | plus: 70 %}
                           {{ adjusted_price | money_without_currency }} USD
                         {% elsif forloop.index == 3 and product.title == 'Spicy Cubes' %}
-                          {% assign adjusted_price = price_each | plus: 30 %}
+                          {% assign adjusted_price = price_each | plus: 40 %}
                           {{ adjusted_price | money_without_currency }} USD
                         {% else %}
                           {{ price_each | money_without_currency }} USD
