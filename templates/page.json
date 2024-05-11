@@ -9,17 +9,6 @@
     },
     "17053714877f0d1907": {
       "type": "apps",
-      "blocks": {
-        "snowball_affiliate_marketing_affiliate_sign_up_J9RVQW": {
-          "type": "shopify:\/\/apps\/snowball-affiliate-marketing\/blocks\/affiliate-sign-up\/6e5feda3-ec24-4171-ae41-64028b660bc7",
-          "settings": {
-            "form_id": "a6307e02-1495-45f8-86b5-cefe7a6de5fc"
-          }
-        }
-      },
-      "block_order": [
-        "snowball_affiliate_marketing_affiliate_sign_up_J9RVQW"
-      ],
       "settings": {
       }
     }

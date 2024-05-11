@@ -501,10 +501,10 @@
                           </span>
                         {% endif %}
                         {% if forloop.index == 2 and product.title == 'Spicy Cubes' %}
-                          {% assign adjusted_price = price_each | plus: 70 %}
+                          {% assign adjusted_price = price_each | plus: 15 %}
                           {{ adjusted_price | money_without_currency }} USD
                         {% elsif forloop.index == 3 and product.title == 'Spicy Cubes' %}
-                          {% assign adjusted_price = price_each | plus: 40 %}
+                          {% assign adjusted_price = price_each | plus: 30 %}
                           {{ adjusted_price | money_without_currency }} USD
                         {% else %}
                           {{ price_each | money_without_currency }} USD
