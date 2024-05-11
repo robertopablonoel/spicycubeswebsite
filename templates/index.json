@@ -383,8 +383,7 @@
       "type": "pre-footer",
       "settings": {
         "button_url": "shopify:\/\/products\/spicy-cubes",
-        "button_text": "Shop Now",
-        "background_image": "shopify:\/\/shop_images\/kiki_frame_1.webp"
+        "background_image": "shopify:\/\/shop_images\/pre-footer-image.jpg"
       }
     }
   },
