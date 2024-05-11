@@ -1,0 +1,82 @@
+<div class='pre-footer-section'>
+  <img src='{{ section.settings.background_image | img_url: 'master' }}' class='background-image'>
+  <div class='pre-footer-content-wrapper'>
+    {% render 'get-your-spicy-cubes' %}
+    <a href='{{ section.settings.button_url }}' class='btn'
+      >shop now <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i
+    ></a>
+  </div>
+</div>
+
+{% style %}
+  .pre-footer-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 900px) {
+    .pre-footer-section {
+      display: none;
+    }
+  }
+
+  .background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .pre-footer-content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pre-footer-section .btn {
+    color: #fff; /* White text */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    background-color: transparent;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .pre-footer-section .btn:hover {
+    background-color: #fff;
+    color: #000; /* Black text on hover */
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "video-hero",
+  "settings": [
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ]
+}
+{% endschema %}

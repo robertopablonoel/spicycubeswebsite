@@ -378,6 +378,14 @@
       ],
       "settings": {
       }
+    },
+    "pre-footer": {
+      "type": "pre-footer",
+      "settings": {
+        "button_url": "shopify:\/\/products\/spicy-cubes",
+        "button_text": "Shop Now",
+        "background_image": "shopify:\/\/shop_images\/kiki_frame_1.webp"
+      }
     }
   },
   "order": [
@@ -394,6 +402,7 @@
     "horizontal_ticker_eQapVa",
     "video-testimonials",
     "shop-now-3",
-    "17054643133553cd9c"
+    "17054643133553cd9c",
+    "pre-footer"
   ]
 }
