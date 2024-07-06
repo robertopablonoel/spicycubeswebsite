@@ -449,11 +449,17 @@
                   assign save_key = 'quantity_discount_save_' | append: forloop.index
                   assign qty_key = 'quantity_discount_' | append: forloop.index
                   assign badge_key = 'quantity_discount_badge_' | append: forloop.index
+                  assign bundle_message_key = 'bundle_discounts_buy_message_1'
+                  assign bundle_product_key = 'bundle_option_1'
 
                   assign buy_message = section.settings[buy_message_key]
                   assign save = section.settings[save_key] | times: 1
                   assign qty = section.settings[qty_key]
                   assign badge = section.settings[badge_key]
+                  assign bundle_message = section.settings[bundle_message_key]
+                  assign bundle_product_handle = section.settings[bundle_product_key]
+
+                  assign bundle_product = all_products[bundle_product_handle]
                 %}
                 {% if buy_message != blank %}
                   {% assign percentage = save | divided_by: 100.00 %}
@@ -516,8 +522,23 @@
                 {% endif %}
               {% endfor %}
             </div>
-          {% elsif section.settings.enable_bundle_discounts %}
-
+            {% if bundle_product %}
+              <div class='bundle-product product__quantity--radio-single'>
+                <label for='bundle-toggle' class='bundle__toggle-label'>
+                  <input type='checkbox' id='bundle-toggle' name='add_bundle' value='{{ bundle_product.id }}' checked>
+                  <span class='bundle__toggle-switch'></span>
+                  <span class='bundle__toggle-message'>
+                    <img src='{{ bundle_product.featured_image | img_url: 'small' }}' alt='{{ bundle_product.title }}'>
+                    <div>
+                      Add {{ bundle_product.title }}
+                      <div style='font-size: 14px; color: gold;'>
+                        <b>{{ bundle_message }}</b>
+                      </div>
+                    </div>
+                  </span>
+                </label>
+              </div>
+            {% endif %}
           {% endif %}
         </div>
 

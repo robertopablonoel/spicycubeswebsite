@@ -159,13 +159,41 @@ solodrop.cart = {
       const formData = $(this).serializeArray(),
         formJSON = {};
 
-      //Form data to JSON
+      // Form data to JSON
       $.each(formData, function (i, v) {
         formJSON[v.name] = v.value;
       });
 
-      //Add form json to cart
-      addItemToCart(formJSON);
+      console.log(formJSON);
+      // Add main product to items array
+      const items = [
+        {
+          form_type: formJSON['form_type'],
+          id: formJSON.id,
+          'product-id': formJSON['product-id'],
+          quantity: formJSON['quantity'],
+          'section-id': formJSON['section-id'],
+          utf8: formJSON['utf8'],
+        },
+      ];
+
+      console.log(items[0]);
+
+      // Check if bundle product checkbox is checked
+      const bundleCheckbox = document.querySelector('#bundle-toggle');
+      if (bundleCheckbox && bundleCheckbox.checked) {
+        items.push({
+          form_type: formJSON['form_type'],
+          id: formJSON.id,
+          'product-id': bundleCheckbox.value,
+          quantity: 1,
+          'section-id': formJSON['section-id'],
+          utf8: formJSON['utf8'],
+        });
+      }
+
+      // Add items to cart
+      addItemsToCart(items);
     });
 
     // When quantity is changed within cart
@@ -176,7 +204,7 @@ solodrop.cart = {
       updateItemQuantity(variantId, quantity);
     });
 
-    //Check for cart notes
+    // Check for cart notes
     $checkoutBtn.click(function (e) {
       e.preventDefault();
 
@@ -190,25 +218,33 @@ solodrop.cart = {
     });
 
     // Post product data to cart
-    function addItemToCart(data) {
-      $.ajax({
-        type: 'POST',
-        url: '/cart/add.js',
-        data: data,
-        dataType: 'json',
-      })
-        .done(function (itemData) {
-          // if successful
+    function addItemsToCart(items) {
+      const addItemPromises = items.map((item) => addItemToCart(item));
+
+      Promise.all(addItemPromises)
+        .then(() => {
           if (skipCart) {
             window.location.replace('/checkout');
           } else {
             updateCart();
           }
         })
-        .fail(function (xhr, textStatus) {
-          // if fail
-          console.log('addItemToCart error');
+        .catch((error) => {
+          console.error('addItemsToCart error', error);
+          alert('Failed to add items to cart. Please try again.');
         });
+    }
+
+    function addItemToCart(item) {
+      console.log('addItemToCart: ', item);
+      return $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: item,
+        dataType: 'json',
+      }).fail(function (xhr, textStatus, errorThrown) {
+        console.error('addItemToCart error', xhr, textStatus, errorThrown);
+      });
     }
 
     function updateCartNote(value) {
