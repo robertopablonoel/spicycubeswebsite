@@ -525,7 +525,13 @@
             {% if bundle_product %}
               <div class='bundle-product product__quantity--radio-single'>
                 <label for='bundle-toggle' class='bundle__toggle-label'>
-                  <input type='checkbox' id='bundle-toggle' name='add_bundle' value='{{ bundle_product.id }}' checked>
+                  <input
+                    type='checkbox'
+                    id='bundle-toggle'
+                    name='add_bundle'
+                    value='{{ bundle_product.id }}.{{ bundle_product.variants[0].id }}'
+                    checked
+                  >
                   <span class='bundle__toggle-switch'></span>
                   <span class='bundle__toggle-message'>
                     <img src='{{ bundle_product.featured_image | img_url: 'small' }}' alt='{{ bundle_product.title }}'>

@@ -184,9 +184,9 @@ solodrop.cart = {
       if (bundleCheckbox && bundleCheckbox.checked) {
         items.push({
           form_type: formJSON['form_type'],
-          id: formJSON.id,
-          'product-id': bundleCheckbox.value,
-          quantity: 1,
+          id: formJSON['add_bundle'].split('.')[1],
+          'product-id': formJSON['add_bundle'].split('.')[0],
+          quantity: '1',
           'section-id': formJSON['section-id'],
           utf8: formJSON['utf8'],
         });
@@ -218,33 +218,35 @@ solodrop.cart = {
     });
 
     // Post product data to cart
-    function addItemsToCart(items) {
-      const addItemPromises = items.map((item) => addItemToCart(item));
-
-      Promise.all(addItemPromises)
-        .then(() => {
-          if (skipCart) {
-            window.location.replace('/checkout');
-          } else {
-            updateCart();
-          }
-        })
-        .catch((error) => {
-          console.error('addItemsToCart error', error);
-          alert('Failed to add items to cart. Please try again.');
-        });
+    async function addItemsToCart(items) {
+      try {
+        for (const item of items) {
+          await addItemToCart(item);
+        }
+        if (skipCart) {
+          window.location.replace('/checkout');
+        } else {
+          await updateCart();
+        }
+      } catch (error) {
+        console.error('addItemsToCart error', error);
+        alert('Failed to add items to cart. Please try again.');
+      }
     }
 
-    function addItemToCart(item) {
+    async function addItemToCart(item) {
       console.log('addItemToCart: ', item);
-      return $.ajax({
-        type: 'POST',
-        url: '/cart/add.js',
-        data: item,
-        dataType: 'json',
-      }).fail(function (xhr, textStatus, errorThrown) {
-        console.error('addItemToCart error', xhr, textStatus, errorThrown);
-      });
+      try {
+        await $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          data: item,
+          dataType: 'json',
+        });
+      } catch (error) {
+        console.error('addItemToCart error', error);
+        throw error;
+      }
     }
 
     function updateCartNote(value) {
@@ -263,46 +265,35 @@ solodrop.cart = {
     }
 
     // Get cart data
-    function updateCart() {
-      $.ajax({
-        type: 'GET',
-        url: '/cart.js',
-        dataType: 'json',
-      })
-        .done(function (cartData) {
-          // if successful
-
-          updateCartRefs(cartData['item_count'], cartData['total_price']); // update references
-          populateCart(); // update mini cart
-        })
-        .fail(function (xhr, textStatus) {
-          // if fail
-          console.log('updateCart error');
+    async function updateCart() {
+      try {
+        const cartData = await $.ajax({
+          type: 'GET',
+          url: '/cart.js',
+          dataType: 'json',
         });
+        updateCartRefs(cartData['item_count'], cartData['total_price']);
+        await populateCart();
+      } catch (error) {
+        console.log('updateCart error', error);
+      }
     }
 
-    // Add items to mini cart
-    function populateCart() {
-      $.get({
-        url: '/cart?view=ajax',
-      })
-        .done(function (newCartItems) {
-          // if successful
-
-          // Add updated cart data
-          const $newCartItems = $.parseHTML(newCartItems);
-          $itemsContainer.html($newCartItems);
-
-          var sections = new solodrop.Sections();
-          sections.register('product', theme.Product);
-
-          //Open cart drawer
-          openCart();
-        })
-        .fail(function (xhr, textStatus) {
-          // if fail
-          console.log('populateCart error');
+    async function populateCart() {
+      try {
+        const newCartItems = await $.get({
+          url: '/cart?view=ajax',
         });
+        const $newCartItems = $.parseHTML(newCartItems);
+        $itemsContainer.html($newCartItems);
+
+        var sections = new solodrop.Sections();
+        sections.register('product', theme.Product);
+
+        openCart();
+      } catch (error) {
+        console.log('populateCart error', error);
+      }
     }
 
     // Update cart alert and totals
