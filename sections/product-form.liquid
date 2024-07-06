@@ -1,21 +1,25 @@
 <div
-  id="product-section-{{ section.id }}"
-  class="product-page"
-  data-section-id="{{ section.id }}"
-  data-section-type="product"
-  data-enable-history-state="true"
+  id='product-section-{{ section.id }}'
+  class='product-page'
+  data-section-id='{{ section.id }}'
+  data-section-type='product'
+  data-enable-history-state='true'
   itemscope
-  itemtype="http://schema.org/Product">
-  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
-  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
-  <meta itemprop="brand" content="{{ product.vendor }}">
-  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
-  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+  itemtype='http://schema.org/Product'
+>
+  <meta
+    itemprop='name'
+    content='{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}'
+  >
+  <meta itemprop='url' content='{{ shop.url }}{{ current_variant.url }}'>
+  <meta itemprop='brand' content='{{ product.vendor }}'>
+  <meta itemprop='image' content='{{ featured_image | img_url: '600x600' }}'>
+  <meta itemprop='description' content='{{ product.description | strip_html | escape }}'>
 
   {% include 'product-form' %}
 
   {% unless product == empty %}
-    <script type="application/json" data-product-json>
+    <script type='application/json' data-product-json>
       {{ product | json }}
     </script>
   {% endunless %}
@@ -30,406 +34,448 @@
 {% endstyle %}
 
 {% schema %}
-  {
-   "name":"Product Details",
-   "settings":[
-      {
-         "type":"checkbox",
-         "id":"show_vendor",
-         "label":"Show Product Vendor?",
-         "default":false
-      },
-      {
-         "type":"header",
-         "content":"Images"
-      },
-      {
-         "type":"select",
-         "id":"image_layout",
-         "label":"Image Layout",
-         "options":[
-            {
-               "value":"slider",
-               "label":"Slider"
-            },
-            {
-               "value":"grid",
-               "label":"Grid"
-            }
-         ],
-         "default":"slider"
-      },
-      {
-         "type":"checkbox",
-         "id":"show_thumbnails",
-         "label":"Show Image Thumbnails?",
-         "default":true
-      },
-      {
-         "type":"header",
-         "content":"Social Badges"
-      },
-      {
-         "type":"paragraph",
-         "content":"Display an 'As seen on' social badge on your product images."
-      },
-      {
-         "type":"select",
-         "id":"social_badge",
-         "label":"Social Badge",
-         "options":[
-            {
-               "value":"tiktok",
-               "label":"TikTok"
-            },
-            {
-               "value":"instagram",
-               "label":"Instagram"
-            },
-            {
-               "value":"none",
-               "label":"None"
-            }
-         ],
-         "default":"none"
-      },
-      {
-         "type":"header",
-         "content":"Form Options"
-      },
-      {
-         "type":"select",
-         "id":"product_form_input",
-         "label":"Form options type",
-         "options":[
-            {
-               "value":"select",
-               "label":"Select box"
-            },
-            {
-               "value":"grid",
-               "label":"Grid"
-            }
-         ],
-         "default":"select"
-      },
-      {
-         "type":"checkbox",
-         "id":"hide_quantity",
-         "label":"Hide quantity option?",
-         "default":false
-      },
-      {
-         "type":"header",
-         "content":"Color Swatches"
-      },
-      {
-         "type":"checkbox",
-         "id":"enable_color_swatches",
-         "label":"Enable color swatches",
-         "default":true
-      },
-      {
-         "type":"text",
-         "id":"custom_swatch_option_name",
-         "label":"Custom swatch option name",
-         "info":"The name of your product option that should appear as a color swatch. If left blank, the product option that contains the word 'color' will be used."
-      },
-      {
-         "type":"header",
-         "content":"Promotion Message"
-      },
-      {
-         "type":"paragraph",
-         "content":"Appears below product pricing. Use this space to callout special promotions."
-      },
-      {
-         "type":"text",
-         "id":"promo_message",
-         "label":"Promotion Message"
-      },
-      {
-         "type":"color",
-         "id":"promo_message_gradient_1",
-         "label":"Gradient Color 1"
-      },
-      {
-         "type":"color",
-         "id":"promo_message_gradient_2",
-         "label":"Gradient Color 2"
-      },
-      {
-         "type":"color",
-         "id":"promo_message_text_color",
-         "label":"Promotion Message Text Color"
-      },
-      {
-         "type":"header",
-         "content":"Discount Percentage"
-      },
-      {
-         "type":"checkbox",
-         "id":"show_discount_percentage",
-         "label":"Show Discount Percentage?",
-         "default":true
-      },
-      {
-         "type":"textarea",
-         "id":"percentage_message",
-         "label":"Discount Percentage Message",
-         "default":"*percent* OFF"
-      },
-      {
-         "type":"checkbox",
-         "id":"discount_message_rounded_corners",
-         "label":"Rounded Corners?",
-         "default":false
-      },
-      {
-         "type":"header",
-         "content":"Quantity Discounts"
-      },
-      {
-         "type":"paragraph",
-         "content":"Be sure to set up an [automatic discount](https://help.shopify.com/en/manual/discounts/automatic-discounts) in Shopify to allow items to be discounted at certain quantity levels."
-      },
-      {
-         "type":"checkbox",
-         "id":"enable_quantity_discounts",
-         "label":"Enable Quantity Discounts"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discounts_buy_message_1",
-         "label":"Quantity Option Message #1",
-         "default":"Get 1"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discount_badge_1",
-         "label":"Quantity Option Badge #1"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_1",
-         "min":1,
-         "max":20,
-         "step":1,
-         "unit":"qty",
-         "label":"Quantity Option #1",
-         "default":2,
-         "info":"Set 1 to disable this option"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_save_1",
-         "label":"Quantity Option Percentage Discount #1",
-         "min":0,
-         "max":100,
-         "step":1,
-         "unit":"%",
-         "default":10,
-         "info":"The % that the customer will be saving"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discounts_buy_message_2",
-         "label":"Quantity Option Message #2",
-         "default":"Get 2"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discount_badge_2",
-         "label":"Quantity Option Badge #2",
-         "default":"Most popular"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_2",
-         "min":1,
-         "max":20,
-         "step":1,
-         "unit":"qty",
-         "label":"Quantity Option #2",
-         "default":3,
-         "info":"Set 1 to disable this option"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_save_2",
-         "label":"Quantity Option Percentage Discount #2",
-         "min":0,
-         "max":100,
-         "step":1,
-         "unit":"%",
-         "default":10,
-         "info":"The % that the customer will be saving"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discounts_buy_message_3",
-         "label":"Quantity Option Message #3",
-         "default":"Get 3"
-      },
-      {
-         "type":"text",
-         "id":"quantity_discount_badge_3",
-         "label":"Quantity Option Badge #3",
-         "default":"Best deal"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_save_3",
-         "label":"Quantity Option Percentage Discount #3",
-         "min":0,
-         "max":100,
-         "step":1,
-         "unit":"%",
-         "default":10,
-         "info":"The % that the customer will be saving"
-      },
-      {
-         "type":"range",
-         "id":"quantity_discount_3",
-         "min":1,
-         "max":20,
-         "step":1,
-         "unit":"qty",
-         "label":"Quantity Option #3",
-         "default":1,
-         "info":"Set 1 to disable this option"
-      },
-      {
-         "type":"header",
-         "content":"Add To Cart"
-      },
-      {
-         "type":"checkbox",
-         "id":"enable_dynamic_buttons",
-         "label":"Show dynamic checkout button"
-      },
-      {
-         "type":"header",
-         "content":"Additional Details"
-      },
-      {
-         "type":"text",
-         "id":"add_to_cart_message_title",
-         "label":"Additional details title",
-         "info":"Appears below add to cart button."
-      },
-      {
-         "type":"textarea",
-         "id":"add_to_cart_message",
-         "label":"Additional details message",
-         "info":"Appears below add to cart button."
-      },
-      {
-         "type":"header",
-         "content":"Trust Badges"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_trust_badges",
-        "label": "Enable Trust Badges"
-      },
-      {
-        "type": "image_picker",
-        "id": "trust_badge_1",
-        "label": "Trust Badge #1"
-      },
-      {
-        "type": "text",
-        "id": "trust_badge_label_1",
-        "label": "Trust Badge Label #1"
-      },
-      {
-        "type": "image_picker",
-        "id": "trust_badge_2",
-        "label": "Trust Badge #2"
-      },
-      {
-        "type": "text",
-        "id": "trust_badge_label_2",
-        "label": "Trust Badge Label #2"
-      },
-      {
-        "type": "image_picker",
-        "id": "trust_badge_3",
-        "label": "Trust Badge #3"
-      },
-      {
-        "type": "text",
-        "id": "trust_badge_label_3",
-        "label": "Trust Badge Label #3"
-      },
-      {
-         "type":"header",
-         "content":"Installment Message"
-      },
-      {
-         "type":"paragraph",
-         "content":"Use this area to inform your customers about your installment plan(s). Please ensure you have your store set up to accept payment plans for this product."
-      },
-      {
-         "type":"checkbox",
-         "id":"enable_payment_plan",
-         "label":"Enable Installment Message"
-      },
-      {
-         "type":"text",
-         "id":"plan_heading",
-         "label":"Installment Title",
-         "default":"Pay monthly"
-      },
-      {
-         "type":"text",
-         "id":"plan_message",
-         "label":"Installment Message",
-         "default":"Pay as low as"
-      },
-      {
-         "type":"text",
-         "id":"plan_lowest_payment",
-         "label":"Installment Lowest Payment",
-         "info":"How low can the installment payments be for your product?",
-         "default":"XX"
-      },
-      {
-         "type":"text",
-         "id":"plan_frequency",
-         "label":"Installment Frequency",
-         "default":"MO"
-      },
-      {
-         "type":"textarea",
-         "id":"plan_instructions",
-         "label":"Installment Instructions",
-         "default":"Select ____ as the payment option at checkout."
-      }
-   ],
-   "blocks":[
-      {
-         "type":"details-block",
-         "name":"Details Block",
-         "settings":[
-            {
-               "type":"text",
-               "id":"title",
-               "label":"Title"
-            },
-            {
-               "type":"textarea",
-               "id":"content",
-               "label":"Content"
-            },
-            {
-               "type":"checkbox",
-               "id":"default_open",
-               "label":"Appear open by default"
-            }
-         ]
-      }
-    ]
-  }
+{
+  "name": "Product Details",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show Product Vendor?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "select",
+      "id": "image_layout",
+      "label": "Image Layout",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show Image Thumbnails?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Social Badges"
+    },
+    {
+      "type": "paragraph",
+      "content": "Display an 'As seen on' social badge on your product images."
+    },
+    {
+      "type": "select",
+      "id": "social_badge",
+      "label": "Social Badge",
+      "options": [
+        {
+          "value": "tiktok",
+          "label": "TikTok"
+        },
+        {
+          "value": "instagram",
+          "label": "Instagram"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "header",
+      "content": "Form Options"
+    },
+    {
+      "type": "select",
+      "id": "product_form_input",
+      "label": "Form options type",
+      "options": [
+        {
+          "value": "select",
+          "label": "Select box"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "select"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_quantity",
+      "label": "Hide quantity option?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Color Swatches"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_color_swatches",
+      "label": "Enable color swatches",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_swatch_option_name",
+      "label": "Custom swatch option name",
+      "info": "The name of your product option that should appear as a color swatch. If left blank, the product option that contains the word 'color' will be used."
+    },
+    {
+      "type": "header",
+      "content": "Promotion Message"
+    },
+    {
+      "type": "paragraph",
+      "content": "Appears below product pricing. Use this space to callout special promotions."
+    },
+    {
+      "type": "text",
+      "id": "promo_message",
+      "label": "Promotion Message"
+    },
+    {
+      "type": "color",
+      "id": "promo_message_gradient_1",
+      "label": "Gradient Color 1"
+    },
+    {
+      "type": "color",
+      "id": "promo_message_gradient_2",
+      "label": "Gradient Color 2"
+    },
+    {
+      "type": "color",
+      "id": "promo_message_text_color",
+      "label": "Promotion Message Text Color"
+    },
+    {
+      "type": "header",
+      "content": "Discount Percentage"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_percentage",
+      "label": "Show Discount Percentage?",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "percentage_message",
+      "label": "Discount Percentage Message",
+      "default": "*percent* OFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "discount_message_rounded_corners",
+      "label": "Rounded Corners?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Bundle Discounts"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_bundle_discounts",
+      "label": "Enable Bundle Discounts"
+    },
+    {
+      "type": "text",
+      "id": "bundle_discounts_buy_message_1",
+      "label": "Bundle Option Message #1",
+      "default": "Get 1"
+    },
+    {
+      "type": "product",
+      "id": "bundle_option_1",
+      "label": "Bundle Option #1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_discounts_buy_message_2",
+      "label": "Bundle Option Message #2",
+      "default": "Get 2"
+    },
+    {
+      "type": "product",
+      "id": "bundle_option_2",
+      "label": "Bundle Option #2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_discounts_buy_message_3",
+      "label": "Bundle Option Message #3",
+      "default": "Get 3"
+    },
+    {
+      "type": "product",
+      "id": "bundle_option_3",
+      "label": "Bundle Option #3"
+    },
+    {
+      "type": "header",
+      "content": "Quantity Discounts"
+    },
+    {
+      "type": "paragraph",
+      "content": "Be sure to set up an [automatic discount](https://help.shopify.com/en/manual/discounts/automatic-discounts) in Shopify to allow items to be discounted at certain quantity levels."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quantity_discounts",
+      "label": "Enable Quantity Discounts"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discounts_buy_message_1",
+      "label": "Quantity Option Message #1",
+      "default": "Get 1"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discount_badge_1",
+      "label": "Quantity Option Badge #1"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_1",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "qty",
+      "label": "Quantity Option #1",
+      "default": 2,
+      "info": "Set 1 to disable this option"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_save_1",
+      "label": "Quantity Option Percentage Discount #1",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 10,
+      "info": "The % that the customer will be saving"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discounts_buy_message_2",
+      "label": "Quantity Option Message #2",
+      "default": "Get 2"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discount_badge_2",
+      "label": "Quantity Option Badge #2",
+      "default": "Most popular"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_2",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "qty",
+      "label": "Quantity Option #2",
+      "default": 3,
+      "info": "Set 1 to disable this option"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_save_2",
+      "label": "Quantity Option Percentage Discount #2",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 10,
+      "info": "The % that the customer will be saving"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discounts_buy_message_3",
+      "label": "Quantity Option Message #3",
+      "default": "Get 3"
+    },
+    {
+      "type": "text",
+      "id": "quantity_discount_badge_3",
+      "label": "Quantity Option Badge #3",
+      "default": "Best deal"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_save_3",
+      "label": "Quantity Option Percentage Discount #3",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 10,
+      "info": "The % that the customer will be saving"
+    },
+    {
+      "type": "range",
+      "id": "quantity_discount_3",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "qty",
+      "label": "Quantity Option #3",
+      "default": 1,
+      "info": "Set 1 to disable this option"
+    },
+    {
+      "type": "header",
+      "content": "Add To Cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_dynamic_buttons",
+      "label": "Show dynamic checkout button"
+    },
+    {
+      "type": "header",
+      "content": "Additional Details"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_message_title",
+      "label": "Additional details title",
+      "info": "Appears below add to cart button."
+    },
+    {
+      "type": "textarea",
+      "id": "add_to_cart_message",
+      "label": "Additional details message",
+      "info": "Appears below add to cart button."
+    },
+    {
+      "type": "header",
+      "content": "Trust Badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_trust_badges",
+      "label": "Enable Trust Badges"
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_badge_1",
+      "label": "Trust Badge #1"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_label_1",
+      "label": "Trust Badge Label #1"
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_badge_2",
+      "label": "Trust Badge #2"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_label_2",
+      "label": "Trust Badge Label #2"
+    },
+    {
+      "type": "image_picker",
+      "id": "trust_badge_3",
+      "label": "Trust Badge #3"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_label_3",
+      "label": "Trust Badge Label #3"
+    },
+    {
+      "type": "header",
+      "content": "Installment Message"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use this area to inform your customers about your installment plan(s). Please ensure you have your store set up to accept payment plans for this product."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_plan",
+      "label": "Enable Installment Message"
+    },
+    {
+      "type": "text",
+      "id": "plan_heading",
+      "label": "Installment Title",
+      "default": "Pay monthly"
+    },
+    {
+      "type": "text",
+      "id": "plan_message",
+      "label": "Installment Message",
+      "default": "Pay as low as"
+    },
+    {
+      "type": "text",
+      "id": "plan_lowest_payment",
+      "label": "Installment Lowest Payment",
+      "info": "How low can the installment payments be for your product?",
+      "default": "XX"
+    },
+    {
+      "type": "text",
+      "id": "plan_frequency",
+      "label": "Installment Frequency",
+      "default": "MO"
+    },
+    {
+      "type": "textarea",
+      "id": "plan_instructions",
+      "label": "Installment Instructions",
+      "default": "Select ____ as the payment option at checkout."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "details-block",
+      "name": "Details Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Appear open by default"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
