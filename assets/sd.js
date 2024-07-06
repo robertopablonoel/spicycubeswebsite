@@ -153,7 +153,7 @@ solodrop.cart = {
       processingClass = 'is-processing';
 
     // On product form submit
-    $('body').on('submit', '.product-form--ajax', function (e) {
+    $('body').on('submit', '.product-form--ajax', async function (e) {
       e.preventDefault();
 
       const formData = $(this).serializeArray(),
@@ -184,24 +184,17 @@ solodrop.cart = {
       if (bundleCheckbox && bundleCheckbox.checked) {
         items.push({
           form_type: formJSON['form_type'],
-          id: '49335460331804',
-          'product-id': '9524708278556',
-          quantity: '1',
-          'section-id': formJSON['section-id'],
-          utf8: formJSON['utf8'],
-        });
-        items.push({
-          form_type: formJSON['form_type'],
           id: formJSON['add_bundle'].split('.')[1],
           'product-id': formJSON['add_bundle'].split('.')[0],
           quantity: '1',
           'section-id': formJSON['section-id'],
           utf8: formJSON['utf8'],
         });
+        await applyDiscountCode('CARDSDISCOUNT50');
       }
 
       // Add items to cart
-      addItemsToCart(items);
+      await addItemsToCart(items);
     });
 
     // When quantity is changed within cart
@@ -254,6 +247,24 @@ solodrop.cart = {
       } catch (error) {
         console.error('addItemToCart error', error);
         throw error;
+      }
+    }
+
+    async function applyDiscountCode(discountCode) {
+      try {
+        const response = await $.ajax({
+          type: 'POST',
+          url: '/cart/update.js',
+          data: {
+            attributes: {
+              discount: discountCode,
+            },
+          },
+          dataType: 'json',
+        });
+        console.log('Discount code applied:', response);
+      } catch (error) {
+        console.error('Error applying discount code:', error);
       }
     }
 
