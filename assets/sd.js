@@ -189,13 +189,28 @@ solodrop.cart = {
           quantity: '1',
           'section-id': formJSON['section-id'],
           utf8: formJSON['utf8'],
+          discounts: ['CARDSDISCOUNT50'],
         });
-        await applyDiscountCode('CARDSDISCOUNT50');
       }
 
       // Add items to cart
       await addItemsToCart(items);
+      await logCartContents();
     });
+
+    async function logCartContents() {
+      $.ajax({
+        url: '/cart.js',
+        type: 'GET',
+        dataType: 'json',
+        success: function (cart) {
+          console.log('Cart contents:', cart);
+        },
+        error: function (error) {
+          console.error('Error fetching cart contents:', error);
+        },
+      });
+    }
 
     // When quantity is changed within cart
     $('body').on('change', $qtySelector, function () {
@@ -247,24 +262,6 @@ solodrop.cart = {
       } catch (error) {
         console.error('addItemToCart error', error);
         throw error;
-      }
-    }
-
-    async function applyDiscountCode(discountCode) {
-      try {
-        const response = await $.ajax({
-          type: 'POST',
-          url: '/cart/update.js',
-          data: {
-            attributes: {
-              discount: discountCode,
-            },
-          },
-          dataType: 'json',
-        });
-        console.log('Discount code applied:', response);
-      } catch (error) {
-        console.error('Error applying discount code:', error);
       }
     }
 
