@@ -523,7 +523,7 @@
               {% endfor %}
             </div>
             {% if bundle_product %}
-              <div class='bundle-product product__quantity--radio-single'>
+              <div class='bundle-product product__bundle--checkbox'>
                 <label for='bundle-toggle' class='bundle__toggle-label'>
                   <input
                     type='checkbox'
@@ -536,8 +536,8 @@
                   <span class='bundle__toggle-message'>
                     <img src='{{ bundle_product.featured_image | img_url: 'small' }}' alt='{{ bundle_product.title }}'>
                     <div>
-                      Add {{ bundle_product.title }}
-                      <div style='font-size: 14px; color: gold;'>
+                      <b>Add {{ bundle_product.title }}</b>
+                      <div style='font-size: 14px; color: #ffc500;'>
                         <b>{{ bundle_message }}</b>
                       </div>
                     </div>
