@@ -184,6 +184,14 @@ solodrop.cart = {
       if (bundleCheckbox && bundleCheckbox.checked) {
         items.push({
           form_type: formJSON['form_type'],
+          id: '49335460331804',
+          'product-id': '9524708278556',
+          quantity: '1',
+          'section-id': formJSON['section-id'],
+          utf8: formJSON['utf8'],
+        });
+        items.push({
+          form_type: formJSON['form_type'],
           id: formJSON['add_bundle'].split('.')[1],
           'product-id': formJSON['add_bundle'].split('.')[0],
           quantity: '1',
