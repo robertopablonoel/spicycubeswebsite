@@ -522,7 +522,7 @@
                 {% endif %}
               {% endfor %}
             </div>
-            {% if bundle_product %}
+            {% if bundle_product and product.title == 'Spicy Cubes' %}
               <div class='bundle-product product__bundle--checkbox'>
                 <label for='bundle-toggle' class='bundle__toggle-label'>
                   <input
@@ -537,8 +537,14 @@
                     <img src='{{ bundle_product.featured_image | img_url: 'small' }}' alt='{{ bundle_product.title }}'>
                     <div>
                       <b>Add {{ bundle_product.title }}</b>
-                      <div style='font-size: 14px; color: #ffc500;'>
-                        <b>{{ bundle_message }}</b>
+                      <div style='font-size: 14px; color: black;'>
+                        <span
+                          class='product__quantity--discount__price'
+                          style='font-size: 14px; color: #FF5A5A; text-decoration: line-through; padding-right: 5px;'
+                        >
+                          {{ bundle_product.compare_at_price | money_without_trailing_zeros }}
+                        </span>
+                        <b>{{ bundle_product.price | money_without_currency }} USD</b>
                       </div>
                     </div>
                   </span>

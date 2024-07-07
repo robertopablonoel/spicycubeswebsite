@@ -88,7 +88,7 @@
         "discount_message_rounded_corners": false,
         "enable_bundle_discounts": true,
         "bundle_discounts_buy_message_1": "GET 50% OFF!",
-        "bundle_option_1": "the-spicy-card-game",
+        "bundle_option_1": "the-spicy-card-game-50-off",
         "enable_quantity_discounts": true,
         "quantity_discounts_buy_message_1": "1 box",
         "quantity_discount_badge_1": "",
