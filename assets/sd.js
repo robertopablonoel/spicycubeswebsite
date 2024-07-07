@@ -179,7 +179,7 @@ solodrop.cart = {
 
       console.log(items[0]);
 
-      // Check if bundle product checkbox is checked
+      // Check if bundle product checkbox is checked CARDSDISCOUNT50
       const bundleCheckbox = document.querySelector('#bundle-toggle');
       if (bundleCheckbox && bundleCheckbox.checked) {
         items.push({
@@ -189,7 +189,6 @@ solodrop.cart = {
           quantity: '1',
           'section-id': formJSON['section-id'],
           utf8: formJSON['utf8'],
-          discounts: ['CARDSDISCOUNT50'],
         });
       }
 
