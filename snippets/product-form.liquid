@@ -601,7 +601,7 @@
                   {% if settings.enable_skip_to_checkout %}
                     {{ settings.skip_cart_submit | default: 'Buy now' }}
                   {% elsif settings.is_presale %}
-                    Pre Order Now
+                    Add to Cart
                   {% else %}
                     {{ 'products.product.add_to_cart' | t }}
                   {% endif %}
