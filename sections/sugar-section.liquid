@@ -6,9 +6,9 @@
     </div>
     <div class='sugar-box-image'>
       <!-- Desktop Image -->
-      <img src='{{ section.settings.box_image_desktop | image_url }}' class='desktop-image' loading='lazy'>
+      <img src='{{ section.settings.hero_product_image_desktop | image_url }}' class='desktop-image' loading='lazy'>
       <!-- Mobile Image -->
-      <img src='{{ section.settings.box_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
+      <img src='{{ section.settings.hero_product_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
     </div>
   </div>
 </section>
@@ -43,12 +43,12 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "box_image_desktop",
+      "id": "hero_product_image_desktop",
       "label": "Choose Desktop Image"
     },
     {
       "type": "image_picker",
-      "id": "box_image_mobile",
+      "id": "hero_product_image_mobile",
       "label": "Choose Mobile Image"
     }
   ]

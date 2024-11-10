@@ -1,21 +1,17 @@
 {% liquid
-  assign color_right = section.settings.color_right | default: settings.color_gradient_2
-  assign color_left = section.settings.color_left | default: settings.color_gradient_1
+  assign background_color = section.settings.background_color
   assign color_text = section.settings.text_color | default: settings.color_gradient_text
-  assign top_margin = section.settings.top_margin | default: 0
-  assign bottom_margin = section.settings.bottom_margin | default: 0
+  assign top_padding = section.settings.top_padding | default: 0
+  assign bottom_padding = section.settings.bottom_padding | default: 0
 %}
 
 <style media='screen'>
   #section-{{ section.id }} {
-    background: {{ color_right }};
-    background: -webkit-linear-gradient(to right, {{ color_left  }}, {{ color_right }});
-    background: linear-gradient(to right, {{ color_left }}, {{ color_right }});
-    {% if top_margin %}
-      margin-top: {{ top_margin }}px;
-      margin-bottom: {{ bottom_margin }}px;
+    background-color: {{ background_color }};
+    {% if top_padding %}
+      padding-top: {{ top_padding }}px;
+      padding-bottom: {{ bottom_padding }}px;
     {% endif %}
-    padding: 0;
   }
 
   #section-{{ section.id }} h3 {
@@ -77,14 +73,9 @@
       "content": "Gradient"
     },
     {
-      "id": "color_left",
+      "id": "background_color",
       "type": "color",
-      "label": "Color (left)"
-    },
-    {
-      "id": "color_right",
-      "type": "color",
-      "label": "Color (right)"
+      "label": "Background Color"
     },
     {
       "id": "text_color",
@@ -113,8 +104,8 @@
     },
     {
       "type": "range",
-      "id": "top_margin",
-      "label": "Top Margin",
+      "id": "top_padding",
+      "label": "Top Padding",
       "min": 0,
       "max": 100,
       "step": 1,
@@ -123,8 +114,8 @@
     },
     {
       "type": "range",
-      "id": "bottom_margin",
-      "label": "Bottom Margin",
+      "id": "bottom_padding",
+      "label": "Bottom Padding",
       "min": 0,
       "max": 100,
       "step": 1,
