@@ -74,7 +74,10 @@
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
-        "desktop_padding_bottom": 16
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#fdfaf1",
+        "desktop_background_color": "#fdfaf1",
+        "text_color": "#000000"
       }
     },
     "video-hero": {
@@ -132,7 +135,8 @@
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "top_padding": 0,
-        "bottom_padding": 50
+        "bottom_padding": 50,
+        "display_on_desktop": true
       }
     },
     "sugar-section": {
@@ -155,7 +159,8 @@
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "top_padding": 50,
-        "bottom_padding": 50
+        "bottom_padding": 50,
+        "display_on_desktop": true
       }
     },
     "dark-benefits-section": {
@@ -180,7 +185,8 @@
         "button_url": "",
         "spacing": false,
         "top_padding": 0,
-        "bottom_padding": 50
+        "bottom_padding": 50,
+        "display_on_desktop": false
       }
     },
     "image_with_text_XGbNyM": {
@@ -244,7 +250,7 @@
       ],
       "settings": {
         "visibility": "always-display",
-        "showBorder": true,
+        "showBorder": false,
         "border": 3,
         "speed": 1,
         "mobile_spacing": 60,
@@ -261,12 +267,15 @@
         "hidden_products": "",
         "enable_specific_display": false,
         "displayed_products": "",
-        "margin_top": 52,
+        "margin_top": 0,
         "margin_bottom": 52,
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
-        "desktop_padding_bottom": 16
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#7b1c14",
+        "text_color": "#f7e8cc"
       }
     },
     "video-testimonials": {
@@ -321,7 +330,8 @@
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "top_padding": 0,
-        "bottom_padding": 0
+        "bottom_padding": 0,
+        "display_on_desktop": true
       }
     },
     "17054643133553cd9c": {

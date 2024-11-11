@@ -3,9 +3,15 @@
     overflow-x: hidden;
     max-width: 100%;
     z-index: 1000;
-    background-color: #fdfaf1;
+    background-color: var(--mobile-background-color);
+    color: var(--text-color);
   }
 
+  @media screen and (min-width: 1200px) {
+    .horizontal-ticker {
+      background-color: var(--desktop-background-color);
+    }
+  }
 
   .custom-font-size {
     font-size: 13px;
@@ -118,7 +124,7 @@
 {% if displayed %}
   <div
     class='horizontal-ticker {% if section.settings.showBorder %} show-border {% endif %} {% if section.settings.isHeader %} sticky {% endif %} horizontal-ticker-{{ section.id }} color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding {{ section.settings.visibility }}'
-    style='--mobile-text-size: {{ section.settings.mobile_text_size | divided_by: 10.0 }}rem;--desktop-text-size: {{ section.settings.desktop_text_size | divided_by: 10.0 }}rem;--mobile-image-height: {{ section.settings.mobile_image_height | divided_by: 10.0 }}rem;--desktop-image-height: {{ section.settings.desktop_image_height | divided_by: 10.0 }}rem; margin-bottom: {{ section.settings.margin_bottom }}px; margin-top: {{ section.settings.margin_top }}px;'
+    style='--mobile-text-size: {{ section.settings.mobile_text_size | divided_by: 10.0 }}rem;--desktop-text-size: {{ section.settings.desktop_text_size | divided_by: 10.0 }}rem;--mobile-image-height: {{ section.settings.mobile_image_height | divided_by: 10.0 }}rem;--desktop-image-height: {{ section.settings.desktop_image_height | divided_by: 10.0 }}rem; margin-bottom: {{ section.settings.margin_bottom }}px; margin-top: {{ section.settings.margin_top }}px; --mobile-background-color: {{ section.settings.mobile_background_color }}; --desktop-background-color: {{ section.settings.desktop_background_color }}; --text-color: {{ section.settings.text_color }};'
   >
     <div class='horizontal-ticker__container'>
       {% assign unique_blocks_total = section.blocks | size %}
@@ -441,6 +447,24 @@
       "unit": "px",
       "label": "Padding Bottom (Desktop)",
       "default": 16
+    },
+    {
+      "type": "color",
+      "id": "mobile_background_color",
+      "label": "Mobile Background Color",
+      "default": "#fdfaf1"
+    },
+    {
+      "type": "color",
+      "id": "desktop_background_color",
+      "label": "Desktop Background Color",
+      "default": "#fdfaf1"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
     }
   ],
   "blocks": [
