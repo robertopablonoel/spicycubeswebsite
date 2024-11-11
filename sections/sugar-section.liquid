@@ -12,12 +12,47 @@
         <img src='{{ section.settings.hero_product_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
       </div>
       <div class='sugar-text'>
-        <h3>Safe and natural ingredients</h3>
-        <p>Made in FDA approved facility & constantly improve through research & development.</p>
-        <h3>Made in the USA</h3>
-        <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
-        <h3>Easy 30-day returns</h3>
-        <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
+        <div class='benefit'>
+          <div class='benefit-icon'>
+            {% render 'icon-america' %}
+          </div>
+          <div class='benefit-content'>
+            <h3>Made in the USA</h3>
+            <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
+          </div>
+        </div>
+        <div class='benefit'>
+          <div class='benefit-icon'>
+            {% render 'icon-return' %}
+          </div>
+          <div class='benefit-content'>
+            <h3>Easy 30-day returns</h3>
+            <p>
+              We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.
+            </p>
+          </div>
+        </div>
+        <div class='benefit'>
+          <div class='benefit-icon'>
+            {% render 'icon-clover' %}
+          </div>
+          <div class='benefit-content'>
+            <h3>Safe and <em>natural</em> ingredients</h3>
+            <p>Made in FDA approved facility & constantly improve through research & development.</p>
+          </div>
+        </div>
+        <div class='benefit'>
+          <div class='benefit-icon'>
+            {% render 'icon-box' %}
+          </div>
+          <div class='benefit-content'>
+            <h3>Fast and <em>discreet</em> shipping</h3>
+            <p>
+              Fast standard shipping, opt for expedited shipping via USPS, ships in 10-15 business days -
+              <a href='#'>more info</a>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +64,7 @@
   }
   .sugar-box-image .mobile-image {
     display: block;
+    max-width: 500px;
   }
 
   @media (min-width: 1200px) {
@@ -53,10 +89,13 @@
     .sugar-content {
       flex-direction: row;
       justify-content: space-between;
+      gap: 60px;
     }
     .sugar-text {
       text-align: left;
       order: 2; /* Ensure text is on the right */
+      padding-top: 40px;
+      max-width: 500px;
     }
     .sugar-box-image {
       order: 1; /* Ensure image is on the left */
