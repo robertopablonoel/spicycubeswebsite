@@ -4,11 +4,21 @@
     <div class='sugar-title-image'>
       {% render 'title-sugar-by-cubes' %}
     </div>
-    <div class='sugar-box-image'>
-      <!-- Desktop Image -->
-      <img src='{{ section.settings.hero_product_image_desktop | image_url }}' class='desktop-image' loading='lazy'>
-      <!-- Mobile Image -->
-      <img src='{{ section.settings.hero_product_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
+    <div class='sugar-content'>
+      <div class='sugar-box-image'>
+        <!-- Desktop Image -->
+        <img src='{{ section.settings.hero_product_image_desktop | image_url }}' class='desktop-image' loading='lazy'>
+        <!-- Mobile Image -->
+        <img src='{{ section.settings.hero_product_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
+      </div>
+      <div class='sugar-text'>
+        <h2>Safe and natural ingredients</h2>
+        <p>Made in FDA approved facility & constantly improve through research & development.</p>
+        <h2>Made in the USA</h2>
+        <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
+        <h2>Easy 30-day returns</h2>
+        <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -24,10 +34,32 @@
   @media (min-width: 1200px) {
     .sugar-box-image .desktop-image {
       display: block;
-      max-width: 1200px;
+      max-width: 770px;
+      max-height: 611px;
+      width: 100%;
+      height: auto;
     }
     .sugar-box-image .mobile-image {
       display: none;
+    }
+  }
+
+  .sugar-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1200px) {
+    .sugar-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .sugar-text {
+      text-align: left;
+      order: 2; /* Ensure text is on the right */
+    }
+    .sugar-box-image {
+      order: 1; /* Ensure image is on the left */
     }
   }
 </style>
