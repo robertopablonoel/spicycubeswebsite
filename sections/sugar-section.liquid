@@ -56,8 +56,6 @@
     }
     .sugar-text {
       text-align: left;
-      color: {{ section.settings.text_color | default: '#FFC0CB' }}; /* Default to pink */
-    font-size: {{ section.settings.font_size | default: 32 }}px;
       order: 2; /* Ensure text is on the right */
     }
     .sugar-box-image {
@@ -66,7 +64,16 @@
   }
 
   .sugar-text {
-    display: none;
+    color: {{ section.settings.text_color | default: '#FFC0CB' }}; /* Default to pink */
+    font-size: {{ section.settings.font_size | default: 32 }}px;
+    text-align: left;
+    display: none; /* Hide by default */
+  }
+
+  @media (min-width: 1200px) {
+    .sugar-text {
+      display: block; /* Show on larger screens */
+    }
   }
 </style>
 

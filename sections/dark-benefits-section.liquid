@@ -1,0 +1,157 @@
+<style>
+  .dark-benefits-section {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    padding: {{ section.settings.padding_top | default: 20 }}px {{ section.settings.padding_right | default: 20 }}px {{ section.settings.padding_bottom | default: 20 }}px {{ section.settings.padding_left | default: 20 }}px;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .benefit:last-child {
+    margin-bottom: 0;
+  }
+
+  .benefit-icon {
+    flex-shrink: 0;
+    width: 50px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .benefit-content h3,
+  .benefit-content p {
+    margin: 0;
+    padding: 2px 0;
+  }
+
+  .benefit-content a {
+    color: #FEFAF0;
+    text-decoration: underline;
+  }
+
+  .benefit-content a:hover {
+    color: #FFFFFF;
+  }
+
+  /* Hide section on desktop */
+  @media (min-width: 1024px) {
+    .dark-benefits-section {
+      display: none;
+    }
+  }
+</style>
+
+<div class='dark-benefits-section'>
+  <div class='benefit'>
+    <div class='benefit-icon'>
+      {% render 'icon-america' %}
+    </div>
+    <div class='benefit-content'>
+      <h3>Made in the USA</h3>
+      <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
+    </div>
+  </div>
+  <div class='benefit'>
+    <div class='benefit-icon'>
+      {% render 'icon-return' %}
+    </div>
+    <div class='benefit-content'>
+      <h3>Easy 30-day returns</h3>
+      <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
+    </div>
+  </div>
+  <div class='benefit'>
+    <div class='benefit-icon'>
+      {% render 'icon-clover' %}
+    </div>
+    <div class='benefit-content'>
+      <h3>Safe and <em>natural</em> ingredients</h3>
+      <p>Made in FDA approved facility & constantly improve through research & development.</p>
+    </div>
+  </div>
+  <div class='benefit'>
+    <div class='benefit-icon'>
+      {% render 'icon-box' %}
+    </div>
+    <div class='benefit-content'>
+      <h3>Fast and <em>discreet</em> shipping</h3>
+      <p>
+        Fast standard shipping, opt for expedited shipping via USPS, ships in 10-15 business days -
+        <a href='#'>more info</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dark Benefits Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#7B1C14"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FEFAF0"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Padding Right",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Padding Left",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Default"
+    }
+  ]
+}
+{% endschema %}
