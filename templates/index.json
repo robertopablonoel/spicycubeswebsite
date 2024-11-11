@@ -182,29 +182,11 @@
         "background_color": "#7b1c14",
         "text_color": "#fefaf0",
         "button_text": "shop now",
-        "button_url": "",
+        "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "top_padding": 0,
         "bottom_padding": 50,
         "display_on_desktop": false
-      }
-    },
-    "image_with_text_XGbNyM": {
-      "type": "image-with-text",
-      "settings": {
-        "pre_header": "",
-        "pre_header_highlight": "",
-        "title": "",
-        "content": "",
-        "button_url": "",
-        "button_text": "",
-        "image": "shopify://shop_images/web_-_12.png",
-        "image_align_left": false,
-        "border_radius": 0,
-        "spacing": false,
-        "padding": true,
-        "bg_color": "",
-        "text_color": ""
       }
     },
     "horizontal_ticker_eQapVa": {
@@ -372,7 +354,6 @@
     "shop-now-2",
     "dark-benefits-section",
     "gradient_cta_B4xHn3",
-    "image_with_text_XGbNyM",
     "horizontal_ticker_eQapVa",
     "video-testimonials",
     "shop-now-3",
