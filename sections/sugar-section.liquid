@@ -12,11 +12,11 @@
         <img src='{{ section.settings.hero_product_image_mobile | image_url }}' class='mobile-image' loading='lazy'>
       </div>
       <div class='sugar-text'>
-        <h2>Safe and natural ingredients</h2>
+        <h3>Safe and natural ingredients</h3>
         <p>Made in FDA approved facility & constantly improve through research & development.</p>
-        <h2>Made in the USA</h2>
+        <h3>Made in the USA</h3>
         <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
-        <h2>Easy 30-day returns</h2>
+        <h3>Easy 30-day returns</h3>
         <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
       </div>
     </div>
@@ -56,11 +56,17 @@
     }
     .sugar-text {
       text-align: left;
+      color: {{ section.settings.text_color | default: '#FFC0CB' }}; /* Default to pink */
+    font-size: {{ section.settings.font_size | default: 32 }}px;
       order: 2; /* Ensure text is on the right */
     }
     .sugar-box-image {
       order: 1; /* Ensure image is on the left */
     }
+  }
+
+  .sugar-text {
+    display: none;
   }
 </style>
 
@@ -82,6 +88,18 @@
       "type": "image_picker",
       "id": "hero_product_image_mobile",
       "label": "Choose Mobile Image"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FDFAF1"
+    },
+    {
+      "type": "number",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": 24
     }
   ]
 }
