@@ -5,6 +5,11 @@
     padding: {{ section.settings.padding_top | default: 20 }}px {{ section.settings.padding_right | default: 20 }}px {{ section.settings.padding_bottom | default: 20 }}px {{ section.settings.padding_left | default: 20 }}px;
   }
 
+  .benefits-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .benefit {
     display: flex;
     align-items: center;
@@ -35,6 +40,14 @@
     padding: 2px 0;
   }
 
+  .benefit-content p {
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .benefit-content h3 {
+    font-family: "Playfair Display", serif;
+  }
+
   .benefit-content a {
     color: #FEFAF0;
     text-decoration: underline;
@@ -53,43 +66,45 @@
 </style>
 
 <div class='dark-benefits-section'>
-  <div class='benefit'>
-    <div class='benefit-icon'>
-      {% render 'icon-america' %}
+  <div class='benefits-container'>
+    <div class='benefit'>
+      <div class='benefit-icon'>
+        {% render 'icon-clover' %}
+      </div>
+      <div class='benefit-content'>
+        <h3>Safe and natural ingredients</h3>
+        <p>Made in FDA approved facility & constantly improve through research & development.</p>
+      </div>
     </div>
-    <div class='benefit-content'>
-      <h3>Made in the USA</h3>
-      <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
+    <div class='benefit'>
+      <div class='benefit-icon'>
+        {% render 'icon-america' %}
+      </div>
+      <div class='benefit-content'>
+        <h3>Made in the USA</h3>
+        <p>Formulated, crafted and packaged in United States from globally sourced ingredients.</p>
+      </div>
     </div>
-  </div>
-  <div class='benefit'>
-    <div class='benefit-icon'>
-      {% render 'icon-return' %}
+    <div class='benefit'>
+      <div class='benefit-icon'>
+        {% render 'icon-return' %}
+      </div>
+      <div class='benefit-content'>
+        <h3>Easy 30-day returns</h3>
+        <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
+      </div>
     </div>
-    <div class='benefit-content'>
-      <h3>Easy 30-day returns</h3>
-      <p>We're confident you'll love Spicy Cubes, so we offer a 100% satisfaction guarantee with no-hassle return.</p>
-    </div>
-  </div>
-  <div class='benefit'>
-    <div class='benefit-icon'>
-      {% render 'icon-clover' %}
-    </div>
-    <div class='benefit-content'>
-      <h3>Safe and <em>natural</em> ingredients</h3>
-      <p>Made in FDA approved facility & constantly improve through research & development.</p>
-    </div>
-  </div>
-  <div class='benefit'>
-    <div class='benefit-icon'>
-      {% render 'icon-box' %}
-    </div>
-    <div class='benefit-content'>
-      <h3>Fast and <em>discreet</em> shipping</h3>
-      <p>
-        Fast standard shipping, opt for expedited shipping via USPS, ships in 10-15 business days -
-        <a href='#'>more info</a>.
-      </p>
+    <div class='benefit'>
+      <div class='benefit-icon'>
+        {% render 'icon-box' %}
+      </div>
+      <div class='benefit-content'>
+        <h3>Fast and discreet shipping</h3>
+        <p>
+          Fast standard shipping, opt for expedited shipping via USPS, ships in 10-15 business days -
+          <a href='#'>more info</a>.
+        </p>
+      </div>
     </div>
   </div>
 </div>
