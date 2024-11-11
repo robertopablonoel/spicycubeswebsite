@@ -3,6 +3,7 @@
   assign color_text = section.settings.text_color | default: settings.color_gradient_text
   assign top_padding = section.settings.top_padding | default: 0
   assign bottom_padding = section.settings.bottom_padding | default: 0
+  assign display_on_desktop = section.settings.display_on_desktop
 %}
 
 <style media='screen'>
@@ -12,6 +13,14 @@
       padding-top: {{ top_padding }}px;
       padding-bottom: {{ bottom_padding }}px;
     {% endif %}
+  }
+
+  @media (min-width: 1200px) { /* Adjust the width as needed for your desktop breakpoint */
+    {% unless display_on_desktop %}
+      #section-{{ section.id }} {
+        display: none;
+      }
+    {% endunless %}
   }
 
   #section-{{ section.id }} h3 {
@@ -121,6 +130,12 @@
       "step": 1,
       "default": 0,
       "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_desktop",
+      "label": "Display on Desktop",
+      "default": true
     }
   ],
   "presets": [
