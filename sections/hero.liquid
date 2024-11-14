@@ -52,10 +52,13 @@
               <div style='margin-bottom: 10px;'>{% render 'turn-any-drink' %}</div>
             </div>
             <div class='content__holder'>
-              <div>{% render 'more-love' %}</div>
-              {% if block.settings.button_url != blank and block.settings.button_text != blank %}
-                <a class='btn' href='{{ block.settings.button_url }}'>{{ block.settings.button_text }}</a>
-              {% endif %}
+              <div class='more-love-large'>
+                {% render 'more-love-large' %}
+              </div>
+              <div class='more-love-small'>
+                {% render 'more-love-small' %}
+              </div>
+              <a class='btn red' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
             </div>
           </div>
         </div>
