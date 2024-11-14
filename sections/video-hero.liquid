@@ -13,11 +13,13 @@
     {% endif %}
   </video>
   <div class='hero-video__content-wrapper'>
-    <div class='top__bar'>
-      {% render 'turn-any-drink' %}
-    </div>
     <div class='content__holder'>
-      <div>{% render 'more-love' %}</div>
+      <div class='more-love-large'>
+        {% render 'more-love-large' %}
+      </div>
+      <div class='more-love-small'>
+        {% render 'more-love-small' %}
+      </div>
       <a class='btn red' href='{{ section.settings.button_url }}'>{{ section.settings.button_text }}</a>
     </div>
   </div>
@@ -135,16 +137,8 @@
     color: #fff; /* Adjust text color as needed */
   }
 
-  @media screen and (min-width: 901px) {
-      .top__bar svg {
-      width: 400px; /* Adjust the width of the SVG for desktop */
-      height: auto; /* Maintain aspect ratio */
-      }
-
-      .content__holder svg {
-      width: 400px; /* Adjust the width of the SVG for desktop */
-      height: auto; /* Maintain aspect ratio */
-      }
+  .more-love-small {
+    display: none; /* Hide the small SVG by default */
   }
 
   @media screen and (max-width: 900px) {
@@ -153,6 +147,12 @@
     }
     .content__holder {
       top: 45%;
+    }
+    .more-love-large {
+      display: none; /* Hide the large SVG on mobile */
+    }
+    .more-love-small {
+      display: block; /* Show the small SVG on mobile */
     }
   }
 {% endstyle %}
