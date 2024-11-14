@@ -341,7 +341,7 @@
       "type": "pre-footer",
       "settings": {
         "button_url": "shopify://products/spicy-cubes",
-        "background_image": "shopify://shop_images/pre-footer-image.jpg"
+        "background_image": "shopify://shop_images/two_girls.png"
       }
     }
   },
