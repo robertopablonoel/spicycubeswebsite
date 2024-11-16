@@ -84,7 +84,7 @@
       "type": "video-hero",
       "settings": {
         "button_url": "shopify://products/spicy-cubes",
-        "button_text": "Shop Now",
+        "button_text": "SHOP NOW",
         "video_url": "https://d1y0e0eyxb4mj1.cloudfront.net/square_short.mp4",
         "video_overlay": "shopify://shop_images/video_overlay.svg"
       }
@@ -129,7 +129,7 @@
       "settings": {
         "background_color": "",
         "text_color": "",
-        "button_text": "shop now",
+        "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": true,
@@ -142,10 +142,10 @@
         "top_padding": 0,
         "bottom_padding": 50,
         "border_size": 3,
-        "border_radius": 12,
-        "button_height": 40,
-        "button_width": 100,
-        "font_size": 20
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
       }
     },
     "sugar-section": {
@@ -162,7 +162,7 @@
       "settings": {
         "background_color": "#b5251b",
         "text_color": "",
-        "button_text": "shop now",
+        "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": true,
@@ -175,10 +175,10 @@
         "top_padding": 50,
         "bottom_padding": 50,
         "border_size": 3,
-        "border_radius": 12,
-        "button_height": 40,
-        "button_width": 100,
-        "font_size": 20
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
       }
     },
     "dark-benefits-section": {
@@ -197,7 +197,7 @@
       "settings": {
         "background_color": "#7b1c14",
         "text_color": "",
-        "button_text": "shop now",
+        "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": false,
@@ -209,11 +209,11 @@
         "hover_border_color": "#faf1e0",
         "top_padding": 0,
         "bottom_padding": 50,
-        "border_size": 3,
-        "border_radius": 12,
-        "button_height": 40,
-        "button_width": 100,
-        "font_size": 20
+        "border_size": 0,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
       }
     },
     "horizontal_ticker_eQapVa": {
@@ -333,23 +333,23 @@
       "settings": {
         "background_color": "",
         "text_color": "",
-        "button_text": "shop now",
+        "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": true,
-        "button_background_color": "",
-        "button_color": "",
-        "border_color": "",
-        "hover_text_color": "#ffffff",
-        "hover_button_background_color": "#000000",
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#000000",
+        "hover_button_background_color": "#faf1e0",
         "hover_border_color": "#000000",
         "top_padding": 0,
-        "bottom_padding": 0,
+        "bottom_padding": 50,
         "border_size": 3,
-        "border_radius": 12,
-        "button_height": 40,
-        "button_width": 100,
-        "font_size": 16
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
       }
     },
     "17054643133553cd9c": {

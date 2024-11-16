@@ -9,12 +9,14 @@
   assign border_size = section.settings.border_size | default: 3
   assign border_radius = section.settings.border_radius | default: 12
   assign border_color = section.settings.border_color | default: color_text
-  assign button_height = section.settings.button_height | default: 'auto'
-  assign button_width = section.settings.button_width | default: 'auto'
+  assign button_height = 'auto'
+  assign button_width = 'auto'
   assign font_size = section.settings.font_size | default: '16px'
   assign hover_text_color = section.settings.hover_text_color | default: '#FFFFFF'
   assign hover_button_background_color = section.settings.hover_button_background_color | default: button_color
   assign hover_border_color = section.settings.hover_border_color | default: border_color
+  assign is_bold = section.settings.is_bold | default: false
+  assign no_border = section.settings.no_border | default: false
 %}
 
 <style media='screen'>
@@ -35,21 +37,33 @@
   #section-{{ section.id }}.cta-gradient a.btn {
     color: {{ button_color }};
     background-color: {{ button_background_color }};
-    border: {{ border_size }}px solid {{ border_color }};
+    {% unless no_border %}
+      border: {{ border_size }}px solid {{ border_color }};
+    {% else %}
+      border: none;
+    {% endunless %}
     border-radius: {{ border_radius }}px;
     height: {{ button_height }};
     width: {{ button_width }};
+    padding: 9px 20px;
   }
 
   #section-{{ section.id }}.cta-gradient a.btn:hover {
     color: {{ hover_text_color }};
     background-color: {{ hover_button_background_color }};
-    border-color: {{ hover_border_color }};
+    border: 3px solid {{ hover_border_color }};
   }
 
   #section-{{ section.id }} h3 span {
     color: transparent;
     -webkit-text-stroke-color: {{ color_text }};
+  }
+
+  #section-{{ section.id }}.cta-gradient a.btn .btn-text {
+    font-size: {{ font_size }};
+    {% if is_bold %}
+      font-weight: 600;
+    {% endif %}
   }
 </style>
 
@@ -57,7 +71,7 @@
   <div class='cta-gradient__content'>
     {% if section.settings.button_text != blank %}
       <a href='{{ section.settings.button_url }}' class='btn'>
-        <span class='btn-text' style='font-size: {{ font_size }};'>{{- section.settings.button_text }}</span>
+        <span class='btn-text'>{{- section.settings.button_text }}</span>
         <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i>
       </a>
     {% endif %}
@@ -82,7 +96,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "shop now"
+      "default": "SHOP NOW"
     },
     {
       "type": "url",
@@ -175,26 +189,6 @@
     },
     {
       "type": "range",
-      "id": "button_height",
-      "label": "Button Height",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 40,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_width",
-      "label": "Button Width",
-      "min": 0,
-      "max": 300,
-      "step": 10,
-      "default": 100,
-      "unit": "px"
-    },
-    {
-      "type": "range",
       "id": "font_size",
       "label": "Font Size",
       "min": 10,
@@ -202,6 +196,16 @@
       "step": 1,
       "default": 16,
       "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_bold",
+      "label": "Bold Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "no_border",
+      "label": "No Border"
     }
   ],
   "presets": [

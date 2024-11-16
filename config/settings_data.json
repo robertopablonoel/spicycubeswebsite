@@ -11,8 +11,8 @@
   "current": {
     "one_product": "",
     "enable_promo": true,
-    "banner_text_1": "Buy 3+ boxes,",
-    "banner_text_2": "SAVE 18% + FREE SHIPPING",
+    "banner_text_1": "Free shipping on $50+ orders",
+    "banner_text_2": "",
     "promo_bar_bg": "#000",
     "promo_bar_color_1": "#FFFFFF",
     "promo_bar_color_2": "#FCA5A5",
@@ -40,9 +40,9 @@
     "dropdown_type": "oversized",
     "header_text_size": "med",
     "enable_search": false,
-    "font_heading": "futura_n7",
+    "font_heading": "work_sans_n4",
     "uppercase_heading": "none",
-    "font_body": "futura_n4",
+    "font_body": "work_sans_n4",
     "type_base_size": "16px",
     "favicon": "shopify://shop_images/satisfaction.svg",
     "social_sharing_blog": true,
@@ -135,7 +135,7 @@
               "title": "Welcome.",
               "text": "Use this text area to give a brief yet powerful introduction to your amazing product.",
               "button_url": "/",
-              "button_text": "shop now"
+              "button_text": "SHOP NOW"
             }
           },
           "1597558210103": {
@@ -342,7 +342,7 @@
         "type": "gradient-cta",
         "settings": {
           "text_color": "#ffffff",
-          "button_text": "shop now",
+          "button_text": "SHOP NOW",
           "button_url": "/"
         }
       },
