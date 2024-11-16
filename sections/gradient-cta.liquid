@@ -4,6 +4,11 @@
   assign top_padding = section.settings.top_padding | default: 0
   assign bottom_padding = section.settings.bottom_padding | default: 0
   assign display_on_desktop = section.settings.display_on_desktop
+  assign button_background_color = section.settings.button_background_color | default: 'transparent'
+  assign button_color = section.settings.button_color | default: color_text
+  assign border_size = section.settings.border_size | default: 3
+  assign border_radius = section.settings.border_radius | default: 12
+  assign border_color = section.settings.border_color | default: color_text
 %}
 
 <style media='screen'>
@@ -15,7 +20,7 @@
     {% endif %}
   }
 
-  @media (min-width: 1200px) { /* Adjust the width as needed for your desktop breakpoint */
+  @media (min-width: 1200px) {
     {% unless display_on_desktop %}
       #section-{{ section.id }} {
         display: none;
@@ -28,16 +33,17 @@
   }
 
   #section-{{ section.id }}.cta-gradient a.btn {
-    color: {{ color_text }};
-    border: 3px solid {{ color_text }};
-    border-radius: 12px;
+    color: {{ button_color }};
+    background-color: {{ button_background_color }};
+    border: {{ border_size }}px solid {{ border_color }};
+    border-radius: {{ border_radius }}px;
   }
 
   #section-{{ section.id }}.cta-gradient a.btn:hover {
     color: white;
-    border: 3px solid {{ color_text }};
-    border-radius: 10px;
-    background: {{ color_text }};
+    border: {{ border_size }}px solid {{ border_color }};
+    border-radius: {{ border_radius }}px;
+    background: {{ button_color }};
   }
 
   #section-{{ section.id }} h3 span {
@@ -136,6 +142,41 @@
       "id": "display_on_desktop",
       "label": "Display on Desktop",
       "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Text Color"
+    },
+    {
+      "type": "range",
+      "id": "border_size",
+      "label": "Border Size",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 3,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color"
     }
   ],
   "presets": [
