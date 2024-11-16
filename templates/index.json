@@ -161,24 +161,24 @@
       "type": "gradient-cta",
       "settings": {
         "background_color": "#b5251b",
-        "text_color": "#fefaf0",
+        "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": true,
-        "button_background_color": "",
-        "button_color": "",
-        "border_color": "",
-        "hover_text_color": "#FFFFFF",
-        "hover_button_background_color": "#000000",
-        "hover_border_color": "#000000",
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#faf1e0",
+        "hover_button_background_color": "#b5251b",
+        "hover_border_color": "#faf1e0",
         "top_padding": 50,
         "bottom_padding": 50,
         "border_size": 3,
         "border_radius": 12,
         "button_height": 40,
         "button_width": 100,
-        "font_size": 16
+        "font_size": 20
       }
     },
     "dark-benefits-section": {
@@ -188,7 +188,7 @@
         "text_color": "#fefaf0",
         "padding_top": 50,
         "padding_right": 20,
-        "padding_bottom": 50,
+        "padding_bottom": 10,
         "padding_left": 20
       }
     },
@@ -196,24 +196,24 @@
       "type": "gradient-cta",
       "settings": {
         "background_color": "#7b1c14",
-        "text_color": "#fefaf0",
+        "text_color": "",
         "button_text": "shop now",
         "button_url": "shopify://products/spicy-cubes",
         "spacing": false,
         "display_on_desktop": false,
-        "button_background_color": "",
-        "button_color": "",
-        "border_color": "",
-        "hover_text_color": "#FFFFFF",
-        "hover_button_background_color": "#000000",
-        "hover_border_color": "#000000",
+        "button_background_color": "#d22c1e",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#faf1e0",
+        "hover_button_background_color": "#7b1c14",
+        "hover_border_color": "#faf1e0",
         "top_padding": 0,
         "bottom_padding": 50,
         "border_size": 3,
         "border_radius": 12,
         "button_height": 40,
         "button_width": 100,
-        "font_size": 16
+        "font_size": 20
       }
     },
     "horizontal_ticker_eQapVa": {
@@ -340,7 +340,7 @@
         "button_background_color": "",
         "button_color": "",
         "border_color": "",
-        "hover_text_color": "#FFFFFF",
+        "hover_text_color": "#ffffff",
         "hover_button_background_color": "#000000",
         "hover_border_color": "#000000",
         "top_padding": 0,
