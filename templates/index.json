@@ -95,15 +95,15 @@
         "block_1": {
           "type": "icon_item",
           "settings": {
-            "icon": "❤️",
-            "title": "Gender <i>inclusive aphrodisiac</i>",
-            "mobile_title": "Gender <br/><i>inclusive<br/> aphrodisiac</i>"
+            "icon": "🍑",
+            "title": "<i>Spicy peach</i> aphrodisiac <i>for two</i>",
+            "mobile_title": "<i>Spicy peach</i><br>aphrodisiac<br><i>for two</i>"
           }
         },
         "block_2": {
           "type": "icon_item",
           "settings": {
-            "icon": "❤️",
+            "icon": "🔥",
             "title": "Boost mood \& <i>sensual experience</i>",
             "mobile_title": "Boost mood<br/> and <i>sensual<br/> experience</i>"
           }
@@ -111,7 +111,7 @@
         "block_3": {
           "type": "icon_item",
           "settings": {
-            "icon": "❤️",
+            "icon": "🌱",
             "title": "<i>Natural</i> \& <i>effective</i> ingredients",
             "mobile_title": "<i>Natural</i> and <br/><i>effective</i> <br/>ingredients"
           }
