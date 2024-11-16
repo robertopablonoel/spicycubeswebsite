@@ -86,7 +86,7 @@
         "button_url": "shopify://products/spicy-cubes",
         "button_text": "SHOP NOW",
         "video_url": "https://d1y0e0eyxb4mj1.cloudfront.net/square_short.mp4",
-        "video_overlay": "shopify://shop_images/video_overlay.svg"
+        "video_overlay": "shopify://shop_images/video_overlay_2.svg"
       }
     },
     "icon-bar": {
@@ -114,12 +114,17 @@
           }
         }
       },
-      "block_order": ["block_1", "block_2", "block_3"]
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
+      "settings": {}
     },
     "shop-now-1": {
       "type": "gradient-cta",
       "settings": {
-        "background_color": "",
+        "background_color": "#faf1e0",
         "text_color": "",
         "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes",
