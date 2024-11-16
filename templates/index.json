@@ -92,37 +92,29 @@
     "icon-bar": {
       "type": "icon-bar",
       "blocks": {
-        "1448f2db-1b1c-44ea-b901-38c8d5af0fad": {
-          "type": "icon",
+        "block_1": {
+          "type": "icon_item",
           "settings": {
-            "emoji_icon": "🌈",
-            "title": "Aphrodisiac for men & women"
+            "icon": "❤️",
+            "title": "Gender inclusive aphrodisiac"
           }
         },
-        "02b7427a-3087-4f53-b31a-b985b69ee103": {
-          "type": "icon",
+        "block_2": {
+          "type": "icon_item",
           "settings": {
-            "emoji_icon": "🔥",
-            "title": "Boosts mood  & sensual experience"
+            "icon": "❤️",
+            "title": "Boost mood & sensual experience"
           }
         },
-        "643e983e-1995-4026-b774-876980d57ade": {
-          "type": "icon",
+        "block_3": {
+          "type": "icon_item",
           "settings": {
-            "emoji_icon": "🌿",
+            "icon": "❤️",
             "title": "Natural & effective ingredients"
           }
         }
       },
-      "block_order": [
-        "1448f2db-1b1c-44ea-b901-38c8d5af0fad",
-        "02b7427a-3087-4f53-b31a-b985b69ee103",
-        "643e983e-1995-4026-b774-876980d57ade"
-      ],
-      "settings": {
-        "spacing": true,
-        "min_gap": "0px"
-      }
+      "block_order": ["block_1", "block_2", "block_3"]
     },
     "shop-now-1": {
       "type": "gradient-cta",
