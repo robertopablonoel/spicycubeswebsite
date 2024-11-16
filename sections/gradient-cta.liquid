@@ -9,6 +9,9 @@
   assign border_size = section.settings.border_size | default: 3
   assign border_radius = section.settings.border_radius | default: 12
   assign border_color = section.settings.border_color | default: color_text
+  assign button_height = section.settings.button_height | default: 'auto'
+  assign button_width = section.settings.button_width | default: 'auto'
+  assign font_size = section.settings.font_size | default: '16px'
 %}
 
 <style media='screen'>
@@ -30,6 +33,7 @@
 
   #section-{{ section.id }} h3 {
     color: {{ color_text }};
+    font-size: {{ font_size }};
   }
 
   #section-{{ section.id }}.cta-gradient a.btn {
@@ -37,6 +41,8 @@
     background-color: {{ button_background_color }};
     border: {{ border_size }}px solid {{ border_color }};
     border-radius: {{ border_radius }}px;
+    height: {{ button_height }};
+    width: {{ button_width }};
   }
 
   #section-{{ section.id }}.cta-gradient a.btn:hover {
@@ -177,6 +183,36 @@
       "type": "color",
       "id": "border_color",
       "label": "Border Color"
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Button Height",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_width",
+      "label": "Button Width",
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font Size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
     }
   ],
   "presets": [
