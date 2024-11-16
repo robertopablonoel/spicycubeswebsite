@@ -96,21 +96,24 @@
           "type": "icon_item",
           "settings": {
             "icon": "❤️",
-            "title": "Gender inclusive aphrodisiac"
+            "title": "Gender <i>inclusive aphrodisiac</i>",
+            "mobile_title": "Gender <br/><i>inclusive<br/> aphrodisiac</i>"
           }
         },
         "block_2": {
           "type": "icon_item",
           "settings": {
             "icon": "❤️",
-            "title": "Boost mood & sensual experience"
+            "title": "Boost mood \& <i>sensual experience</i>",
+            "mobile_title": "Boost mood<br/> and <i>sensual<br/> experience</i>"
           }
         },
         "block_3": {
           "type": "icon_item",
           "settings": {
             "icon": "❤️",
-            "title": "Natural & effective ingredients"
+            "title": "<i>Natural</i> \& <i>effective</i> ingredients",
+            "mobile_title": "<i>Natural</i> and <br/><i>effective</i> <br/>ingredients"
           }
         }
       },
@@ -136,8 +139,8 @@
         "hover_text_color": "#000000",
         "hover_button_background_color": "#faf1e0",
         "hover_border_color": "#000000",
-        "top_padding": 0,
-        "bottom_padding": 50,
+        "top_padding": 40,
+        "bottom_padding": 40,
         "border_size": 3,
         "border_radius": 30,
         "font_size": 20,
