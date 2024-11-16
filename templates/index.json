@@ -75,8 +75,8 @@
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
         "desktop_padding_bottom": 16,
-        "mobile_background_color": "#fdfaf1",
-        "desktop_background_color": "#fdfaf1",
+        "mobile_background_color": "#faf1e0",
+        "desktop_background_color": "#faf1e0",
         "text_color": "#000000"
       }
     },
