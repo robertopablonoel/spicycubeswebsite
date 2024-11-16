@@ -12,15 +12,16 @@
   assign button_height = section.settings.button_height | default: 'auto'
   assign button_width = section.settings.button_width | default: 'auto'
   assign font_size = section.settings.font_size | default: '16px'
+  assign hover_text_color = section.settings.hover_text_color | default: '#FFFFFF'
+  assign hover_button_background_color = section.settings.hover_button_background_color | default: button_color
+  assign hover_border_color = section.settings.hover_border_color | default: border_color
 %}
 
 <style media='screen'>
   #section-{{ section.id }} {
     background-color: {{ background_color }};
-    {% if top_padding %}
-      padding-top: {{ top_padding }}px;
-      padding-bottom: {{ bottom_padding }}px;
-    {% endif %}
+    padding-top: {{ top_padding }}px;
+    padding-bottom: {{ bottom_padding }}px;
   }
 
   @media (min-width: 1200px) {
@@ -29,11 +30,6 @@
         display: none;
       }
     {% endunless %}
-  }
-
-  #section-{{ section.id }} h3 {
-    color: {{ color_text }};
-    font-size: {{ font_size }};
   }
 
   #section-{{ section.id }}.cta-gradient a.btn {
@@ -46,10 +42,9 @@
   }
 
   #section-{{ section.id }}.cta-gradient a.btn:hover {
-    color: white;
-    border: {{ border_size }}px solid {{ border_color }};
-    border-radius: {{ border_radius }}px;
-    background: {{ button_color }};
+    color: {{ hover_text_color }};
+    background-color: {{ hover_button_background_color }};
+    border-color: {{ hover_border_color }};
   }
 
   #section-{{ section.id }} h3 span {
@@ -62,9 +57,9 @@
   <div class='cta-gradient__content'>
     {% if section.settings.button_text != blank %}
       <a href='{{ section.settings.button_url }}' class='btn'>
-        {{- section.settings.button_text }}
-        <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i
-      ></a>
+        <span class='btn-text' style='font-size: {{ font_size }};'>{{- section.settings.button_text }}</span>
+        <i class='fa fa-arrow-right' aria-hidden='true' style='margin-left:5px;'></i>
+      </a>
     {% endif %}
   </div>
 </div>
@@ -74,26 +69,6 @@
   "name": "CTA Gradient Banner",
   "settings": [
     {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading (Solid)",
-      "default": "Your Text"
-    },
-    {
-      "type": "text",
-      "id": "title_outline",
-      "label": "Heading (Outline)",
-      "default": "Goes Here"
-    },
-    {
-      "type": "header",
-      "content": "Gradient"
-    },
-    {
       "id": "background_color",
       "type": "color",
       "label": "Background Color"
@@ -102,10 +77,6 @@
       "id": "text_color",
       "type": "color",
       "label": "Text Color"
-    },
-    {
-      "type": "header",
-      "content": "Button"
     },
     {
       "type": "text",
@@ -122,6 +93,45 @@
       "type": "checkbox",
       "id": "spacing",
       "label": "Section spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_desktop",
+      "label": "Display on Desktop",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Text Color"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color"
+    },
+    {
+      "type": "color",
+      "id": "hover_text_color",
+      "label": "Hover Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "hover_button_background_color",
+      "label": "Hover Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "hover_border_color",
+      "label": "Hover Border Color",
+      "default": "#000000"
     },
     {
       "type": "range",
@@ -144,22 +154,6 @@
       "unit": "px"
     },
     {
-      "type": "checkbox",
-      "id": "display_on_desktop",
-      "label": "Display on Desktop",
-      "default": true
-    },
-    {
-      "type": "color",
-      "id": "button_background_color",
-      "label": "Button Background Color"
-    },
-    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button Text Color"
-    },
-    {
       "type": "range",
       "id": "border_size",
       "label": "Border Size",
@@ -178,11 +172,6 @@
       "step": 1,
       "default": 12,
       "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "border_color",
-      "label": "Border Color"
     },
     {
       "type": "range",

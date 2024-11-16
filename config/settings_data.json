@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "one_product": "",
@@ -35,16 +44,16 @@
     "uppercase_heading": "none",
     "font_body": "futura_n4",
     "type_base_size": "16px",
-    "favicon": "shopify:\/\/shop_images\/satisfaction.svg",
+    "favicon": "shopify://shop_images/satisfaction.svg",
     "social_sharing_blog": true,
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_tiktok_link": "https:\/\/tiktok.com",
-    "social_twitter_link": "https:\/\/twitter.com",
-    "social_facebook_link": "https:\/\/facebook.com",
-    "social_pinterest_link": "https:\/\/pinterest.com",
-    "social_instagram_link": "https:\/\/instagram.com",
+    "social_tiktok_link": "https://tiktok.com",
+    "social_twitter_link": "https://twitter.com",
+    "social_facebook_link": "https://facebook.com",
+    "social_pinterest_link": "https://pinterest.com",
+    "social_instagram_link": "https://instagram.com",
     "social_snapchat_link": "",
     "social_tumblr_link": "",
     "social_youtube_link": "",
@@ -61,7 +70,7 @@
     "enable_cart_upsell": true,
     "cart_upsell_product": "the-spicy-card-game-50-off",
     "cart_upsell_message": "🔥 Set the mood with 69 spicy cards that will have your heart racing 🔥",
-    "checkout_logo_image": "shopify:\/\/shop_images\/heart-icon.svg",
+    "checkout_logo_image": "shopify://shop_images/heart-icon.svg",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#fff",
@@ -77,7 +86,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.svg",
+          "logo": "shopify://shop_images/logo.svg",
           "logo_svg": "",
           "logo_max_width": 230,
           "logo_max_width_mobile": 190,
@@ -125,7 +134,7 @@
               "overlay": true,
               "title": "Welcome.",
               "text": "Use this text area to give a brief yet powerful introduction to your amazing product.",
-              "button_url": "\/",
+              "button_url": "/",
               "button_text": "shop now"
             }
           },
@@ -312,7 +321,7 @@
         "type": "richtext",
         "settings": {
           "title": "Real nice text box.",
-          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum dapibus metus sit amet malesuada. Duis ligula velit, tristique ac dictum eu, egestas eu lorem. Aenean pellentesque erat eget ornare efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris condimentum enim leo, eu tincidunt augue accumsan id. In bibendum, velit vitae vulputate tincidunt, orci purus pharetra enim, in tempus nibh neque id nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at consectetur felis. Fusce vehicula erat a elit venenatis, non elementum est dignissim.<\/p>"
+          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum dapibus metus sit amet malesuada. Duis ligula velit, tristique ac dictum eu, egestas eu lorem. Aenean pellentesque erat eget ornare efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris condimentum enim leo, eu tincidunt augue accumsan id. In bibendum, velit vitae vulputate tincidunt, orci purus pharetra enim, in tempus nibh neque id nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at consectetur felis. Fusce vehicula erat a elit venenatis, non elementum est dignissim.</p>"
         }
       },
       "social-proof": {
@@ -332,11 +341,9 @@
       "1603768623c059fedc": {
         "type": "gradient-cta",
         "settings": {
-          "title": "Shout",
-          "title_outline": "your brand!",
           "text_color": "#ffffff",
           "button_text": "shop now",
-          "button_url": "\/"
+          "button_url": "/"
         }
       },
       "promo-pop-up": {
@@ -368,16 +375,14 @@
     ],
     "blocks": {
       "11532412952436166569": {
-        "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-inject\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
