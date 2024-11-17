@@ -12,51 +12,72 @@
     "horizontal_ticker_FdAdhW": {
       "type": "horizontal-ticker",
       "blocks": {
-        "text_VN4EJj": {
+        "text_zYrhJr": {
           "type": "text",
           "settings": {
-            "title": "☘️ SAFE & EFFECTIVE"
+            "title": "SAFE & EFFECTIVE"
           }
         },
-        "text_pU9FKN": {
-          "type": "text",
-          "settings": {
-            "title": "🇺🇸 MADE IN USA"
-          }
-        },
-        "text_FfXr8Y": {
-          "type": "text",
-          "settings": {
-            "title": "📦 FAST & DISCREET SHIPPING"
-          }
-        },
-        "text_WkzyhE": {
-          "type": "text",
-          "settings": {
-            "title": "🗓️ 30-DAY SATISFACTION GUARANTEE"
-          }
-        },
-        "text_qHhh3n": {
+        "text_LyQGet": {
           "type": "text",
           "settings": {
             "title": "♥"
           }
+        },
+        "text_HXbG9F": {
+          "type": "text",
+          "settings": {
+            "title": "MADE IN USA"
+          }
+        },
+        "text_hrqQwD": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_rLp7HU": {
+          "type": "text",
+          "settings": {
+            "title": "FAST & DISCREET SHIPPING"
+          }
+        },
+        "text_MBhFX3": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_y798fr": {
+          "type": "text",
+          "settings": {
+            "title": "30-DAY SATISFACTION GUARANTEE"
+          }
+        },
+        "text_myLDhM": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
         }
       },
       "block_order": [
-        "text_VN4EJj",
-        "text_pU9FKN",
-        "text_FfXr8Y",
-        "text_WkzyhE",
-        "text_qHhh3n"
+        "text_zYrhJr",
+        "text_LyQGet",
+        "text_HXbG9F",
+        "text_hrqQwD",
+        "text_rLp7HU",
+        "text_MBhFX3",
+        "text_y798fr",
+        "text_myLDhM"
       ],
       "settings": {
         "visibility": "always-display",
         "showBorder": false,
         "border": 0,
         "speed": 1,
-        "mobile_spacing": 60,
-        "desktop_spacing": 100,
+        "mobile_spacing": 20,
+        "desktop_spacing": 60,
         "color_scheme": "accent-1",
         "mobile_text_size": 16,
         "desktop_text_size": 18,
@@ -75,9 +96,9 @@
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
         "desktop_padding_bottom": 16,
-        "mobile_background_color": "#faf1e0",
-        "desktop_background_color": "#faf1e0",
-        "text_color": "#000000"
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#b5251b",
+        "text_color": "#faf1e0"
       }
     },
     "video-hero": {
@@ -379,6 +400,77 @@
         "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
         "background_image": "shopify://shop_images/two_girls.png"
       }
+    },
+    "horizontal_ticker_2": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_eLwxbNa": {
+          "type": "text",
+          "settings": {
+            "title": "natural"
+          }
+        },
+        "text_8EhtkUa": {
+          "type": "text",
+          "settings": {
+            "title": "safe"
+          }
+        },
+        "text_8RTYega": {
+          "type": "text",
+          "settings": {
+            "title": "effective"
+          }
+        },
+        "text_iiVqrMa": {
+          "type": "text",
+          "settings": {
+            "title": "Delicious"
+          }
+        },
+        "text_eK3ggJa": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        }
+      },
+      "block_order": [
+        "text_eLwxbNa",
+        "text_8EhtkUa",
+        "text_8RTYega",
+        "text_iiVqrMa",
+        "text_eK3ggJa"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 3,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 52,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#7b1c14",
+        "text_color": "#f7e8cc"
+      }
     }
   },
   "order": [
@@ -394,6 +486,7 @@
     "video-testimonials",
     "shop-now-3",
     "17054643133553cd9c",
-    "pre-footer"
+    "pre-footer",
+    "horizontal_ticker_2"
   ]
 }
