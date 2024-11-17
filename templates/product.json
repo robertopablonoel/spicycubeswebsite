@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "horizontal_ticker_tERGFL": {
@@ -6,25 +15,7 @@
         "text_zYrhJr": {
           "type": "text",
           "settings": {
-            "title": "☘️ Safe & Effective"
-          }
-        },
-        "text_HXbG9F": {
-          "type": "text",
-          "settings": {
-            "title": "🇺🇸 Made in USA"
-          }
-        },
-        "text_rLp7HU": {
-          "type": "text",
-          "settings": {
-            "title": "📦 Fast & Discreet Shipping"
-          }
-        },
-        "text_y798fr": {
-          "type": "text",
-          "settings": {
-            "title": "🗓️ 30-day Satisfaction Guarantee"
+            "title": "SAFE & EFFECTIVE"
           }
         },
         "text_LyQGet": {
@@ -32,22 +23,61 @@
           "settings": {
             "title": "♥"
           }
+        },
+        "text_HXbG9F": {
+          "type": "text",
+          "settings": {
+            "title": "MADE IN USA"
+          }
+        },
+        "text_hrqQwD": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_rLp7HU": {
+          "type": "text",
+          "settings": {
+            "title": "FAST & DISCREET SHIPPING"
+          }
+        },
+        "text_MBhFX3": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_y798fr": {
+          "type": "text",
+          "settings": {
+            "title": "30-DAY SATISFACTION GUARANTEE"
+          }
+        },
+        "text_myLDhM": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
         }
       },
       "block_order": [
         "text_zYrhJr",
+        "text_LyQGet",
         "text_HXbG9F",
+        "text_hrqQwD",
         "text_rLp7HU",
+        "text_MBhFX3",
         "text_y798fr",
-        "text_LyQGet"
+        "text_myLDhM"
       ],
       "settings": {
         "visibility": "always-display",
         "showBorder": false,
         "border": 0,
         "speed": 1,
-        "mobile_spacing": 60,
-        "desktop_spacing": 100,
+        "mobile_spacing": 20,
+        "desktop_spacing": 60,
         "color_scheme": "accent-1",
         "mobile_text_size": 16,
         "desktop_text_size": 18,
@@ -65,7 +95,10 @@
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
-        "desktop_padding_bottom": 16
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#b5251b",
+        "text_color": "#faf1e0"
       }
     },
     "form": {
@@ -120,7 +153,7 @@
     "product-details": {
       "type": "product-details",
       "settings": {
-        "learn_url": "shopify:\/\/products\/spicy-cubes"
+        "learn_url": "shopify://products/spicy-cubes"
       }
     },
     "image_with_text_XGbNyM": {
@@ -132,7 +165,7 @@
         "content": "",
         "button_url": "",
         "button_text": "",
-        "image": "shopify:\/\/shop_images\/web_-_12.png",
+        "image": "shopify://shop_images/web_-_12.png",
         "image_align_left": false,
         "border_radius": 0,
         "spacing": false,
@@ -143,8 +176,7 @@
     },
     "benefits-section-1": {
       "type": "benefits-section-1",
-      "settings": {
-      }
+      "settings": {}
     },
     "video-testimonials": {
       "type": "video-testimonials",
@@ -152,27 +184,27 @@
         "video_8qgB3K": {
           "type": "video",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/trinity_frame_3.webp",
-            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d11da69c2f944433a50e00e12eef3737.mp4",
-            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_poster": "shopify://shop_images/trinity_frame_3.webp",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/d11da69c2f944433a50e00e12eef3737.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
             "video_description": "\"We had our fun last night.\""
           }
         },
         "video_kwVCUK": {
           "type": "video",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/egf_thumbnail.jpg",
-            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
-            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_poster": "shopify://shop_images/egf_thumbnail.jpg",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
             "video_description": "We take these every week now 😂"
           }
         },
         "video_AUV9rt": {
           "type": "video",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/kiki_frame_1.webp",
-            "video_source": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
-            "play_icon": "shopify:\/\/shop_images\/icon-play.svg",
+            "video_poster": "shopify://shop_images/kiki_frame_1.webp",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
             "video_description": "Took them on Valentines day... WOW"
           }
         }
@@ -183,8 +215,8 @@
         "video_AUV9rt"
       ],
       "settings": {
-        "title_image_desktop": "shopify:\/\/shop_images\/text_desktop.webp",
-        "title_image_mobile": "shopify:\/\/shop_images\/text_mobile.webp"
+        "title_image_desktop": "shopify://shop_images/text_desktop.webp",
+        "title_image_mobile": "shopify://shop_images/text_mobile.webp"
       }
     },
     "faq-section": {
@@ -197,7 +229,7 @@
       "type": "apps",
       "blocks": {
         "9cadbab9-4a7e-4e96-89da-fca1a0711a0d": {
-          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-dynamic-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
             "only_photos": false,
             "aggregated": false,
@@ -211,8 +243,7 @@
       "block_order": [
         "9cadbab9-4a7e-4e96-89da-fca1a0711a0d"
       ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
