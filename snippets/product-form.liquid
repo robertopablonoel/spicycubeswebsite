@@ -241,15 +241,29 @@
             {% endif %}
           {% endif %}
         </div>
-        <h1 class='product__title'>
-          {% if template contains 'product' %}
-            {{ product.title }}
-          {% else %}
-            <a href='{{ product.url }}'>{{ product.title }}</a>
-          {% endif %}
-        </h1>
+        {% if product.title == 'Spicy Cubes - Hot Peach Edition' %}
+          <h3
+            style='font-size: 48px; font-weight: 700; font-style: italic; font-family: "superior-title", serif;'
+            class='product__title'
+          >
+            Spicy Cubes
+          </h3>
+        {% else %}
+          <h1 class='product__title'>
+            {% if template contains 'product' %}
+              {{ product.title }}
+            {% else %}
+              <a href='{{ product.url }}'>{{ product.title }}</a>
+            {% endif %}
+          </h1>
+        {% endif %}
+
         {% if product.title == 'Spicy Cubes' %}
           <h4 style='margin: 0; margin-top: 5px;'>Sexually Enhancing Cinnamon Cubes</h4>
+        {% endif %}
+
+        {% if product.title == 'Spicy Cubes - Hot Peach Edition' %}
+          <h4 style='margin: 0; margin-top: 5px;'><i>8 Hot Peach flavored aphrodisiac delights</i></h4>
         {% endif %}
         {% comment %}
           <style>
