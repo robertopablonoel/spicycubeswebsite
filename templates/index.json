@@ -462,12 +462,12 @@
         "enable_specific_display": false,
         "displayed_products": "",
         "margin_top": 0,
-        "margin_bottom": 52,
+        "margin_bottom": 0,
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
         "desktop_padding_bottom": 16,
-        "mobile_background_color": "#b5251b",
+        "mobile_background_color": "#7b1c14",
         "desktop_background_color": "#7b1c14",
         "text_color": "#f7e8cc"
       }
