@@ -1,30 +1,36 @@
 {% comment %}
   Icon Bar Section
 {% endcomment %}
-<div class='icon-bar'>
-  {% if section.blocks.size > 0 %}
-    {% for block in section.blocks %}
-      <div class='icon-item'>
-        <span class='icon'>{{ block.settings.icon }}</span>
-        <h3>
-          <span class='desktop-title'>{{ block.settings.title }}</span>
-          {% if block.settings.mobile_title != blank %}
-            <span class='mobile-title'>{{ block.settings.mobile_title }}</span>
-          {% endif %}
-        </h3>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p>No icons available.</p>
-  {% endif %}
+<div class='icon-bar-section'>
+  <div class='icon-bar'>
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class='icon-item'>
+          <span class='icon'>{{ block.settings.icon }}</span>
+          <h3>
+            <span class='desktop-title'>{{ block.settings.title }}</span>
+            {% if block.settings.mobile_title != blank %}
+              <span class='mobile-title'>{{ block.settings.mobile_title }}</span>
+            {% endif %}
+          </h3>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No icons available.</p>
+    {% endif %}
+  </div>
 </div>
-
 <style>
+  .icon-bar-section {
+    margin-top: -1px;
+    position: relative;
+    z-index: 1000;
+    background-color: #faf1e0;
+    padding-top: 41px;
+  }
   .icon-bar {
     display: flex;
     justify-content: center;
-    background-color: #faf1e0;
-    margin-top: 40px;
     text-align: center;
   }
 
