@@ -194,20 +194,22 @@
             </li>
           {% endfor %}
         </ul>
-        {% if shop.customer_accounts_enabled or settings.enable_search %}
-          <div class='main-list__actions'>
-            {% if shop.customer_accounts_enabled %}
-              <a class='{{ dropdown_font_size }}' href='/account'>
-                {% render 'icon-account', icon_pack: section.settings.icon_pack %}
-              </a>
-            {% endif %}
-            {% if settings.enable_search %}
-              <a class='{{ dropdown_font_size }}' href='/search' data-toggle-search>
-                {% render 'icon-search', icon_pack: section.settings.icon_pack %}
-              </a>
-            {% endif %}
-          </div>
-        {% endif %}
+        {% comment %}
+          {% if shop.customer_accounts_enabled or settings.enable_search %}
+            <div class='main-list__actions'>
+              {% if shop.customer_accounts_enabled %}
+                <a class='{{ dropdown_font_size }}' href='/account'>
+                  {% render 'icon-account', icon_pack: section.settings.icon_pack %}
+                </a>
+              {% endif %}
+              {% if settings.enable_search %}
+                <a class='{{ dropdown_font_size }}' href='/search' data-toggle-search>
+                  {% render 'icon-search', icon_pack: section.settings.icon_pack %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endcomment %}
         {{ cta }}
       </div>
     </nav>
