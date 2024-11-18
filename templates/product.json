@@ -285,7 +285,7 @@
         "enable_specific_display": false,
         "displayed_products": "",
         "margin_top": 0,
-        "margin_bottom": 52,
+        "margin_bottom": 0,
         "mobile_padding_top": 12,
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
@@ -308,8 +308,8 @@
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
             "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
+            "aggregated": true,
+            "limit": 6,
             "hide_thumbnails": false,
             "maxwidth": 800,
             "is_sample": true
@@ -320,6 +320,84 @@
         "9cadbab9-4a7e-4e96-89da-fca1a0711a0d"
       ],
       "settings": {}
+    },
+    "pre-footer": {
+      "type": "pre-footer",
+      "settings": {
+        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "background_image": "shopify://shop_images/two_girls.png"
+      }
+    },
+    "horizontal_ticker_2": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_eLwxbNa": {
+          "type": "text",
+          "settings": {
+            "title": "natural"
+          }
+        },
+        "text_8EhtkUa": {
+          "type": "text",
+          "settings": {
+            "title": "safe"
+          }
+        },
+        "text_8RTYega": {
+          "type": "text",
+          "settings": {
+            "title": "effective"
+          }
+        },
+        "text_iiVqrMa": {
+          "type": "text",
+          "settings": {
+            "title": "Delicious"
+          }
+        },
+        "text_eK3ggJa": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        }
+      },
+      "block_order": [
+        "text_eLwxbNa",
+        "text_8EhtkUa",
+        "text_8RTYega",
+        "text_iiVqrMa",
+        "text_eK3ggJa"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 3,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#7b1c14",
+        "desktop_background_color": "#7b1c14",
+        "text_color": "#f7e8cc"
+      }
     }
   },
   "order": [
@@ -332,6 +410,8 @@
     "gradient_cta_B4xHn3",
     "horizontal_ticker_eQapVa",
     "faq-section",
-    "1704393476afe07aa2"
+    "1704393476afe07aa2",
+    "pre-footer",
+    "horizontal_ticker_2"
   ]
 }
