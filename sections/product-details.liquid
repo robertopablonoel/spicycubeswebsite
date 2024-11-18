@@ -116,11 +116,8 @@
     {% elsif product.title == 'Spicy Cubes - Hot Peach Edition' %}
       <div class='product-details-accordion'>
         <div class='accordion-item'>
-          <button class='accordion-button' type='button'>
-            Natural Key Ingredients
-            <i class='fa fa-chevron-down' aria-hidden='true'></i>
-          </button>
-          <div class='accordion-content'>
+          <button class='accordion-button active' type='button'>Natural Key Ingredients</button>
+          <div class='accordion-content' style='display: block;'>
             <p>
               Your safety and satisfaction are our top priorities. Spicy Cubes are crafted with a potent blend of
               natural aphrodisiacs including:
@@ -192,6 +189,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     var acc = document.getElementsByClassName('accordion-button');
     for (var i = 0; i < acc.length; i++) {
+      if (i === 0) continue;
+
       acc[i].addEventListener('click', function () {
         this.classList.toggle('active');
         var content = this.nextElementSibling;
