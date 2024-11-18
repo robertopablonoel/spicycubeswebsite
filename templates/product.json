@@ -233,10 +233,22 @@
             "title": "natural"
           }
         },
+        "text_eK3ggJ": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
         "text_8EhtkU": {
           "type": "text",
           "settings": {
             "title": "safe"
+          }
+        },
+        "text_8hraWq": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
           }
         },
         "text_8RTYeg": {
@@ -245,25 +257,34 @@
             "title": "effective"
           }
         },
-        "text_iiVqrM": {
-          "type": "text",
-          "settings": {
-            "title": "Delicious"
-          }
-        },
-        "text_eK3ggJ": {
+        "text_REDhcc": {
           "type": "text",
           "settings": {
             "title": "♥"
+          }
+        },
+        "text_iiVqrM": {
+          "type": "text",
+          "settings": {
+            "title": "delicious"
+          }
+        },
+        "text_xiHney": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
           }
         }
       },
       "block_order": [
         "text_eLwxbN",
+        "text_eK3ggJ",
         "text_8EhtkU",
+        "text_8hraWq",
         "text_8RTYeg",
+        "text_REDhcc",
         "text_iiVqrM",
-        "text_eK3ggJ"
+        "text_xiHney"
       ],
       "settings": {
         "visibility": "always-display",
@@ -331,43 +352,64 @@
     "horizontal_ticker_2": {
       "type": "horizontal-ticker",
       "blocks": {
-        "text_eLwxbNa": {
+        "text_eLwxbN": {
           "type": "text",
           "settings": {
             "title": "natural"
           }
         },
-        "text_8EhtkUa": {
+        "text_eK3ggJ": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_8EhtkU": {
           "type": "text",
           "settings": {
             "title": "safe"
           }
         },
-        "text_8RTYega": {
+        "text_8hraWq": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_8RTYeg": {
           "type": "text",
           "settings": {
             "title": "effective"
           }
         },
-        "text_iiVqrMa": {
-          "type": "text",
-          "settings": {
-            "title": "Delicious"
-          }
-        },
-        "text_eK3ggJa": {
+        "text_REDhcc": {
           "type": "text",
           "settings": {
             "title": "♥"
           }
+        },
+        "text_iiVqrM": {
+          "type": "text",
+          "settings": {
+            "title": "delicious"
+          }
+        },
+        "text_xiHney": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
         }
       },
       "block_order": [
-        "text_eLwxbNa",
-        "text_8EhtkUa",
-        "text_8RTYega",
-        "text_iiVqrMa",
-        "text_eK3ggJa"
+        "text_eLwxbN",
+        "text_eK3ggJ",
+        "text_8EhtkU",
+        "text_8hraWq",
+        "text_8RTYeg",
+        "text_REDhcc",
+        "text_iiVqrM",
+        "text_xiHney"
       ],
       "settings": {
         "visibility": "always-display",
