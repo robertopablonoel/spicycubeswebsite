@@ -316,6 +316,71 @@
         "text_color": "#f7e8cc"
       }
     },
+    "video-testimonials": {
+      "type": "video-testimonials",
+      "blocks": {
+        "video_8qgB3K": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify://shop_images/trinity_frame_3.webp",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/d11da69c2f944433a50e00e12eef3737.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
+            "video_description": "\"We had our fun last night.\""
+          }
+        },
+        "video_kwVCUK": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify://shop_images/egf_thumbnail.jpg",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/6c2eaf4fe3544fd48e31faa016b0ddd4.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
+            "video_description": "We take these every week now 😂"
+          }
+        },
+        "video_AUV9rt": {
+          "type": "video",
+          "settings": {
+            "video_poster": "shopify://shop_images/kiki_frame_1.webp",
+            "video_source": "https://cdn.shopify.com/videos/c/o/v/e4e9dba858f64ebaa23c33debdbb0d29.mp4",
+            "play_icon": "shopify://shop_images/icon-play.svg",
+            "video_description": "Took them on Valentines day... WOW"
+          }
+        }
+      },
+      "block_order": [
+        "video_8qgB3K",
+        "video_kwVCUK",
+        "video_AUV9rt"
+      ],
+      "settings": {
+        "title_image_desktop": "shopify://shop_images/text_desktop.webp",
+        "title_image_mobile": "shopify://shop_images/text_mobile.webp"
+      }
+    },
+    "shop-now-3": {
+      "type": "gradient-cta",
+      "settings": {
+        "background_color": "",
+        "text_color": "",
+        "button_text": "SHOP NOW",
+        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "spacing": false,
+        "display_on_desktop": true,
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#000000",
+        "hover_button_background_color": "#faf1e0",
+        "hover_border_color": "#000000",
+        "top_padding": 0,
+        "bottom_padding": 50,
+        "border_size": 3,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
+      }
+    },
     "faq-section": {
       "type": "faq-section",
       "settings": {
@@ -451,6 +516,8 @@
     "dark-benefits-section",
     "gradient_cta_B4xHn3",
     "horizontal_ticker_eQapVa",
+    "video-testimonials",
+    "shop-now-3",
     "faq-section",
     "1704393476afe07aa2",
     "pre-footer",
