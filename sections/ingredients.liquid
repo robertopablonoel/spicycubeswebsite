@@ -1,0 +1,114 @@
+{{ 'section-ingredients.css' | asset_url | stylesheet_tag }}
+
+<div class='ingredients-section'>
+  <div class='ingredients-header'>
+    <h2>Ingredients</h2>
+    <p class='ingredients-description'>
+      Ensuring the safety and effectiveness of our Spicy Cubes is our utmost priority. Crafted in our fully
+      FDA-registered facility in Florida, each batch undergoes stringent quality control inspections. We source all of
+      our premium ingredients through trusted, USA-based suppliers, guaranteeing the highest standard for our dietary
+      supplements.
+    </p>
+  </div>
+  {%- if section.settings.desktop_image != blank -%}
+    <div class='ingredients-image desktop-only'>
+      {{
+        section.settings.desktop_image
+        | image_url: width: 2000
+        | image_tag: loading: 'lazy', class: 'ingredients-desktop', alt: section.settings.desktop_image.alt
+        | escape
+      }}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.mobile_image != blank -%}
+    <div class='ingredients-image mobile-only'>
+      {{
+        section.settings.mobile_image
+        | image_url: width: 800
+        | image_tag: loading: 'lazy', class: 'ingredients-mobile', alt: section.settings.mobile_image.alt
+        | escape
+      }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .ingredients-section {
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    align-items: center;
+  }
+
+  .ingredients-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .desktop-only {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (max-width: 749px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .mobile-only {
+      display: none;
+    }
+  }
+
+  .ingredients-header h2 {
+    color: #000;
+    text-align: center;
+    font-family: 'superior title', serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ingredients-description {
+    color: #000;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 17.6px */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+{% endstylesheet %}

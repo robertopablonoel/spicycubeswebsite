@@ -1,30 +1,280 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
-{
+ {
   "sections": {
-    "ingredients-banner": {
-      "type": "ingredients-banner",
-      "settings": {}
+    "horizontal_ticker_FdAdhW": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_zYrhJr": {
+          "type": "text",
+          "settings": {
+            "title": "SAFE & EFFECTIVE"
+          }
+        },
+        "text_LyQGet": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_HXbG9F": {
+          "type": "text",
+          "settings": {
+            "title": "MADE IN USA"
+          }
+        },
+        "text_hrqQwD": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_rLp7HU": {
+          "type": "text",
+          "settings": {
+            "title": "FAST & DISCREET SHIPPING"
+          }
+        },
+        "text_MBhFX3": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_y798fr": {
+          "type": "text",
+          "settings": {
+            "title": "30-DAY SATISFACTION GUARANTEE"
+          }
+        },
+        "text_myLDhM": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        }
+      },
+      "block_order": [
+        "text_zYrhJr",
+        "text_LyQGet",
+        "text_HXbG9F",
+        "text_hrqQwD",
+        "text_rLp7HU",
+        "text_MBhFX3",
+        "text_y798fr",
+        "text_myLDhM"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 0,
+        "speed": 1,
+        "mobile_spacing": 20,
+        "desktop_spacing": 60,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#b5251b",
+        "text_color": "#faf1e0"
+      }
     },
-    "shop-now": {
+    "shop-now-1": {
       "type": "gradient-cta",
       "settings": {
+        "background_color": "#faf1e0",
         "text_color": "",
         "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
-        "spacing": false
+        "spacing": false,
+        "display_on_desktop": true,
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#000000",
+        "hover_button_background_color": "#faf1e0",
+        "hover_border_color": "#000000",
+        "top_padding": 20,
+        "bottom_padding": 60,
+        "border_size": 3,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
       }
     },
-    "ingredients-description": {
-      "type": "ingredients-description",
-      "settings": {}
+    "sugar-section": {
+      "type": "sugar-section",
+      "settings": {
+        "hero_product_image_desktop": "shopify://shop_images/hero_product_image_desktop.webp",
+        "hero_product_image_mobile": "shopify://shop_images/hero_product_image_mobile.webp",
+        "text_color": "#fdfaf1",
+        "font_size": 24
+      }
+    },
+    "shop-now-2": {
+      "type": "gradient-cta",
+      "settings": {
+        "background_color": "#b5251b",
+        "text_color": "",
+        "button_text": "SHOP NOW",
+        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "spacing": false,
+        "display_on_desktop": true,
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#faf1e0",
+        "hover_button_background_color": "#b5251b",
+        "hover_border_color": "#faf1e0",
+        "top_padding": 50,
+        "bottom_padding": 50,
+        "border_size": 3,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
+      }
+    },
+    "dark-benefits-section": {
+      "type": "dark-benefits-section",
+      "settings": {
+        "background_color": "#7b1c14",
+        "text_color": "#fefaf0",
+        "padding_top": 50,
+        "padding_right": 20,
+        "padding_bottom": 10,
+        "padding_left": 20
+      }
+    },
+    "gradient_cta_B4xHn3": {
+      "type": "gradient-cta",
+      "settings": {
+        "background_color": "#7b1c14",
+        "text_color": "",
+        "button_text": "SHOP NOW",
+        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "spacing": false,
+        "display_on_desktop": false,
+        "button_background_color": "#d22c1e",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#faf1e0",
+        "hover_button_background_color": "#7b1c14",
+        "hover_border_color": "#faf1e0",
+        "top_padding": 0,
+        "bottom_padding": 50,
+        "border_size": 3,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
+      }
+    },
+    "horizontal_ticker_eQapVa": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_eLwxbN": {
+          "type": "text",
+          "settings": {
+            "title": "natural"
+          }
+        },
+        "text_eK3ggJ": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_8EhtkU": {
+          "type": "text",
+          "settings": {
+            "title": "safe"
+          }
+        },
+        "text_8hraWq": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_8RTYeg": {
+          "type": "text",
+          "settings": {
+            "title": "effective"
+          }
+        },
+        "text_REDhcc": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_iiVqrM": {
+          "type": "text",
+          "settings": {
+            "title": "delicious"
+          }
+        },
+        "text_xiHney": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        }
+      },
+      "block_order": [
+        "text_eLwxbN",
+        "text_eK3ggJ",
+        "text_8EhtkU",
+        "text_8hraWq",
+        "text_8RTYeg",
+        "text_REDhcc",
+        "text_iiVqrM",
+        "text_xiHney"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 3,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 52,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#b5251b",
+        "desktop_background_color": "#7b1c14",
+        "text_color": "#f7e8cc"
+      }
     },
     "video-testimonials": {
       "type": "video-testimonials",
@@ -67,21 +317,163 @@
         "title_image_mobile": "shopify://shop_images/text_mobile.webp"
       }
     },
-    "shop-now-2": {
+    "shop-now-3": {
       "type": "gradient-cta",
       "settings": {
+        "background_color": "",
         "text_color": "",
         "button_text": "SHOP NOW",
         "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
-        "spacing": false
+        "spacing": false,
+        "display_on_desktop": true,
+        "button_background_color": "#7b1c14",
+        "button_color": "#faf1e0",
+        "border_color": "#7b1c14",
+        "hover_text_color": "#000000",
+        "hover_button_background_color": "#faf1e0",
+        "hover_border_color": "#000000",
+        "top_padding": 0,
+        "bottom_padding": 50,
+        "border_size": 3,
+        "border_radius": 30,
+        "font_size": 20,
+        "is_bold": true,
+        "no_border": false
+      }
+    },
+    "17054643133553cd9c": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_ftDd3M": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": true,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 20,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_ftDd3M"
+      ],
+      "settings": {}
+    },
+    "pre-footer": {
+      "type": "pre-footer",
+      "settings": {
+        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "background_image": "shopify://shop_images/two_girls.png"
+      }
+    },
+    "horizontal_ticker_2": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_eLwxbN": {
+          "type": "text",
+          "settings": {
+            "title": "natural"
+          }
+        },
+        "text_eK3ggJ": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_8EhtkU": {
+          "type": "text",
+          "settings": {
+            "title": "safe"
+          }
+        },
+        "text_8hraWq": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        },
+        "text_8RTYeg": {
+          "type": "text",
+          "settings": {
+            "title": "effective"
+          }
+        },
+        "text_REDhcc": {
+          "type": "text",
+          "settings": {
+            "title": "♥"
+          }
+        },
+        "text_iiVqrM": {
+          "type": "text",
+          "settings": {
+            "title": "delicious"
+          }
+        },
+        "text_xiHney": {
+          "type": "text",
+          "settings": {
+            "title": "♡"
+          }
+        }
+      },
+      "block_order": [
+        "text_eLwxbN",
+        "text_eK3ggJ",
+        "text_8EhtkU",
+        "text_8hraWq",
+        "text_8RTYeg",
+        "text_REDhcc",
+        "text_iiVqrM",
+        "text_xiHney"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "showBorder": false,
+        "border": 3,
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "isHeader": false,
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16,
+        "mobile_background_color": "#7b1c14",
+        "desktop_background_color": "#7b1c14",
+        "text_color": "#f7e8cc"
       }
     }
   },
   "order": [
-    "ingredients-banner",
-    "shop-now",
-    "ingredients-description",
+    "horizontal_ticker_FdAdhW",
+    "shop-now-1",
+    "sugar-section",
+    "shop-now-2",
+    "dark-benefits-section",
+    "gradient_cta_B4xHn3",
+    "horizontal_ticker_eQapVa",
     "video-testimonials",
-    "shop-now-2"
+    "shop-now-3",
+    "17054643133553cd9c",
+    "pre-footer",
+    "horizontal_ticker_2"
   ]
 }
