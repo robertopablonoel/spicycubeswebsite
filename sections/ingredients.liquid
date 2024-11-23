@@ -25,7 +25,7 @@
     <div class='ingredients-image mobile-only'>
       {{
         section.settings.mobile_image
-        | image_url: width: 800
+        | image_url: width: 2000
         | image_tag: loading: 'lazy', class: 'ingredients-mobile', alt: section.settings.mobile_image.alt
         | escape
       }}
@@ -61,9 +61,14 @@
     width: 100%;
     position: relative;
     justify-content: center;
-    margin-top: 120px;
-    margin-bottom: 120px;
     align-items: center;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
+  .desktop-only {
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
 
   .ingredients-image img {
@@ -72,13 +77,13 @@
     display: block;
   }
 
-  .desktop-only {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
   @media screen and (max-width: 749px) {
     .desktop-only {
       display: none;
+    }
+    .ingredients-section {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 

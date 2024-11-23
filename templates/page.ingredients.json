@@ -1,4 +1,13 @@
- {
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
   "sections": {
     "horizontal_ticker_FdAdhW": {
       "type": "horizontal-ticker",
@@ -90,6 +99,13 @@
         "mobile_background_color": "#b5251b",
         "desktop_background_color": "#b5251b",
         "text_color": "#faf1e0"
+      }
+    },
+    "ingredients_eEM7BC": {
+      "type": "ingredients",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Ingredients.webp",
+        "mobile_image": "shopify://shop_images/ingredients_mobile.webp"
       }
     },
     "shop-now-1": {
@@ -464,6 +480,7 @@
   },
   "order": [
     "horizontal_ticker_FdAdhW",
+    "ingredients_eEM7BC",
     "shop-now-1",
     "sugar-section",
     "shop-now-2",
