@@ -1,9 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "page-content": {
       "type": "page-content",
       "custom_css": [
-        "h1 {color: #F7E8CC; text-align: center; font-size: 42px; font-family: 'superior title', serif; font-weight: 500; line-height: 120%;} .shopify-section { background-color: #7B1C14;}"
+        "h1 {text-align: center; font-size: 42px; font-family: 'superior title', serif; font-weight: 500; line-height: 120%;} .page-content-container { background-color: #7B1C14;}"
       ],
       "settings": {
         "show_page_title": true,
