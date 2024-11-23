@@ -4,12 +4,12 @@
 >
   <div class='product-details-container page-width'>
     <div class='product-benefits'>
-      {% if product.title == 'Spicy Cubes' or product.title == 'Spicy Cubes - Hot Peach Edition' %}
+      {% if product.title == 'Spicy Cubes' or product.title == 'Spicy Cubes - Hot Mango Edition' %}
         <h1>Product Benefits</h1>
       {% else %}
         <h1>Product Details</h1>
       {% endif %}
-      {% if product.title == 'Spicy Cubes' or product.title == 'Spicy Cubes - Hot Peach Edition' %}
+      {% if product.title == 'Spicy Cubes' or product.title == 'Spicy Cubes - Hot Mango Edition' %}
         <p style='font-size: 16px; line-height: 120%;'>
           {{ product.description }}
         </p>
@@ -113,7 +113,7 @@
           </a>
         {% endcomment %}
       </div>
-    {% elsif product.title == 'Spicy Cubes - Hot Peach Edition' %}
+    {% elsif product.title == 'Spicy Cubes - Hot Mango Edition' %}
       <div class='product-details-accordion'>
         <div class='accordion-item'>
           <button class='accordion-button active' type='button'>Natural Key Ingredients</button>

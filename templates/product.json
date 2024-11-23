@@ -171,7 +171,7 @@
         "background_color": "#b5251b",
         "text_color": "",
         "button_text": "SHOP NOW",
-        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "button_url": "shopify://products/spicy-cubes-hot-mango-edition",
         "spacing": false,
         "display_on_desktop": true,
         "button_background_color": "#7b1c14",
@@ -206,7 +206,7 @@
         "background_color": "#7b1c14",
         "text_color": "",
         "button_text": "SHOP NOW",
-        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "button_url": "shopify://products/spicy-cubes-hot-mango-edition",
         "spacing": false,
         "display_on_desktop": false,
         "button_background_color": "#d22c1e",
@@ -345,7 +345,7 @@
     "pre-footer": {
       "type": "pre-footer",
       "settings": {
-        "button_url": "shopify://products/spicy-cubes-hot-peach-edition",
+        "button_url": "shopify://products/spicy-cubes-hot-mango-edition",
         "background_image": "shopify://shop_images/two_girls.png"
       }
     },

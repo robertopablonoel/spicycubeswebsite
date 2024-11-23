@@ -3723,7 +3723,6 @@ $total-header-height-mobile: calc(#{$header-height-mobile} + #{$promo-bar-height
 
   @include media-query($medium-up) {
     margin: 0;
-    overflow-x: hidden;
   }
 }
 
@@ -3732,6 +3731,8 @@ $total-header-height-mobile: calc(#{$header-height-mobile} + #{$promo-bar-height
   overflow-x: hidden;
   display: flex;
   gap: 45px;
+  // Add height: 100% to contain vertical scroll
+  height: 100%;
 }
 
 .product__image {
@@ -3859,10 +3860,14 @@ image-slider .slider__pagination .swiper-pagination-bullet-active {
 
 .slider-wrapper {
   overflow: hidden;
+  // Add height: 100% to ensure proper vertical containment
+  height: 100%;
 }
 
 .product__images-slider--desktop {
   display: none;
+  // Add height handling for desktop
+  height: 100%;
 
   @include media-query($medium-up) {
     display: block;
@@ -7246,7 +7251,11 @@ image-slider {
   display: block;
   opacity: 0;
   overflow-x: hidden;
+  // Remove any potential overflow-y
+  overflow-y: hidden;
   transition: opacity 0.3s;
+  // Add height: 100%
+  height: 100%;
 }
 
 image-slider.slider-disabled {
