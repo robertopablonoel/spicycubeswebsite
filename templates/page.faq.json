@@ -9,20 +9,10 @@
  */
 {
   "sections": {
-    "page-content": {
-      "type": "page-content",
-      "custom_css": [
-        "h1 {text-align: center; font-size: 42px; font-family: 'superior title', serif; font-weight: 500; line-height: 120%;} .page-content-container { background-color: #7B1C14;}"
-      ],
-      "settings": {
-        "show_page_title": true,
-        "show_page_content": true
-      }
-    },
     "faq-section": {
       "type": "faq-section",
       "settings": {
-        "include_title": false
+        "include_title": true
       }
     }
   },
